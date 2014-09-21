@@ -1,0 +1,40 @@
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\ApplicationIcon.png
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\RadioNewsPaper.dll
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\RadioNewsPaper.pdb
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\AppManifest.xaml
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\App.g.cs
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\MainPage.g.cs
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.g.resources
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.Resources.AppResources.resources
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.csproj.GenerateResource.Cache
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.pdb
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\XapCacheFile.xml
+c:\users\kalyan\documents\visual studio 2013\Projects\RadioNewsPaper\RadioNewsPaper\obj\Debug\Views\NewsPaperDetail.g.cs
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\RadioNewsPaper.dll
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\RadioNewsPaper.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\AppManifest.xaml
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\App.g.cs
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\MainPage.g.cs
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\Views\NewsPaperDetail.g.cs
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.g.resources
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.Resources.AppResources.resources
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.csproj.GenerateResource.Cache
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\XapCacheFile.xml
