@@ -177,7 +177,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\Freelancer\Radio and Newspaper\Radio and Newspaper\RadioPlayback\RadioPlayback.csproj">
+    <ProjectReference Include="..\RadioPlayback\RadioPlayback.csproj">
       <Project>{4235ab6a-38c0-40da-a4d7-c5230e081bbc}</Project>
       <Name>RadioPlayback</Name>
     </ProjectReference>

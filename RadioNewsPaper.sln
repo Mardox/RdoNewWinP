@@ -5,9 +5,9 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioNewsPaper", "RadioNewsPaper\RadioNewsPaper.csproj", "{0179C934-779F-43CF-ADE4-3E97EF6FAC60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioPlayback", "..\..\..\Desktop\Freelancer\Radio and Newspaper\Radio and Newspaper\RadioPlayback\RadioPlayback.csproj", "{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioPlayback", "RadioPlayback\RadioPlayback.csproj", "{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightMedia", "..\..\..\Desktop\Freelancer\Radio and Newspaper\Radio and Newspaper\SilverlightMedia\SilverlightMedia.csproj", "{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightMedia", "SilverlightMedia\SilverlightMedia.csproj", "{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
