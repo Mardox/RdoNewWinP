@@ -34,36 +34,34 @@ namespace RadioNewsPaper
             }
         }
 
-
         private void RadioItem_Tap(object sender, SelectionChangedEventArgs e)
         {
+            // If selected item is null, do nothing
+            if (RadioList.SelectedItem == null)
+                return;
+
             var longlistselector = (sender as LongListSelector);
             int index = longlistselector.ItemsSource.IndexOf(longlistselector.SelectedItem);
-            MessageBox.Show(index.ToString());
+            //MessageBox.Show(index.ToString());
+            NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml?index=" + index, UriKind.Relative));
+
+            // Reset selected item to null
+            RadioList.SelectedItem = null;
         }
 
         private void NewsPaper_Tap(object sender, SelectionChangedEventArgs e)
         {
+            // If selected item is null, do nothing
+            if (NewsPaperList.SelectedItem == null)
+                return;
+
             var longlistselector = (sender as LongListSelector);
             int index = longlistselector.ItemsSource.IndexOf(longlistselector.SelectedItem);
             //MessageBox.Show(index.ToString());
             NavigationService.Navigate(new Uri("/Views/NewsPaperDetail.xaml?index=" + index, UriKind.Relative));
+
+            // Reset selected item to null
+            NewsPaperList.SelectedItem = null;
         }
-
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
-
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
     }
 }

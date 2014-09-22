@@ -25,15 +25,15 @@ namespace RadioNewsPaper.Data
                                   "FM 9",
                               };
         string[] radioUrl = {
-                                "url 1",
-                                "url 2",
-                                "url 3",
-                                "url 4",
-                                "url 5",
-                                "url 6",
-                                "url 7",
-                                "url 8",
-                                "url 9",
+                                "http://114.130.45.114:1021",
+                                "http://live.abcradiobd.fm:8282",
+                                "http://220.247.162.146:7170",
+                                "http://radiovoice24.com:7015",
+                                "http://118.179.219.243:8000",
+                                "http://live.peoplesradio.fm:9160",
+                                "http://184.107.144.218:8240",
+                                "http://202.51.191.123:8000",
+                                "http://184.172.165.195:8201"
                             };
 
         public string[] returnTitle()

@@ -12,6 +12,10 @@
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="AudioStreamingAgent" Name="RadioPlayback" Source="RadioPlayback" Type="RadioPlayback.AudioTrackStreamer" />
+        <BackgroundServiceAgent Specifier="AudioPlayerAgent" Name="RadioPlayback" Source="RadioPlayback" Type="RadioPlayback.AudioPlayer" />
+      </ExtendedTask>
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="RadioNewsPaperToken" TaskName="_default">

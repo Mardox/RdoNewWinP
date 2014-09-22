@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioNewsPaper", "RadioNewsPaper\RadioNewsPaper.csproj", "{0179C934-779F-43CF-ADE4-3E97EF6FAC60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioPlayback", "..\..\..\Desktop\Freelancer\Radio and Newspaper\Radio and Newspaper\RadioPlayback\RadioPlayback.csproj", "{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightMedia", "..\..\..\Desktop\Freelancer\Radio and Newspaper\Radio and Newspaper\SilverlightMedia\SilverlightMedia.csproj", "{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,30 @@ Global
 		{0179C934-779F-43CF-ADE4-3E97EF6FAC60}.Release|x86.ActiveCfg = Release|x86
 		{0179C934-779F-43CF-ADE4-3E97EF6FAC60}.Release|x86.Build.0 = Release|x86
 		{0179C934-779F-43CF-ADE4-3E97EF6FAC60}.Release|x86.Deploy.0 = Release|x86
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Debug|ARM.Build.0 = Debug|ARM
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Debug|x86.ActiveCfg = Debug|x86
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Debug|x86.Build.0 = Debug|x86
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Release|ARM.ActiveCfg = Release|ARM
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Release|ARM.Build.0 = Release|ARM
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Release|x86.ActiveCfg = Release|x86
+		{4235AB6A-38C0-40DA-A4D7-C5230E081BBC}.Release|x86.Build.0 = Release|x86
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Debug|ARM.Build.0 = Debug|ARM
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Debug|x86.ActiveCfg = Debug|x86
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Debug|x86.Build.0 = Debug|x86
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Release|ARM.ActiveCfg = Release|ARM
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Release|ARM.Build.0 = Release|ARM
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Release|x86.ActiveCfg = Release|x86
+		{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

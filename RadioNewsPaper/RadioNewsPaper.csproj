@@ -112,6 +112,9 @@
     <Compile Include="Views\NewsPaperDetail.xaml.cs">
       <DependentUpon>NewsPaperDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RadioDetail.xaml.cs">
+      <DependentUpon>RadioDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -127,6 +130,10 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="Views\NewsPaperDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RadioDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,12 +164,23 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\transport.ff.png" />
+    <Content Include="Assets\transport.pause.png" />
+    <Content Include="Assets\transport.play.png" />
+    <Content Include="Assets\transport.rew.png" />
+    <Content Include="Assets\transport.stop.white.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\Freelancer\Radio and Newspaper\Radio and Newspaper\RadioPlayback\RadioPlayback.csproj">
+      <Project>{4235ab6a-38c0-40da-a4d7-c5230e081bbc}</Project>
+      <Name>RadioPlayback</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

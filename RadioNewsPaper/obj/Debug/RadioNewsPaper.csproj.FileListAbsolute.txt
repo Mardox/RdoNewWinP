@@ -38,3 +38,29 @@ C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\Rad
 C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll
 C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\RadioNewsPaper.pdb
 C:\Users\HooMan\Desktop\Windows Apps\RadioNewsPaper\RadioNewsPaper\obj\Debug\XapCacheFile.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\AppManifest.xaml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\App.g.cs
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\MainPage.g.cs
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\Views\NewsPaperDetail.g.cs
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.g.resources
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.Resources.AppResources.resources
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.csproj.GenerateResource.Cache
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\XapCacheFile.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\Views\RadioDetail.g.cs
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioPlayback.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\SilverlightMedia.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioPlayback.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\SilverlightMedia.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.csprojResolveAssemblyReference.cache
