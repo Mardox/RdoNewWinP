@@ -53,7 +53,7 @@ namespace RadioNewsPaper.Views
             {
                 case PlayState.Playing:
                     this.UpdateState(null, null);
-
+                    UpdateButtons(false, true);
                     break;
 
                 case PlayState.Paused:
@@ -61,7 +61,7 @@ namespace RadioNewsPaper.Views
                     this.UpdateState(null, null);
                     break;
                 case PlayState.Stopped:
-                    
+                    UpdateButtons(true, false);
                     this.UpdateState(null, null);
                     break;
                 default:
