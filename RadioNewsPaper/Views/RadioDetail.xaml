@@ -40,6 +40,7 @@
 
                 <StackPanel Orientation="Vertical" Height="Auto">
                     <TextBlock Padding="10" Text="Status:" FontSize="36" Width="Auto"/>
+                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="White" Height="12"/>
                     <TextBlock Padding="10" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="36"/>
                 </StackPanel>
             </StackPanel>
@@ -50,7 +51,10 @@
                 <Image x:Name="stop" Source="/Assets/transport.stop.white.png" Visibility="Collapsed" Height="160" Width="160" Tap="stopButtonTap" />
                 <Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />
             </StackPanel>
+            
+            
         </Grid>
+        
     </Grid>
 
 </phone:PhoneApplicationPage>
