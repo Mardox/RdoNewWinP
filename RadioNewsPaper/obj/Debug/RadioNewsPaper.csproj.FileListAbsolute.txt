@@ -64,3 +64,5 @@ C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\SilverlightMedi
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioPlayback.pdb
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\SilverlightMedia.pdb
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.csprojResolveAssemblyReference.cache
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\GoogleAds.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\GoogleAds.xml

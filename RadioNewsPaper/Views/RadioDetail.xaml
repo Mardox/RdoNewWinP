@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -28,20 +29,20 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel Orientation="Vertical">
+            <StackPanel x:Name="mainPanel" Orientation="Vertical">
             <StackPanel Orientation="Vertical" Height="Auto">
-                <TextBlock Padding="10" Text="Station :" FontSize="36" Width="Auto"/>
-                    <TextBlock Padding="10" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="36"/>
+                <TextBlock Padding="2" Text="Station :" FontSize="36" Width="Auto"/>
+                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="36"/>
             </StackPanel>
                 <StackPanel Orientation="Vertical" Height="Auto">
-                    <TextBlock Padding="10" Text="You are listening :" FontSize="36" Width="Auto"/>
-                    <TextBlock Padding="10" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="36"/>
+                    <TextBlock Padding="2" Text="You are listening :" FontSize="36" Width="Auto"/>
+                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="36"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Height="Auto">
-                    <TextBlock Padding="10" Text="Status:" FontSize="36" Width="Auto"/>
+                    <TextBlock Padding="2" Text="Status:" FontSize="36" Width="Auto"/>
                     <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="White" Height="12"/>
-                    <TextBlock Padding="10" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="36"/>
+                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="36"/>
                 </StackPanel>
             </StackPanel>
 

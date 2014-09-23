@@ -14,29 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.prothom-alo.com",
-                                 "http://www.ittefaq.com.bd",
-                                 "http://www.amardeshonline.com",
-                                 "http://www.samakal.net",
-                                 "http://www.amadershomoybd.com",
-                                 "http://www.thebangladeshtoday.com",
-                                 "http://www.thefinancialexpress-bd.com",
-                                 "http://www.newstoday.com.bd",
-                                 "http://www.thenewnationbd.com"
+                                 "http://zeenews.india.com/marathi",
+                                 "http://maharashtratimes.indiatimes.com/",
+                                 "http://www.loksatta.com/",
+                                 "http://www.batmya.com/",
+                                 "http://divyamarathi.bhaskar.com/",
                              };
         
 
         string[] NewsTitles = {
-                                         "Channel 1",
-                                         "Channel 2",
-                                         "Channel 3",
-                                         "Channel 4",
-                                         "Channel 5",
-                                         "Channel 6",
-                                         "Channel 7",
-                                         "Channel 8",
-                                         "Channel 9"
-
+                                         "Marathi Latest News",
+                                         "Maharashtra Times",
+                                         "Loksatta",
+                                         "Batmya",
+                                         "Divya",
                                      };
 
         public string[] returnNewsUrls()

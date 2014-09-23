@@ -12,6 +12,7 @@ using Microsoft.Phone.BackgroundAudio;
 using System.IO.IsolatedStorage;
 using System.Windows.Threading;
 using System.Diagnostics;
+using GoogleAds;
 
 namespace RadioNewsPaper.Views
 {
@@ -21,6 +22,7 @@ namespace RadioNewsPaper.Views
         public string[] radioUris;
         RadioData rData;
         int index;
+        private InterstitialAd interstitialAd;
 
         //constructor
         public RadioDetail()
@@ -32,6 +34,34 @@ namespace RadioNewsPaper.Views
             radioUris = rData.returnUrl();
 
             Loaded += RadioDetail_Loaded;
+            interstitialAd = new InterstitialAd(rData.detailInterstitial);
+            AdRequest adRequest = new AdRequest();
+
+            interstitialAd.ReceivedAd += OnAdReceived;
+            interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
+            interstitialAd.LoadAd(adRequest);
+
+            AdView bannerAd = new AdView
+            {
+                Format = AdFormats.Banner,
+                AdUnitID = rData.adBanner
+            };
+            AdRequest BanneradRequest = new AdRequest();
+            // Assumes we've defined a Grid that has a name
+            // directive of ContentPanel.
+            mainPanel.Children.Add(bannerAd);
+            bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
+            bannerAd.LoadAd(BanneradRequest);
+        }
+
+        void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void OnAdReceived(object sender, AdEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Ad received successfully");
         }
 
         private DispatcherTimer timer;
@@ -126,7 +156,10 @@ namespace RadioNewsPaper.Views
             {
                 index = Convert.ToInt32(temp);
             }
-            Play();
+            if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
+            {
+                Play();
+            }
         }
 
         private void playButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -191,21 +224,31 @@ namespace RadioNewsPaper.Views
             UpdateButtons(false, true);
         }
 
-        //protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
-        //{
-        //    if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
-        //    {
-        //        IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-        //        if (!settings.Contains("currentRadio"))
-        //        {
-        //            settings.Add("currentRadio", index);
-        //        }
-        //        else
-        //        {
-        //            settings["currentRadio"] = index;
-        //        }
-        //        settings.Save();
-        //    }
-        //}
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                int count = 1;
+                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+                if (!settings.Contains("radioBackCount"))
+                {
+                    settings.Add("radioBackCount", 1);
+                }
+                else
+                {
+                    count = (int)IsolatedStorageSettings.ApplicationSettings["radioBackCount"];
+                    settings["radioBackCount"] = count + 1;
+                }
+                settings.Save();
+                if (count % 3 == 0)
+                {
+                    interstitialAd.ShowAd();
+                }
+            }
+            catch (Exception ex)
+            {
+                NavigationService.GoBack();
+            }
+        }
     }
 }
