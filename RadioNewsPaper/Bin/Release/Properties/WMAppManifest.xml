@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{00a22271-67e4-468e-a201-ddbc6f5cc627}" Title="Marathi Radio" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RadioNewsPaper author" Description="" Publisher="RadioNewsPaper" PublisherID="{cbff559d-c279-4d87-aba0-655bdb9f7be0}">
+  <App xmlns="" ProductID="{00a22271-67e4-468e-a201-ddbc6f5cc627}" Title="PK Radio" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RadioNewsPaper author" Description="" Publisher="RadioNewsPaper" PublisherID="{cbff559d-c279-4d87-aba0-655bdb9f7be0}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -23,7 +23,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Marathi Radio</Title>
+          <Title>PK Radio</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>
           <BackTitle></BackTitle>

@@ -14,20 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://zeenews.india.com/marathi",
-                                 "http://maharashtratimes.indiatimes.com/",
-                                 "http://www.loksatta.com/",
-                                 "http://www.batmya.com/",
-                                 "http://divyamarathi.bhaskar.com/",
+                                 "http://www.pknews.tv/",
+                                 "http://www.thenews.com.pk/News.aspx",
+                                 "http://www.dawn.com/",
+                                 "http://tribune.com.pk/",
                              };
         
 
         string[] NewsTitles = {
-                                         "Marathi Latest News",
-                                         "Maharashtra Times",
-                                         "Loksatta",
-                                         "Batmya",
-                                         "Divya",
+                                         "Siasat",
+                                         "International News",
+                                         "Dawn",
+                                         "Tribune",
                                      };
 
         public string[] returnNewsUrls()

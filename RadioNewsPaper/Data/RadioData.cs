@@ -14,17 +14,23 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Marathi Radio",
-                                  "Radio Schizoid Chillout",
+                                  "Apna eRadio",
+                                  "Apna Classic",
+                                  "Pakistan Radio",
+                                  "Radio Pak",
+                                  "DeSi-RaDiO",
                               };
         string[] radioUrl = {
-                                "http://208.80.53.106:16704",
-                                "http://78.46.73.237:8000/schizoid",
+                                "http://209.62.54.34:8000",
+                                "http://209.62.54.34:8300",
+                                "http://listen.radionomy.com/pakistanradio",
+                                "http://50.7.77.178:8412",
+                                "http://204.45.41.148:80",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/7741187491";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/9217920692";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/1694653895";
+        public string adBanner = "ca-app-pub-7607380003153721/1834254690";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/3310987893";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/4787721090";
 
         public string[] returnTitle()
         {
