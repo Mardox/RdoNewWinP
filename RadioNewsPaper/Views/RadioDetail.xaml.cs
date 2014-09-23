@@ -32,20 +32,11 @@ namespace RadioNewsPaper.Views
             radioUris = rData.returnUrl();
 
             Loaded += RadioDetail_Loaded;
-
-            Play();
-            BackgroundAudioPlayer.Instance.PlayStateChanged += Instance_PlayStateChanged;
-
-            if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
-            {
-                stationName.Text = radioTitles[index];
-            }
         }
 
         private DispatcherTimer timer;
         void RadioDetail_Loaded(object sender, RoutedEventArgs e)
         {
-
             // Initialize a timer to update the UI every half-second.
             this.timer = new DispatcherTimer();
             this.timer.Interval = TimeSpan.FromSeconds(0.5);
@@ -63,7 +54,7 @@ namespace RadioNewsPaper.Views
             }
         }
 
-        void Instance_PlayStateChanged(object sender, EventArgs e)
+        private void Instance_PlayStateChanged(object sender, EventArgs e)
         {
             PlayState playState = PlayState.Unknown;
             try
@@ -92,14 +83,6 @@ namespace RadioNewsPaper.Views
                     UpdateButtons(true, false);
                     this.UpdateState(null, null);
                     break;
-                case PlayState.BufferingStarted:
-                    bufferingProgress.Visibility = Visibility.Visible;
-                    statusBox.Text = "Buffering";
-                    break;
-                case PlayState.BufferingStopped:
-                    bufferingProgress.Visibility = Visibility.Collapsed;
-                    statusBox.Text = "Playing";
-                    break;
                 default:
                     break;
             }
@@ -108,31 +91,14 @@ namespace RadioNewsPaper.Views
         private void UpdateState(object sender, EventArgs e)
         {
             // The code below changes the Song Name Track
+            statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
 
             AudioTrack audioTrack = BackgroundAudioPlayer.Instance.Track;
-
             if (audioTrack != null)
             {
                 stationName.Text = audioTrack.Title;
                 artistName.Text = audioTrack.Artist;
                 bufferingProgress.IsIndeterminate = false;
-            }
-
-            if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.BufferingStarted)
-            {
-                statusBox.Text = "Buffering";
-            }
-            else if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
-            {
-                statusBox.Text = "Playing";
-            }
-            else if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Stopped)
-            {
-                statusBox.Text = "Stopped";
-            }
-            else
-            {
-                statusBox.Text = "Unknown";
             }
         }
 
@@ -160,19 +126,7 @@ namespace RadioNewsPaper.Views
             {
                 index = Convert.ToInt32(temp);
             }
-            rData = new RadioData();
-            radioTitles = rData.returnTitle();
-            radioUris = rData.returnUrl();
-            if(BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
-            {
-                UpdateButtons(false, true);
-            }
-            else
-            {
-                UpdateButtons(true, false);
-            }
-            
-            UpdateState(null, null);
+            Play();
         }
 
         private void playButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -182,6 +136,7 @@ namespace RadioNewsPaper.Views
 
         private void stopButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            this.timer.Stop();
             BackgroundAudioPlayer.Instance.Stop();
             UpdateButtons(true, false);
             UpdateState(null, null);
@@ -200,7 +155,7 @@ namespace RadioNewsPaper.Views
             {
                 index++;
             }
-            
+            bufferingProgress.IsIndeterminate = true;
             BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
             BackgroundAudioPlayer.Instance.Volume = 1.0d;
             UpdateButtons(false, true);
@@ -220,7 +175,7 @@ namespace RadioNewsPaper.Views
             {
                 index--;
             }
-            
+            bufferingProgress.IsIndeterminate = true;
             BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
             BackgroundAudioPlayer.Instance.Volume = 1.0d;
             UpdateButtons(false, true);
@@ -229,17 +184,10 @@ namespace RadioNewsPaper.Views
 
         void Play()
         {
-            try
-            {
-                BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-                //Volume is by default set to the Maximum
-                BackgroundAudioPlayer.Instance.Volume = 1.0d;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-            }
-            UpdateState(null, null);
+            bufferingProgress.IsIndeterminate = true;
+            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
+            //Volume is by default set to the Maximum
+            BackgroundAudioPlayer.Instance.Volume = 1.0d;
             UpdateButtons(false, true);
         }
 
