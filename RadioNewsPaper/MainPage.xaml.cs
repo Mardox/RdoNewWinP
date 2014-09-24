@@ -34,7 +34,7 @@ namespace RadioNewsPaper
 
         void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
         {
-            ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
+            //ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
         }
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
