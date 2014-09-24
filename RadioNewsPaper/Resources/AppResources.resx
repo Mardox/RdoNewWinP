@@ -137,4 +137,10 @@
   <data name="AppBarMenuItemText" xml:space="preserve">
     <value>Menu Item</value>
   </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>My company</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>kalyanthegangster@gmail.com</value>
+  </data>
 </root>

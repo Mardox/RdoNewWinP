@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
+    xmlns:ctrl="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -17,25 +18,6 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-
-        <!-- LOCALIZATION NOTE:
-            To localize the displayed strings copy their values to appropriately named
-            keys in the app's neutral language resource file (AppResources.resx) then
-            replace the hard-coded text value between the attributes' quotation marks
-            with the binding clause whose path points to that string name.
-
-            For example:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            This binding points to the template's string resource named "ApplicationTitle".
-
-            Adding supported languages in the Project Properties tab will create a
-            new resx file per language that can carry the translated values of your
-            UI strings. The binding in these examples will cause the value of the
-            attributes to be drawn from the .resx file that matches the
-            CurrentUICulture of the app at run time.
-         -->
 
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
@@ -76,7 +58,29 @@
             </phone:PivotItem>
             
         </phone:Pivot>
-        
+
+        <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
+                             EnableAnimation="True"
+                             RatingTitle="Your Rating"
+                             RatingMessage1="Support us by rating"
+                             RatingMessage2="Do you want to rate this app now?"
+                             RatingYes="Yes"
+                             RatingNo="No"
+                             FeedbackTitle="Your Feedback"
+                             FeedbackMessage1="Do you want to feedback about this app?"
+                             FeedbackYes="Yes"
+                             FeedbackNo="No"
+                             FeedbackTo="{Binding Path=LocalizedResources.Email, Source={StaticResource LocalizedStrings}}"
+                             FeedbackSubject="Feedback subject"
+                             FeedbackBody="Feedback description"
+                             ApplicationName="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+                             CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"
+                             FirstCount="5"
+                             SecondCount="10"
+                             CountDays="True"
+                             />
+
+
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)

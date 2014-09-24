@@ -3,6 +3,7 @@
     <AssemblyPart x:Name="RadioNewsPaper" Source="RadioNewsPaper.dll" />
     <AssemblyPart x:Name="GoogleAds" Source="GoogleAds.dll" />
     <AssemblyPart x:Name="RadioPlayback" Source="RadioPlayback.dll" />
+    <AssemblyPart x:Name="RateMyApp" Source="RateMyApp.dll" />
     <AssemblyPart x:Name="SilverlightMedia" Source="SilverlightMedia.dll" />
   </Deployment.Parts>
 </Deployment>

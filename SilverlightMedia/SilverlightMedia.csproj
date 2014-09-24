@@ -122,8 +122,9 @@
     <None Include="Settings.StyleCop" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GoogleAds">
-      <HintPath>..\..\..\..\ADMOB\lib\windowsphone8\GoogleAds.dll</HintPath>
+    <Reference Include="GoogleAds, Version=6.5.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\windowsphone8\GoogleAds.dll</HintPath>
     </Reference>
     <Reference Include="Shoutcast.Sample.Phone">
       <HintPath>..\..\..\..\ShoutcastMSS_v1_beta2 (2)\Src\Shoutcast.Sample.Phone\Bin\Debug\Shoutcast.Sample.Phone.dll</HintPath>

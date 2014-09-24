@@ -27,9 +27,14 @@ namespace RadioNewsPaper
             DataContext = App.ViewModel;
 
             Loaded += MainPage_Loaded;
-
+            FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
+        {
+            ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
         }
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
