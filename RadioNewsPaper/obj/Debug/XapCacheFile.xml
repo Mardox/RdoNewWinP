@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="9/24/2014 1:15:41 PM">
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="9/24/2014 1:15:39 PM" />
+﻿<xapCache source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="9/24/2014 1:18:00 PM">
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="9/24/2014 1:17:59 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="9/22/2014 7:54:09 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="9/22/2014 7:54:09 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="9/22/2014 7:54:09 AM" />
@@ -24,5 +24,5 @@
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\Silverlight.Media.Phone.dll" archivePath="Silverlight.Media.Phone.dll" lastWriteTime="12/5/2013 8:20:30 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\GPL.txt" archivePath="GPL.txt" lastWriteTime="12/5/2013 9:30:36 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\LICENSE.txt" archivePath="LICENSE.txt" lastWriteTime="12/5/2013 9:30:36 PM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="9/24/2014 1:15:41 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="9/24/2014 1:17:59 PM" />
 </xapCache>

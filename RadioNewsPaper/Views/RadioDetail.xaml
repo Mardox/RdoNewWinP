@@ -7,7 +7,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
-    xmlns:ctrl="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -21,27 +20,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <ctrl:FeedbackOverlay x:Name="feedBack"
-                             EnableAnimation="True"
-                             RatingTitle="Your Rating"
-                             RatingMessage1="Support us by rating"
-                             RatingMessage2="Do you want to rate this app now?"
-                             RatingYes="Yes"
-                             RatingNo="No"
-                             FeedbackTitle="Your Feedback"
-                             FeedbackMessage1="Do you want to feedback about this app?"
-                             FeedbackYes="Yes"
-                             FeedbackNo="No"
-                             FeedbackTo="{Binding Path=LocalizedResources.Email, Source={StaticResource LocalizedStrings}}"
-                             FeedbackSubject="Feedback subject"
-                             FeedbackBody="Feedback description"
-                             ApplicationName="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-                             CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"
-                             FirstCount="5"
-                             SecondCount="10"
-                             CountDays="True"
-                             />
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">

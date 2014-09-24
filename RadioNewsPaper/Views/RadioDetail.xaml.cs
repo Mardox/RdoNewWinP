@@ -28,8 +28,6 @@ namespace RadioNewsPaper.Views
         public RadioDetail()
         {
             InitializeComponent();
-
-            feedBack.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
             rData = new RadioData();
             radioTitles = rData.returnTitle();
             radioUris = rData.returnUrl();
@@ -53,11 +51,6 @@ namespace RadioNewsPaper.Views
             mainPanel.Children.Add(bannerAd);
             bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
             bannerAd.LoadAd(BanneradRequest);
-        }
-
-        void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
-        {
-            ApplicationBar.IsVisible = (feedBack.Visibility != Visibility.Visible);
         }
 
         void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
