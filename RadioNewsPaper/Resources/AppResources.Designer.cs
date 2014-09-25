@@ -79,7 +79,7 @@ namespace RadioNewsPaper.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PK Radio.
+        ///   Looks up a localized string similar to All India Radio.
         /// </summary>
         public static string ApplicationTitle {
             get {
