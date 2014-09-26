@@ -116,9 +116,6 @@
     <Compile Include="Views\RadioDetail.xaml.cs">
       <DependentUpon>RadioDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RecordPage.xaml.cs">
-      <DependentUpon>RecordPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -138,10 +135,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RadioDetail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RecordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
