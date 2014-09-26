@@ -91,3 +91,8 @@ C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.pdb
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\XapCacheFile.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\Views\RecordPage.g.cs
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Audio.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Net.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Storage.dll

@@ -13,6 +13,9 @@ using System.IO.IsolatedStorage;
 using System.Windows.Threading;
 using System.Diagnostics;
 using GoogleAds;
+using Coding4Fun.Toolkit.Audio;
+using Coding4Fun.Toolkit.Audio.Helpers;
+using System.IO;
 
 namespace RadioNewsPaper.Views
 {
@@ -101,16 +104,22 @@ namespace RadioNewsPaper.Views
                     this.UpdateState(null, null);
                     UpdateButtons(false, true);
                     this.timer.Start();
+                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
                     break;
 
                 case PlayState.Paused:
                     this.timer.Stop();
                     this.UpdateState(null, null);
+                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
                     break;
                 case PlayState.Stopped:
                     this.timer.Stop();
                     UpdateButtons(true, false);
                     this.UpdateState(null, null);
+                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
+                    break;
+                case PlayState.BufferingStarted:
+                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
                     break;
                 default:
                     break;
@@ -120,7 +129,7 @@ namespace RadioNewsPaper.Views
         private void UpdateState(object sender, EventArgs e)
         {
             // The code below changes the Song Name Track
-            statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
+            //statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
 
             AudioTrack audioTrack = BackgroundAudioPlayer.Instance.Track;
             if (audioTrack != null)
@@ -128,6 +137,10 @@ namespace RadioNewsPaper.Views
                 stationName.Text = audioTrack.Title;
                 artistName.Text = audioTrack.Artist;
                 bufferingProgress.IsIndeterminate = false;
+            }
+            else
+            {
+                statusBox.Text = "Buffering";
             }
         }
 
@@ -169,50 +182,58 @@ namespace RadioNewsPaper.Views
         private void stopButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             this.timer.Stop();
-            BackgroundAudioPlayer.Instance.Stop();
+            try
+            {
+                BackgroundAudioPlayer.Instance.Stop();
+            }
+            catch (Exception)
+            {
+                UpdateButtons(true, false);
+            }
+            
             UpdateButtons(true, false);
             UpdateState(null, null);
         }
 
-        private void nextButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            BackgroundAudioPlayer.Instance.Stop();
-            UpdateButtons(true, false);
-            UpdateState(null, null);
-            if(index == radioUris.Length - 1)
-            {
-                index = 0;
-            }
-            else
-            {
-                index++;
-            }
-            bufferingProgress.IsIndeterminate = true;
-            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-            BackgroundAudioPlayer.Instance.Volume = 1.0d;
-            UpdateButtons(false, true);
-            UpdateState(null, null);
-        }
+        //private void nextButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    BackgroundAudioPlayer.Instance.Stop();
+        //    UpdateButtons(true, false);
+        //    UpdateState(null, null);
+        //    if(index == radioUris.Length - 1)
+        //    {
+        //        index = 0;
+        //    }
+        //    else
+        //    {
+        //        index++;
+        //    }
+        //    bufferingProgress.IsIndeterminate = true;
+        //    BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
+        //    BackgroundAudioPlayer.Instance.Volume = 1.0d;
+        //    UpdateButtons(false, true);
+        //    UpdateState(null, null);
+        //}
 
-        private void backButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            BackgroundAudioPlayer.Instance.Stop();
-            UpdateButtons(true, false);
-            UpdateState(null, null);
-            if (index == 0)
-            {
-                index = radioUris.Length - 1;
-            }
-            else
-            {
-                index--;
-            }
-            bufferingProgress.IsIndeterminate = true;
-            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-            BackgroundAudioPlayer.Instance.Volume = 1.0d;
-            UpdateButtons(false, true);
-            UpdateState(null, null);
-        }
+        //private void backButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    BackgroundAudioPlayer.Instance.Stop();
+        //    UpdateButtons(true, false);
+        //    UpdateState(null, null);
+        //    if (index == 0)
+        //    {
+        //        index = radioUris.Length - 1;
+        //    }
+        //    else
+        //    {
+        //        index--;
+        //    }
+        //    bufferingProgress.IsIndeterminate = true;
+        //    BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
+        //    BackgroundAudioPlayer.Instance.Volume = 1.0d;
+        //    UpdateButtons(false, true);
+        //    UpdateState(null, null);
+        //}
 
         void Play()
         {
@@ -220,7 +241,7 @@ namespace RadioNewsPaper.Views
             BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
             //Volume is by default set to the Maximum
             BackgroundAudioPlayer.Instance.Volume = 1.0d;
-            UpdateButtons(false, true);
+            //UpdateButtons(false, true);
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
@@ -248,6 +269,84 @@ namespace RadioNewsPaper.Views
             {
                 NavigationService.GoBack();
             }
+        }
+
+        private void recordButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //NavigationService.Navigate(new Uri("/Views/RecordPage.xaml", UriKind.RelativeOrAbsolute));
+            recordPopUp.IsOpen = true;
+        }
+
+         private MicrophoneRecorder _recorder = new MicrophoneRecorder();
+        private IsolatedStorageFileStream _audioStream;
+        private string _tempFileName = "tempWav.wav";
+
+        private void startClick(object sender, RoutedEventArgs e)
+        {
+            playButton.IsEnabled = false;
+            RotateCircle.Begin();
+            _recorder.Start();
+        }
+
+        private void SaveTempAudio(MemoryStream buffer)
+        {
+            if (buffer == null)
+                throw new ArgumentNullException("Attempting to save an empty audio file");
+
+            //Clean media element hold on audioStream
+            if (_audioStream != null)
+            {
+                playAudio.Stop();
+                playAudio.Source = null;
+
+                _audioStream.Dispose();
+            }
+
+            var bytes = buffer.GetWavAsByteArray(_recorder.SampleRate);
+
+            using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                if (isoStore.FileExists(_tempFileName))
+                {
+                    isoStore.DeleteFile(_tempFileName);
+                }
+                _tempFileName = string.Format("{0}.wav", DateTime.Now.ToFileTime());
+                _audioStream = isoStore.CreateFile(_tempFileName);
+                _audioStream.Write(bytes, 0, bytes.Length);
+
+                //Play
+                playAudio.SetSource(_audioStream);
+
+                string destFileName = string.Format("/recordAudio/{0}.wav", DateTime.Now.ToFileTime());
+                using (IsolatedStorageFile isoStoreP = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    if (!isoStoreP.DirectoryExists("/recordAudio/"))
+                        isoStoreP.CreateDirectory("/recordAudio/");
+                    isoStoreP.MoveFile(_tempFileName, destFileName);
+                }
+            }
+        }
+
+        private void playClick(object sender, RoutedEventArgs e)
+        {
+            BackgroundAudioPlayer.Instance.Close();
+            playAudio.Play();
+        }
+
+        private void stopClick(object sender, RoutedEventArgs e)
+        {
+            RotateCircle.Stop();
+            playButton.IsEnabled = true;
+            _recorder.Stop();
+            SaveTempAudio(_recorder.Buffer);
+            
+        }
+
+        private void closeGridTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            recordPopUp.IsOpen = false;
+            stop.Visibility = Visibility.Collapsed;
+            play.Visibility = Visibility.Visible;
         }
     }
 }

@@ -14,6 +14,16 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="RotateCircle" RepeatBehavior="Forever">
+            <DoubleAnimation 
+                Duration="0:0:4" To="360"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"
+                Storyboard.TargetName="ReelGrid"
+                d:IsOptimized="True" />
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -31,29 +41,91 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel x:Name="mainPanel" Orientation="Vertical">
             <StackPanel Orientation="Vertical" Height="Auto">
-                <TextBlock Padding="2" Text="Station :" FontSize="36" Width="Auto"/>
-                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="36"/>
+                <TextBlock Padding="2" Text="Station :" FontSize="30" Width="Auto"/>
+                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="30"/>
             </StackPanel>
                 <StackPanel Orientation="Vertical" Height="Auto">
-                    <TextBlock Padding="2" Text="You are listening :" FontSize="36" Width="Auto"/>
-                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="36"/>
+                    <TextBlock Padding="2" Text="You are listening :" FontSize="30" Width="Auto"/>
+                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="30"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Height="Auto">
-                    <TextBlock Padding="2" Text="Status:" FontSize="36" Width="Auto"/>
-                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="White" Height="12"/>
-                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="36"/>
+                    <TextBlock Padding="2" Text="Status:" FontSize="30" Width="Auto"/>
+                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="White" Height="12" Background="Black"/>
+                    <TextBlock Padding="2,2,2,10" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="30" />
                 </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,418,10,29">
-                <Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />
-                <Image x:Name="play" Source="/Assets/transport.play.png" Height="160" Width="160" Tap="playButtonTap" />
-                <Image x:Name="stop" Source="/Assets/transport.stop.white.png" Visibility="Collapsed" Height="160" Width="160" Tap="stopButtonTap" />
-                <Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />
+                <!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />-->
+                <Image x:Name="play" Source="/Assets/transport.play.png" Height="140" Width="140" Tap="playButtonTap" />
+                <Image x:Name="stop" Source="/Assets/transport.stop.white.png" Visibility="Collapsed" Height="140" Width="140" Tap="stopButtonTap" />
+                <!--<Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />-->
+                    <Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>
+                
             </StackPanel>
-            
-            
+
+            <Popup x:Name="recordPopUp" IsOpen="False">
+                <Border  BorderThickness="8" Margin="12,100,0,0" BorderBrush="#CCCCCC">
+                    <StackPanel Background="Black" Width="430">
+                        <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closeGridTap">
+                            <Ellipse Fill="Red"/>
+                            <TextBlock Text="X" Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" 
+                                       />
+                        </Grid>
+                        
+                        <Grid Width="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Center"
+                               Name="ReelGrid"
+                      RenderTransformOrigin=".5, .5">
+                            <Grid.RenderTransform>
+                                <CompositeTransform />
+                            </Grid.RenderTransform>
+                            <Ellipse Fill="{StaticResource PhoneAccentBrush}" />
+
+                            <Ellipse 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        VerticalAlignment="Top"
+                        Margin="0,20,0,0" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,0,20" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        HorizontalAlignment="Left"
+                        Margin="20,0,0,0" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,20,0" />
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                            <ToggleButton Name="recordButton" Content="Record" 
+                                          Height="100" Width="150"
+                                          Checked="startClick"
+                                          Unchecked="stopClick"/>
+                            <Button Name="playButton" IsEnabled="False" Content="Play" Height="100" Width="150" Click="playClick" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                        <MediaElement Name="playAudio" AutoPlay="False"/>
+                    </StackPanel>
+                </Border>
+            </Popup>
+
         </Grid>
         
     </Grid>
