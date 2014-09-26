@@ -11,6 +11,9 @@ using RadioNewsPaper.Resources;
 using GoogleAds;
 using System.Diagnostics;
 using RadioNewsPaper.Data;
+using RadioNewsPaper.ViewModels;
+using System.Collections.ObjectModel;
+using System.IO.IsolatedStorage;
 
 namespace RadioNewsPaper
 {
@@ -18,6 +21,7 @@ namespace RadioNewsPaper
     {
         private RadioData rdata;
         private InterstitialAd interstitialAd;
+        public ObservableCollection<RadioFavViewModel> FavItems;
         // Constructor
         public MainPage()
         {
@@ -124,6 +128,52 @@ namespace RadioNewsPaper
             }
 
             base.OnBackKeyPress(e);
+        }
+
+        private void RadioFavItem_Tap(object sender, SelectionChangedEventArgs e)
+        {
+            // If selected item is null, do nothing
+            if (FavList.SelectedItem == null)
+                return;
+
+            var longlistselector = (sender as LongListSelector);
+            int index = longlistselector.ItemsSource.IndexOf(longlistselector.SelectedItem);
+            //MessageBox.Show(index.ToString());
+            NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml?index=" + index, UriKind.Relative));
+
+            // Reset selected item to null
+            FavList.SelectedItem = null;
+        }
+
+
+        private string[] radioTitles;
+        private string[] radioUrls;
+        private void favListLoaded(object sender, RoutedEventArgs e)
+        {
+            FavItems = new ObservableCollection<RadioFavViewModel>();
+            if (IsolatedStorageSettings.ApplicationSettings.Contains("favData"))
+            {
+                string fav = IsolatedStorageSettings.ApplicationSettings["favData"] as string;
+                if (fav != "")
+                {
+                    this.FavItems.Clear();
+                    string[] tempFav = fav.Split(',');
+                    RadioData rData = new RadioData();
+                    radioTitles = rData.returnTitle();
+                    radioUrls = rData.returnUrl();
+                    foreach (string favItem in tempFav)
+                    {
+                        for (int i = 0; i < radioTitles.Length; i++)
+                        {
+                            if (favItem == radioTitles[i])
+                            {
+                                this.FavItems.Add(new RadioFavViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i], Fav = true });
+                            }
+                        }
+                    }
+                }
+            }
+            FavList.ItemsSource = FavItems;
         }
     }
 }

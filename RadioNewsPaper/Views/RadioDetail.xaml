@@ -56,7 +56,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,418,10,29">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,350,10,29">
                 <!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />-->
                 <Image x:Name="play" Source="/Assets/transport.play.png" Height="140" Width="140" Tap="playButtonTap" />
                 <Image x:Name="stop" Source="/Assets/transport.stop.white.png" Visibility="Collapsed" Height="140" Width="140" Tap="stopButtonTap" />
@@ -129,5 +129,15 @@
         </Grid>
         
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True"
+                              IsVisible="True"
+                              Mode="Default">
+            <shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
+                                            Click="toggleFavorite_Click"
+                                            Text="Favorite" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

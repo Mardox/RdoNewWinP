@@ -108,6 +108,7 @@
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewsPaperViewModel.cs" />
+    <Compile Include="ViewModels\RadioFavViewModel.cs" />
     <Compile Include="ViewModels\RadioViewModel.cs" />
     <Compile Include="Views\NewsPaperDetail.xaml.cs">
       <DependentUpon>NewsPaperDetail.xaml</DependentUpon>
@@ -158,6 +159,7 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\favs.png" />
     <Content Include="Assets\microphone.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

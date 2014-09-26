@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RadioNewsPaper.ViewModels
 {
-    public class RadioViewModel : INotifyPropertyChanged
+    public class RadioFavViewModel : INotifyPropertyChanged
     {
         private string _radioTitle;
         /// <summary>
@@ -47,6 +47,27 @@ namespace RadioNewsPaper.ViewModels
                 {
                     _radioUrl = value;
                     NotifyPropertyChanged("RadioUrl");
+                }
+            }
+        }
+
+        private bool _fav;
+        /// <summary>
+        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
+        /// </summary>
+        /// <returns></returns>
+        public bool Fav
+        {
+            get
+            {
+                return _fav;
+            }
+            set
+            {
+                if (value != _fav)
+                {
+                    _fav = value;
+                    NotifyPropertyChanged("Fav");
                 }
             }
         }

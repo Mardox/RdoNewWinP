@@ -16,6 +16,7 @@ using GoogleAds;
 using Coding4Fun.Toolkit.Audio;
 using Coding4Fun.Toolkit.Audio.Helpers;
 using System.IO;
+using RadioNewsPaper.ViewModels;
 
 namespace RadioNewsPaper.Views
 {
@@ -246,6 +247,8 @@ namespace RadioNewsPaper.Views
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
+            MainViewModel mvm = new MainViewModel();
+            mvm.LoadFavData();
             try
             {
                 int count = 1;
@@ -277,7 +280,8 @@ namespace RadioNewsPaper.Views
             recordPopUp.IsOpen = true;
         }
 
-         private MicrophoneRecorder _recorder = new MicrophoneRecorder();
+        #region Recording section
+        private MicrophoneRecorder _recorder = new MicrophoneRecorder();
         private IsolatedStorageFileStream _audioStream;
         private string _tempFileName = "tempWav.wav";
 
@@ -347,6 +351,31 @@ namespace RadioNewsPaper.Views
             recordPopUp.IsOpen = false;
             stop.Visibility = Visibility.Collapsed;
             play.Visibility = Visibility.Visible;
+        }
+
+        #endregion
+
+        private void toggleFavorite_Click(object sender, EventArgs e)
+        {
+            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+
+            if (!settings.Contains("favData"))
+            {
+                settings.Add("favData", radioTitles[index] + ",");
+            }
+            else
+            {
+                if (!settings["favData"].ToString().Contains(radioTitles[index]))
+                    settings["favData"] += radioTitles[index] + ",";
+                else if (settings["favData"].ToString().Contains(radioTitles[index]))
+                {
+                    string tempSetting = settings["favData"] as string;
+                    tempSetting = tempSetting.Replace(radioTitles[index] + ",", "");
+                    settings["favData"] = tempSetting;
+                }
+                    
+            }
+            settings.Save();
         }
     }
 }

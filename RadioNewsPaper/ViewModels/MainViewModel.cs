@@ -4,6 +4,7 @@ using System.ComponentModel;
 using RadioNewsPaper.Resources;
 using RadioNewsPaper.Data;
 using RadioNewsPaper.Views;
+using System.IO.IsolatedStorage;
 
 namespace RadioNewsPaper.ViewModels
 {
@@ -27,23 +28,23 @@ namespace RadioNewsPaper.ViewModels
         private string[] radioTitles;
         private string[] radioUrls;
 
-        private string _sampleProperty = "Sample Runtime Property Value";
+        private string _favoritesProperty = "Favorites Runtime Property Value";
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding
         /// </summary>
         /// <returns></returns>
-        public string SampleProperty
+        public string FavoritesProperty
         {
             get
             {
-                return _sampleProperty;
+                return _favoritesProperty;
             }
             set
             {
-                if (value != _sampleProperty)
+                if (value != _favoritesProperty)
                 {
-                    _sampleProperty = value;
-                    NotifyPropertyChanged("SampleProperty");
+                    _favoritesProperty = value;
+                    NotifyPropertyChanged("FavoritesProperty");
                 }
             }
         }
@@ -72,7 +73,6 @@ namespace RadioNewsPaper.ViewModels
         {
             LoadRadioData();
             LoadNewsPaperData();
-
             this.IsDataLoaded = true;
         }
 
