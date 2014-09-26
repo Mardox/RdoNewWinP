@@ -23,6 +23,7 @@ namespace RadioNewsPaper.ViewModels
         public ObservableCollection<ItemViewModel> Items { get; private set; }
         public ObservableCollection<RadioViewModel> RadioItems { get; private set; }
         public ObservableCollection<NewsPaperViewModel> NewsItems { get; private set; }
+        public ObservableCollection<RadioFavViewModel> FavItems = new ObservableCollection<RadioFavViewModel>();
         private string[] newsTitles;
         private string[] newsUrls;
         private string[] radioTitles;

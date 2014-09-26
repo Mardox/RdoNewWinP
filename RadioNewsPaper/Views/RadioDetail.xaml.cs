@@ -17,6 +17,7 @@ using Coding4Fun.Toolkit.Audio;
 using Coding4Fun.Toolkit.Audio.Helpers;
 using System.IO;
 using RadioNewsPaper.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace RadioNewsPaper.Views
 {
@@ -169,6 +170,12 @@ namespace RadioNewsPaper.Views
             {
                 index = Convert.ToInt32(temp);
             }
+            else if (NavigationContext.QueryString.TryGetValue("favIndex", out temp))
+            {
+                int tempIndex = Convert.ToInt32(temp);
+                var element = App.ViewModel.FavItems.ElementAt(tempIndex);
+                index = element.FavIndex;
+            }
             if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
             {
                 Play();
@@ -247,8 +254,6 @@ namespace RadioNewsPaper.Views
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            MainViewModel mvm = new MainViewModel();
-            mvm.LoadFavData();
             try
             {
                 int count = 1;

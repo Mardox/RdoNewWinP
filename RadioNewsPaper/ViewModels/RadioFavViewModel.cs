@@ -51,23 +51,23 @@ namespace RadioNewsPaper.ViewModels
             }
         }
 
-        private bool _fav;
+        private int _favIndex;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public bool Fav
+        public int FavIndex
         {
             get
             {
-                return _fav;
+                return _favIndex;
             }
             set
             {
-                if (value != _fav)
+                if (value != _favIndex)
                 {
-                    _fav = value;
-                    NotifyPropertyChanged("Fav");
+                    _favIndex = value;
+                    NotifyPropertyChanged("FavIndex");
                 }
             }
         }
