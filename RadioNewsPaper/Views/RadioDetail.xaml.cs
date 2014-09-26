@@ -279,12 +279,6 @@ namespace RadioNewsPaper.Views
             }
         }
 
-        private void recordButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            //NavigationService.Navigate(new Uri("/Views/RecordPage.xaml", UriKind.RelativeOrAbsolute));
-            recordPopUp.IsOpen = true;
-        }
-
         #region Recording section
         private MicrophoneRecorder _recorder = new MicrophoneRecorder();
         private IsolatedStorageFileStream _audioStream;
@@ -381,6 +375,11 @@ namespace RadioNewsPaper.Views
                     
             }
             settings.Save();
+        }
+
+        private void recordButtonClick(object sender, EventArgs e)
+        {
+            recordPopUp.IsOpen = true;
         }
     }
 }

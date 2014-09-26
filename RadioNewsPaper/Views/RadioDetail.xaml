@@ -61,7 +61,7 @@
                 <Image x:Name="play" Source="/Assets/transport.play.png" Height="140" Width="140" Tap="playButtonTap" />
                 <Image x:Name="stop" Source="/Assets/transport.stop.white.png" Visibility="Collapsed" Height="140" Width="140" Tap="stopButtonTap" />
                 <!--<Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />-->
-                    <Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>
+                    <!--<Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>-->
                 
             </StackPanel>
 
@@ -137,6 +137,9 @@
             <shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
                                             Click="toggleFavorite_Click"
                                             Text="Favorite" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
+                                            Click="recordButtonClick"
+                                            Text="Record" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
