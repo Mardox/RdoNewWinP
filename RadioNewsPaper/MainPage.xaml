@@ -93,7 +93,7 @@
             </phone:PivotItem>
         </phone:Pivot>
 
-        <MediaElement Name="playRecAudio" Volume="1"/>
+        <MediaElement Name="playRecAudio" Volume="1" />
         
         <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
                 FeedbackTo="{Binding Path=LocalizedResources.Email, Source={StaticResource LocalizedStrings}}"

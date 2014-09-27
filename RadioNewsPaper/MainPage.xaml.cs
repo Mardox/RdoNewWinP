@@ -192,6 +192,8 @@ namespace RadioNewsPaper
             if (data == null)
                 return;
 
+            
+
             // is file a custom recorded file?
             if (File.Exists(data.RecPath))
             {
@@ -201,11 +203,10 @@ namespace RadioNewsPaper
             {
                 using (var storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
                 {
-                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, storageFolder))
+                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, FileAccess.Read ,FileShare.Read, storageFolder))
                     {
                         BackgroundAudioPlayer.Instance.Close();
                         playRecAudio.SetSource(stream);
-                        stream.Close();
                     }
                 }
             }
