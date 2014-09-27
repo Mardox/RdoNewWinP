@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="9/26/2014 9:27:18 PM">
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="9/26/2014 9:27:16 PM" />
+﻿<xapCache source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="9/27/2014 6:31:58 PM">
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="9/27/2014 6:31:56 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="9/22/2014 7:54:09 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\favs.png" archivePath="Assets\favs.png" lastWriteTime="9/26/2014 11:14:38 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\microphone.png" archivePath="Assets\microphone.png" lastWriteTime="9/25/2014 11:06:19 PM" />
@@ -9,13 +9,13 @@
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="9/22/2014 7:54:09 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.ff.png" archivePath="Assets\transport.ff.png" lastWriteTime="9/22/2014 10:50:49 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.pause.png" archivePath="Assets\transport.pause.png" lastWriteTime="9/22/2014 10:50:49 AM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.play.png" archivePath="Assets\transport.play.png" lastWriteTime="9/22/2014 10:50:49 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.play.png" archivePath="Assets\transport.play.png" lastWriteTime="9/27/2014 12:25:05 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.rew.png" archivePath="Assets\transport.rew.png" lastWriteTime="9/22/2014 10:50:49 AM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.stop.white.png" archivePath="Assets\transport.stop.white.png" lastWriteTime="9/22/2014 11:14:05 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.stop.png" archivePath="Assets\transport.stop.png" lastWriteTime="9/27/2014 12:26:00 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="9/26/2014 7:41:51 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="9/26/2014 7:41:49 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="9/26/2014 7:41:49 AM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="9/26/2014 7:47:12 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="9/27/2014 6:10:10 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="9/23/2014 8:54:38 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="9/22/2014 7:54:09 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="9/26/2014 7:41:45 AM" />
@@ -23,15 +23,17 @@
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="9/26/2014 7:41:46 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll" archivePath="Coding4Fun.Toolkit.Storage.dll" lastWriteTime="9/26/2014 7:41:47 AM" />
   <file source="C:\Users\Kalyan\Desktop\googlemobileadssdkwindowsphone8\GoogleMobileAdsSdkWindowsPhone8-6.5.13\lib\windowsphone8\GoogleAds.dll" archivePath="GoogleAds.dll" lastWriteTime="6/26/2014 11:06:10 AM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\RadioPlayback.dll" archivePath="RadioPlayback.dll" lastWriteTime="9/24/2014 12:51:59 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="9/27/2014 3:33:07 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\RadioPlayback.dll" archivePath="RadioPlayback.dll" lastWriteTime="9/27/2014 6:10:08 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll" archivePath="RateMyApp.dll" lastWriteTime="9/24/2014 1:15:27 PM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\SilverlightMedia.dll" archivePath="SilverlightMedia.dll" lastWriteTime="9/24/2014 12:51:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\SilverlightMedia.dll" archivePath="SilverlightMedia.dll" lastWriteTime="9/27/2014 6:10:08 PM" />
   <file source="C:\Users\Kalyan\Desktop\googlemobileadssdkwindowsphone8\GoogleMobileAdsSdkWindowsPhone8-6.5.13\lib\windowsphone8\GoogleAds.xml" archivePath="GoogleAds.xml" lastWriteTime="6/26/2014 11:06:06 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" archivePath="Newtonsoft.Json.xml" lastWriteTime="9/27/2014 3:33:07 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\Shoutcast.Sample.Phone.Background.dll" archivePath="Shoutcast.Sample.Phone.Background.dll" lastWriteTime="12/5/2013 8:30:02 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\Shoutcast.Sample.Phone.Background.PlaybackAgent.dll" archivePath="Shoutcast.Sample.Phone.Background.PlaybackAgent.dll" lastWriteTime="12/5/2013 8:20:30 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\Shoutcast.Sample.Phone.dll" archivePath="Shoutcast.Sample.Phone.dll" lastWriteTime="12/5/2013 8:30:02 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Debug\Silverlight.Media.Phone.dll" archivePath="Silverlight.Media.Phone.dll" lastWriteTime="12/5/2013 8:20:30 AM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\GPL.txt" archivePath="GPL.txt" lastWriteTime="12/5/2013 9:30:36 PM" />
   <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\LICENSE.txt" archivePath="LICENSE.txt" lastWriteTime="12/5/2013 9:30:36 PM" />
-  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="9/26/2014 9:27:17 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="9/27/2014 6:31:58 PM" />
 </xapCache>

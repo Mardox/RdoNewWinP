@@ -14,7 +14,7 @@ namespace RadioNewsPaper
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
-
+        public const string CustomSoundKey = "CustomRecord";
         /// <summary>
         /// A static ViewModel used by the views to bind against.
         /// </summary>

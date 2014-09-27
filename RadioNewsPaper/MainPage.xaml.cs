@@ -14,6 +14,8 @@ using RadioNewsPaper.Data;
 using RadioNewsPaper.ViewModels;
 using System.Collections.ObjectModel;
 using System.IO.IsolatedStorage;
+using System.IO;
+using Microsoft.Phone.BackgroundAudio;
 
 namespace RadioNewsPaper
 {
@@ -174,6 +176,48 @@ namespace RadioNewsPaper
                 }
             }
             FavList.ItemsSource = App.ViewModel.FavItems;
+        }
+
+        private void RadioRecordingItem_Tap(object sender, SelectionChangedEventArgs e)
+        {
+            LongListSelector selector = sender as LongListSelector;
+
+            // verifying our sender is actually a LongListSelector
+            if (selector == null)
+                return;
+
+            RecordingsViewModel data = selector.SelectedItem as RecordingsViewModel;
+
+            // verifying our sender is actually SoundData
+            if (data == null)
+                return;
+
+            // is file a custom recorded file?
+            if (File.Exists(data.RecPath))
+            {
+                playRecAudio.Source = new Uri(data.RecPath, UriKind.RelativeOrAbsolute);
+            }
+            else
+            {
+                using (var storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, storageFolder))
+                    {
+                        BackgroundAudioPlayer.Instance.Close();
+                        playRecAudio.SetSource(stream);
+                        stream.Close();
+                    }
+                }
+            }
+
+            //playRecAudio.Play();
+            // resetting selected so we can play the same sound over and over again
+            selector.SelectedItem = null;
+        }
+
+        private void recListLoaded(object sender, RoutedEventArgs e)
+        {
+            RecList.ItemsSource = App.ViewModel.RecItems;
         }
     }
 }

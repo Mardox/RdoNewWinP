@@ -110,6 +110,7 @@
     <Compile Include="ViewModels\NewsPaperViewModel.cs" />
     <Compile Include="ViewModels\RadioFavViewModel.cs" />
     <Compile Include="ViewModels\RadioViewModel.cs" />
+    <Compile Include="ViewModels\RecordingsViewModel.cs" />
     <Compile Include="Views\NewsPaperDetail.xaml.cs">
       <DependentUpon>NewsPaperDetail.xaml</DependentUpon>
     </Compile>
@@ -180,7 +181,7 @@
     <Content Include="Assets\transport.pause.png" />
     <Content Include="Assets\transport.play.png" />
     <Content Include="Assets\transport.rew.png" />
-    <Content Include="Assets\transport.stop.white.png" />
+    <Content Include="Assets\transport.stop.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
@@ -213,6 +214,9 @@
     <Reference Include="GoogleAds, Version=6.5.13.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\googlemobileadssdkwindowsphone8\GoogleMobileAdsSdkWindowsPhone8-6.5.13\lib\windowsphone8\GoogleAds.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RateMyApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

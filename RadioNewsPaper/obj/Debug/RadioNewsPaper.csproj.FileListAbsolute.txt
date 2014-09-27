@@ -96,3 +96,5 @@ C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Tool
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Net.dll
 C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Coding4Fun.Toolkit.Storage.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Newtonsoft.Json.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Debug\Newtonsoft.Json.xml

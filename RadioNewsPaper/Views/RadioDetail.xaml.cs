@@ -18,6 +18,8 @@ using Coding4Fun.Toolkit.Audio.Helpers;
 using System.IO;
 using RadioNewsPaper.ViewModels;
 using System.Collections.ObjectModel;
+using Coding4Fun.Toolkit.Controls;
+using Newtonsoft.Json;
 
 namespace RadioNewsPaper.Views
 {
@@ -25,6 +27,7 @@ namespace RadioNewsPaper.Views
     {
         public string[] radioTitles;
         public string[] radioUris;
+        
         RadioData rData;
         int index;
         private InterstitialAd interstitialAd;
@@ -132,17 +135,23 @@ namespace RadioNewsPaper.Views
         {
             // The code below changes the Song Name Track
             //statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
-
-            AudioTrack audioTrack = BackgroundAudioPlayer.Instance.Track;
-            if (audioTrack != null)
+            try
             {
-                stationName.Text = audioTrack.Title;
-                artistName.Text = audioTrack.Artist;
-                bufferingProgress.IsIndeterminate = false;
+                AudioTrack audioTrack = BackgroundAudioPlayer.Instance.Track;
+                if (audioTrack != null)
+                {
+                    stationName.Text = audioTrack.Title;
+                    artistName.Text = audioTrack.Artist;
+                    bufferingProgress.IsIndeterminate = false;
+                }
+                else
+                {
+                    statusBox.Text = "Buffering";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                statusBox.Text = "Buffering";
+                Debug.WriteLine(ex.ToString());
             }
         }
 
@@ -287,6 +296,7 @@ namespace RadioNewsPaper.Views
         private void startClick(object sender, RoutedEventArgs e)
         {
             playButton.IsEnabled = false;
+            saveButton.IsEnabled = false;
             RotateCircle.Begin();
             _recorder.Start();
         }
@@ -320,19 +330,15 @@ namespace RadioNewsPaper.Views
                 //Play
                 playAudio.SetSource(_audioStream);
 
-                string destFileName = string.Format("/recordAudio/{0}.wav", DateTime.Now.ToFileTime());
-                using (IsolatedStorageFile isoStoreP = IsolatedStorageFile.GetUserStoreForApplication())
-                {
-                    if (!isoStoreP.DirectoryExists("/recordAudio/"))
-                        isoStoreP.CreateDirectory("/recordAudio/");
-                    isoStoreP.MoveFile(_tempFileName, destFileName);
-                }
+                
             }
         }
 
         private void playClick(object sender, RoutedEventArgs e)
         {
             BackgroundAudioPlayer.Instance.Close();
+            stop.Visibility = Visibility.Collapsed;
+            play.Visibility = Visibility.Visible;
             playAudio.Play();
         }
 
@@ -340,6 +346,7 @@ namespace RadioNewsPaper.Views
         {
             RotateCircle.Stop();
             playButton.IsEnabled = true;
+            saveButton.IsEnabled = true;
             _recorder.Stop();
             SaveTempAudio(_recorder.Buffer);
             
@@ -348,8 +355,6 @@ namespace RadioNewsPaper.Views
         private void closeGridTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             recordPopUp.IsOpen = false;
-            stop.Visibility = Visibility.Collapsed;
-            play.Visibility = Visibility.Visible;
         }
 
         #endregion
@@ -380,6 +385,50 @@ namespace RadioNewsPaper.Views
         private void recordButtonClick(object sender, EventArgs e)
         {
             recordPopUp.IsOpen = true;
+        }
+
+        private void saveClick(object sender, RoutedEventArgs e)
+        {
+            InputPrompt fileName = new InputPrompt();
+
+            fileName.Title = "Sound name";
+            fileName.Message = "What should be the file name";
+
+            fileName.Completed += fileName_Completed;
+            fileName.Show();
+
+            
+
+        }
+
+        private void fileName_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            if (e.PopUpResult == PopUpResult.Ok)
+            {
+                if (e.Result != null)
+                {
+                    RecordingsViewModel rvm = new RecordingsViewModel();
+                    rvm.RecTitle = e.Result;
+                    rvm.RecPath = string.Format("/recordAudio/{0}.wav", DateTime.Now.ToFileTime());
+                    rvm.RecTime = DateTime.Now.ToShortDateString();
+
+                    using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
+                    {
+                        if (!isoStore.DirectoryExists("/recordAudio/"))
+                            isoStore.CreateDirectory("/recordAudio/");
+                        isoStore.MoveFile(_tempFileName, rvm.RecPath);
+                    }
+
+                    App.ViewModel.RecItems.Add(rvm);
+
+                    var data = JsonConvert.SerializeObject(App.ViewModel.RecItems);
+
+                    IsolatedStorageSettings.ApplicationSettings[App.CustomSoundKey] = data;
+                    IsolatedStorageSettings.ApplicationSettings.Save();
+                }
+            }
+
+            recordPopUp.IsOpen = false;
         }
     }
 }

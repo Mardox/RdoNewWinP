@@ -5,16 +5,20 @@ using RadioNewsPaper.Resources;
 using RadioNewsPaper.Data;
 using RadioNewsPaper.Views;
 using System.IO.IsolatedStorage;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace RadioNewsPaper.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        
         public MainViewModel()
         {
             this.Items = new ObservableCollection<ItemViewModel>();
             this.RadioItems = new ObservableCollection<RadioViewModel>();
             this.NewsItems = new ObservableCollection<NewsPaperViewModel>();
+            this.RecItems = new List<RecordingsViewModel>();
         }
 
         /// <summary>
@@ -24,6 +28,7 @@ namespace RadioNewsPaper.ViewModels
         public ObservableCollection<RadioViewModel> RadioItems { get; private set; }
         public ObservableCollection<NewsPaperViewModel> NewsItems { get; private set; }
         public ObservableCollection<RadioFavViewModel> FavItems = new ObservableCollection<RadioFavViewModel>();
+        public List<RecordingsViewModel> RecItems { get; set; }
         private string[] newsTitles;
         private string[] newsUrls;
         private string[] radioTitles;
@@ -74,7 +79,37 @@ namespace RadioNewsPaper.ViewModels
         {
             LoadRadioData();
             LoadNewsPaperData();
+            LoadRecordingData();
             this.IsDataLoaded = true;
+        }
+
+        void LoadRecordingData()
+        {
+            List<RecordingsViewModel> list;
+            RecordingsViewModel data = new RecordingsViewModel();
+            string dataFromAppSettings;
+
+            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+            if (settings.Contains(App.CustomSoundKey))
+            {
+                if (IsolatedStorageSettings.ApplicationSettings.TryGetValue(App.CustomSoundKey, out dataFromAppSettings))
+                {
+                    list = JsonConvert.DeserializeObject<List<RecordingsViewModel>>(dataFromAppSettings);
+                    foreach (var item in list)
+                    {
+                        data = item;
+                        this.RecItems.Add(new RecordingsViewModel() { RecTitle = data.RecTitle, RecPath = data.RecPath, RecTime = data.RecTime });
+                    }
+                    
+                }
+            }
+            
+            else
+            {
+                data = new RecordingsViewModel();
+            }
+
+            
         }
 
         void LoadRadioData()

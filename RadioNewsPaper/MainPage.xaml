@@ -22,7 +22,7 @@
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <!--Pivot item one-->
-            <phone:PivotItem Header="Radio">
+            <phone:PivotItem Header="radio">
                 <!--Double line list with text wrapping-->
                 <phone:LongListSelector x:Name="RadioList" Margin="0,0,-12,0" ItemsSource="{Binding RadioItems}" SelectionChanged="RadioItem_Tap">
                     <phone:LongListSelector.ItemTemplate>
@@ -40,7 +40,7 @@
             </phone:PivotItem>
 
             <!--Pivot item two-->
-            <phone:PivotItem Header="NewsPaper">
+            <phone:PivotItem Header="newspaper">
                 <!--Double line list no text wrapping-->
                 <phone:LongListSelector x:Name="NewsPaperList" Margin="0,0,-12,0" ItemsSource="{Binding NewsItems}" SelectionChanged="NewsPaper_Tap">
                     <phone:LongListSelector.ItemTemplate>
@@ -57,7 +57,7 @@
                 </phone:LongListSelector>
             </phone:PivotItem>
 
-            <phone:PivotItem Header="Favorite">
+            <phone:PivotItem Header="favorite">
                 <!--Double line list with text wrapping-->
                 <phone:LongListSelector x:Name="FavList" Margin="0,0,-12,0" SelectionChanged="RadioFavItem_Tap" Loaded="favListLoaded">
                     <phone:LongListSelector.ItemTemplate>
@@ -74,8 +74,27 @@
                 </phone:LongListSelector>
             </phone:PivotItem>
 
+            <phone:PivotItem Header="my recordings">
+                <!--Double line list with text wrapping-->
+                <phone:LongListSelector x:Name="RecList" Margin="0,0,-12,0" SelectionChanged="RadioRecordingItem_Tap" Loaded="recListLoaded">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,17" Orientation="Horizontal">
+                                <Image Source="/Assets/ApplicationIcon.png" Height="100" Width="100"/>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding RecTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                    <TextBlock Text="{Binding RecTime}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+                
+            </phone:PivotItem>
         </phone:Pivot>
 
+        <MediaElement Name="playRecAudio" Volume="1"/>
+        
         <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
                 FeedbackTo="{Binding Path=LocalizedResources.Email, Source={StaticResource LocalizedStrings}}"
                 ApplicationName="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
