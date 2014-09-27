@@ -42,11 +42,11 @@
             <StackPanel x:Name="mainPanel" Orientation="Vertical">
             <StackPanel Orientation="Vertical" Height="Auto">
                 <TextBlock Padding="2" Text="Station :" FontSize="30" Width="Auto"/>
-                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="30"/>
+                    <TextBlock Padding="2" Foreground="DarkOrange" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="30"/>
             </StackPanel>
                 <StackPanel Orientation="Vertical" Height="Auto">
                     <TextBlock Padding="2" Text="You are listening :" FontSize="30" Width="Auto"/>
-                    <TextBlock Padding="2" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="30"/>
+                    <TextBlock Padding="2" Foreground="RoyalBlue" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="30"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Height="Auto">
