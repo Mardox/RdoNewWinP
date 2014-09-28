@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RadioNewsPaper.Data;
 using RadioNewsPaper.ViewModels;
+using GoogleAds;
 
 namespace RadioNewsPaper.Views
 {
@@ -21,6 +22,19 @@ namespace RadioNewsPaper.Views
             InitializeComponent();
             Loaded += NewsPaperDetail_Loaded;
             NewsPaperBrowser.LoadCompleted += NewsPaperBrowser_LoadCompleted;
+
+            RadioData rData = new RadioData();
+            AdView bannerAd = new AdView
+            {
+                Format = AdFormats.Banner,
+                AdUnitID = rData.adBanner
+            };
+            AdRequest BanneradRequest = new AdRequest();
+            // Assumes we've defined a Grid that has a name
+            // directive of ContentPanel.
+            ContentPanel.Children.Add(bannerAd);
+            bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
+            bannerAd.LoadAd(BanneradRequest);
         }
 
         void NewsPaperBrowser_LoadCompleted(object sender, NavigationEventArgs e)
@@ -50,7 +64,7 @@ namespace RadioNewsPaper.Views
             }
             newsData = new NewsPaperData();
             string[] newsTitles = newsData.returnNewsTitles();
-            pageName.Text = newsTitles[Convert.ToInt32(index)];
+            //pageName.Text = newsTitles[Convert.ToInt32(index)];
         }
     }
 }

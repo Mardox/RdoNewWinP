@@ -178,6 +178,7 @@ namespace RadioNewsPaper
             FavList.ItemsSource = App.ViewModel.FavItems;
         }
 
+        
         private void RadioRecordingItem_Tap(object sender, SelectionChangedEventArgs e)
         {
             LongListSelector selector = sender as LongListSelector;
@@ -219,6 +220,17 @@ namespace RadioNewsPaper
         private void recListLoaded(object sender, RoutedEventArgs e)
         {
             RecList.ItemsSource = App.ViewModel.RecItems;
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            //IsolatedStorageFile storage = IsolatedStorageFile.GetUserStoreForApplication();
+            //storage.DeleteFile(new RecordingsViewModel().RecPath);
+        }
+
+        private void nowPlaying_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

@@ -297,6 +297,7 @@ namespace RadioNewsPaper.Views
         {
             playButton.IsEnabled = false;
             saveButton.IsEnabled = false;
+            recordButton.Content = "Stop";
             RotateCircle.Begin();
             _recorder.Start();
         }
@@ -347,6 +348,7 @@ namespace RadioNewsPaper.Views
             RotateCircle.Stop();
             playButton.IsEnabled = true;
             saveButton.IsEnabled = true;
+            recordButton.Content = "Record";
             _recorder.Stop();
             SaveTempAudio(_recorder.Buffer);
             
@@ -380,6 +382,8 @@ namespace RadioNewsPaper.Views
                     
             }
             settings.Save();
+
+            MessageBox.Show("This station is added as favorite. To remove click on favorite button again.");
         }
 
         private void recordButtonClick(object sender, EventArgs e)
