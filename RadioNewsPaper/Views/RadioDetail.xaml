@@ -30,7 +30,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
+        <Image Source="/Assets/background.jpg" Stretch="UniformToFill" Grid.RowSpan="2"/>
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
@@ -49,9 +50,9 @@
                     <TextBlock Padding="2" Foreground="RoyalBlue" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="30"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical" Height="Auto">
+                <StackPanel Name="adPanel" Orientation="Vertical" Height="Auto">
                     <TextBlock Padding="2" Text="Status:" FontSize="30" Width="Auto"/>
-                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="12" Background="{StaticResource PhoneBackgroundBrush}"/>
+                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="12" Background="Transparent"/>
                     <TextBlock Padding="2,2,2,10" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="30" />
                 </StackPanel>
             </StackPanel>
@@ -65,8 +66,8 @@
                 
             </StackPanel>
 
-            <Popup x:Name="recordPopUp" IsOpen="False"  Height="400" VerticalAlignment="Center" >
-                <Border  BorderThickness="8" BorderBrush="#CCCCCC" Height="400">
+            <Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
+                <Border  BorderThickness="8" BorderBrush="#CCCCCC" Height="450">
                     <StackPanel Background="{StaticResource PhoneBackgroundBrush}" Width="430">
                         <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closeGridTap">
                             <Ellipse Fill="Red"/>

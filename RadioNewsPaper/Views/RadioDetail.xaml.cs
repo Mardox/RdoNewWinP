@@ -27,10 +27,9 @@ namespace RadioNewsPaper.Views
     {
         public string[] radioTitles;
         public string[] radioUris;
-        
         RadioData rData;
-        int index;
-        private InterstitialAd interstitialAd;
+        int index, forewardCount = 1;
+        private InterstitialAd interstitialAd, interstitialAd2;
 
         //constructor
         public RadioDetail()
@@ -48,6 +47,14 @@ namespace RadioNewsPaper.Views
             interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
             interstitialAd.LoadAd(adRequest);
 
+            //Interstitial two
+            interstitialAd2 = new InterstitialAd(rData.detailInterstitial);
+            AdRequest adRequest2 = new AdRequest();
+
+            interstitialAd2.ReceivedAd += OnAdReceived2;
+            interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
+            interstitialAd2.LoadAd(adRequest2);
+
             AdView bannerAd = new AdView
             {
                 Format = AdFormats.Banner,
@@ -56,7 +63,7 @@ namespace RadioNewsPaper.Views
             AdRequest BanneradRequest = new AdRequest();
             // Assumes we've defined a Grid that has a name
             // directive of ContentPanel.
-            mainPanel.Children.Add(bannerAd);
+            adPanel.Children.Add(bannerAd);
             bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
             bannerAd.LoadAd(BanneradRequest);
         }
@@ -74,6 +81,7 @@ namespace RadioNewsPaper.Views
         private DispatcherTimer timer;
         void RadioDetail_Loaded(object sender, RoutedEventArgs e)
         {
+
             // Initialize a timer to update the UI every half-second.
             this.timer = new DispatcherTimer();
             this.timer.Interval = TimeSpan.FromSeconds(0.5);
@@ -89,6 +97,41 @@ namespace RadioNewsPaper.Views
                 this.UpdateState(null, null);
 
             }
+        }
+
+        private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
+        {
+            //Do nothing
+        }
+
+        private void OnAdReceived2(object sender, AdEventArgs e)
+        {
+            Debug.WriteLine("Received second ad");
+            #region Interstitial
+            try
+            {
+                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+                if (!settings.Contains("radioForwardCount"))
+                {
+                    settings.Add("radioForwardCount", 1);
+                }
+                else
+                {
+                    forewardCount = (int)IsolatedStorageSettings.ApplicationSettings["radioForwardCount"];
+                    settings["radioForwardCount"] = forewardCount + 1;
+                }
+                settings.Save();
+
+                if (forewardCount % 5 == 0)
+                {
+                    interstitialAd2.ShowAd();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Do nothing
+            }
+            #endregion
         }
 
         private void Instance_PlayStateChanged(object sender, EventArgs e)
@@ -171,6 +214,8 @@ namespace RadioNewsPaper.Views
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            
+
             base.OnNavigatedTo(e);
 
             string temp = "";
@@ -185,10 +230,33 @@ namespace RadioNewsPaper.Views
                 var element = App.ViewModel.FavItems.ElementAt(tempIndex);
                 index = element.FavIndex;
             }
-            if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
+            try
+            {
+                int prevIndex = (int) IsolatedStorageSettings.ApplicationSettings["prevIndex"];
+                if (index != prevIndex)
+                {
+                    Play();
+                }
+                else
+                {
+                    if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
+                    {
+                        Play();
+                    }
+                }
+
+                //if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
+                if ((bool)IsolatedStorageSettings.ApplicationSettings["isPLaying"] == false)
+                {
+                    Play();
+                }
+            }
+            catch (KeyNotFoundException)
             {
                 Play();
+                Debug.WriteLine("first time to radio detail page");
             }
+            
         }
 
         private void playButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -198,6 +266,8 @@ namespace RadioNewsPaper.Views
 
         private void stopButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            IsolatedStorageSettings.ApplicationSettings["isPLaying"] = false;
+            IsolatedStorageSettings.ApplicationSettings.Save();
             this.timer.Stop();
             try
             {
@@ -258,11 +328,15 @@ namespace RadioNewsPaper.Views
             BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
             //Volume is by default set to the Maximum
             BackgroundAudioPlayer.Instance.Volume = 1.0d;
+            IsolatedStorageSettings.ApplicationSettings["isPLaying"] = true;
+            IsolatedStorageSettings.ApplicationSettings.Save();
             //UpdateButtons(false, true);
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
+            IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
+            IsolatedStorageSettings.ApplicationSettings.Save();
             try
             {
                 int count = 1;

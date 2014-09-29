@@ -22,7 +22,8 @@ namespace RadioNewsPaper
     public partial class MainPage : PhoneApplicationPage
     {
         private RadioData rdata;
-        private InterstitialAd interstitialAd;
+        private InterstitialAd interstitialAd, interstitialAd2;
+        int popupCount = 1;
         //public ObservableCollection<RadioFavViewModel> FavItems;
         // Constructor
         public MainPage()
@@ -53,6 +54,14 @@ namespace RadioNewsPaper
             interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
             interstitialAd.LoadAd(adRequest);
 
+            //Interstitial two
+            interstitialAd2 = new InterstitialAd(rdata.detailInterstitial);
+            AdRequest adRequest2 = new AdRequest();
+
+            interstitialAd2.ReceivedAd += OnAdReceived2;
+            interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
+            interstitialAd2.LoadAd(adRequest2);
+
             AdView bannerAd = new AdView
             {
                 Format = AdFormats.Banner,
@@ -64,6 +73,18 @@ namespace RadioNewsPaper
             LayoutRoot.Children.Add(bannerAd);
             bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
             bannerAd.LoadAd(BanneradRequest);
+        }
+
+        private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
+        {
+            //do nothing
+            recordPlayPopUp.IsOpen = true;
+        }
+
+        private void OnAdReceived2(object sender, AdEventArgs e)
+        {
+            Debug.WriteLine("Received second ad");
+            
         }
 
         void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
@@ -117,7 +138,6 @@ namespace RadioNewsPaper
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            //Do your work here
             try
             {
                 interstitialAd.ShowAd();
@@ -128,8 +148,8 @@ namespace RadioNewsPaper
                 var result = MessageBox.Show("Come back soon!", "Are you sure?", MessageBoxButton.OKCancel);
                 e.Cancel = result != MessageBoxResult.OK;
             }
-
             base.OnBackKeyPress(e);
+            
         }
 
         private void RadioFavItem_Tap(object sender, SelectionChangedEventArgs e)
@@ -181,6 +201,8 @@ namespace RadioNewsPaper
         
         private void RadioRecordingItem_Tap(object sender, SelectionChangedEventArgs e)
         {
+            recordPlayPopUp.IsOpen = true;
+            RotateCircle.Begin();
             LongListSelector selector = sender as LongListSelector;
 
             // verifying our sender is actually a LongListSelector
@@ -192,8 +214,6 @@ namespace RadioNewsPaper
             // verifying our sender is actually SoundData
             if (data == null)
                 return;
-
-            
 
             // is file a custom recorded file?
             if (File.Exists(data.RecPath))
@@ -211,6 +231,32 @@ namespace RadioNewsPaper
                     }
                 }
             }
+
+            #region Interstitial
+            try
+            {
+                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+                if (!settings.Contains("radioPopupCount"))
+                {
+                    settings.Add("radioPopupCount", 1);
+                }
+                else
+                {
+                    popupCount = (int)IsolatedStorageSettings.ApplicationSettings["radioPopupCount"];
+                    settings["radioPopupCount"] = popupCount + 1;
+                }
+                settings.Save();
+
+                if (popupCount % 5 == 0)
+                {
+                    interstitialAd2.ShowAd();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Do nothing
+            }
+            #endregion
 
             //playRecAudio.Play();
             // resetting selected so we can play the same sound over and over again
@@ -231,6 +277,13 @@ namespace RadioNewsPaper
         private void nowPlaying_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void closePopupTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            recordPlayPopUp.IsOpen = false;
+            playRecAudio.Stop();
+            RotateCircle.Stop();
         }
     }
 }

@@ -17,9 +17,20 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="RotateCircle" RepeatBehavior="Forever">
+            <DoubleAnimation 
+                Duration="0:0:4" To="360"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"
+                Storyboard.TargetName="ReelGrid"
+                d:IsOptimized="True" />
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
+        <Image Source="/Assets/background.jpg" Stretch="UniformToFill" />
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <!--Pivot item one-->
@@ -67,7 +78,7 @@
                                 <Image Source="/Assets/ApplicationIcon.png" Height="100" Width="100"/>
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Text="{Binding RadioTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <!--<TextBlock Text="{Binding RadioUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+                                    <TextBlock Text="{Binding RadioUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -99,7 +110,65 @@
                 
             </phone:PivotItem>
         </phone:Pivot>
+        
+        <Popup x:Name="recordPlayPopUp" IsOpen="False">
+            <Border  BorderThickness="8" BorderBrush="#CCCCCC" Width="300" Height="400" Margin="100,200" Background="{StaticResource PhoneBackgroundBrush}" >
+                <StackPanel Background="Transparent" >
+                    <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closePopupTap">
+                        <Ellipse Fill="Red"/>
+                        <TextBlock Text="X" Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" 
+                                       />
+                    </Grid>
 
+                    <StackPanel Orientation="Vertical">
+
+                        <Grid Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20"
+                               Name="ReelGrid"
+                      RenderTransformOrigin=".5, .5">
+                            <Grid.RenderTransform>
+                                <CompositeTransform />
+                            </Grid.RenderTransform>
+                            <Ellipse Fill="{StaticResource PhoneAccentBrush}" />
+
+                            <Ellipse 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        VerticalAlignment="Top"
+                        Margin="0,20,0,0" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,0,20" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        HorizontalAlignment="Left"
+                        Margin="20,0,0,0" />
+                            <Rectangle 
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,20,0" />
+                        </Grid>
+                        
+                        <!--<Button Name="playButton" Content="Play" Height="100" Width="150" Click="recPlayClick" />-->
+                        <TextBlock Text="Playing" FontSize="36" Height="100" Width="150" Padding="20" Foreground="{StaticResource PhoneForegroundBrush}"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
         <MediaElement Name="playRecAudio" Volume="1" />
         
         <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
