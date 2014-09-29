@@ -474,9 +474,6 @@ namespace RadioNewsPaper.Views
 
             fileName.Completed += fileName_Completed;
             fileName.Show();
-
-            
-
         }
 
         private void fileName_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)

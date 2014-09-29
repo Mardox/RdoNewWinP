@@ -93,6 +93,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\MoreItemsData.cs" />
     <Compile Include="Data\NewsPaperData.cs" />
     <Compile Include="Data\RadioData.cs" />
     <Compile Include="LocalizedStrings.cs" />
@@ -107,6 +108,7 @@
     </Compile>
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MoreItemViewModel.cs" />
     <Compile Include="ViewModels\NewsPaperViewModel.cs" />
     <Compile Include="ViewModels\RadioFavViewModel.cs" />
     <Compile Include="ViewModels\RadioViewModel.cs" />

@@ -18,7 +18,8 @@ namespace RadioNewsPaper.ViewModels
             this.Items = new ObservableCollection<ItemViewModel>();
             this.RadioItems = new ObservableCollection<RadioViewModel>();
             this.NewsItems = new ObservableCollection<NewsPaperViewModel>();
-            this.RecItems = new List<RecordingsViewModel>();
+            this.RecItems = new ObservableCollection<RecordingsViewModel>();
+            this.MoreItems = new ObservableCollection<MoreItemViewModel>();
         }
 
         /// <summary>
@@ -28,7 +29,8 @@ namespace RadioNewsPaper.ViewModels
         public ObservableCollection<RadioViewModel> RadioItems { get; private set; }
         public ObservableCollection<NewsPaperViewModel> NewsItems { get; private set; }
         public ObservableCollection<RadioFavViewModel> FavItems = new ObservableCollection<RadioFavViewModel>();
-        public List<RecordingsViewModel> RecItems { get; set; }
+        public ObservableCollection<RecordingsViewModel> RecItems { get; set; }
+        public ObservableCollection<MoreItemViewModel> MoreItems { get; set; }
         private string[] newsTitles;
         private string[] newsUrls;
         private string[] radioTitles;
@@ -80,7 +82,21 @@ namespace RadioNewsPaper.ViewModels
             LoadRadioData();
             LoadNewsPaperData();
             LoadRecordingData();
+            LoadMoreItemsData();
             this.IsDataLoaded = true;
+        }
+
+        private void LoadMoreItemsData()
+        {
+            MoreItemsData mData = new MoreItemsData();
+            string[] moreTitles = mData.MoreTitles;
+            string[] storeUrls = mData.StoreUrls;
+            string[] imageUrls = mData.ImageUrls;
+
+            for (int i = 0; i < moreTitles.Length; i++)
+            {
+                this.MoreItems.Add(new MoreItemViewModel() { MoreItemTitle = moreTitles[i], StoreUrl = storeUrls[i], ImageUrl = imageUrls[i] });
+            }
         }
 
         void LoadRecordingData()

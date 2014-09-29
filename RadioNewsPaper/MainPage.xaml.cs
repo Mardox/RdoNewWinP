@@ -16,6 +16,8 @@ using System.Collections.ObjectModel;
 using System.IO.IsolatedStorage;
 using System.IO;
 using Microsoft.Phone.BackgroundAudio;
+using Microsoft.Phone.Tasks;
+using Newtonsoft.Json;
 
 namespace RadioNewsPaper
 {
@@ -24,7 +26,7 @@ namespace RadioNewsPaper
         private RadioData rdata;
         private InterstitialAd interstitialAd, interstitialAd2;
         int popupCount = 1;
-        //public ObservableCollection<RadioFavViewModel> FavItems;
+        
         // Constructor
         public MainPage()
         {
@@ -35,8 +37,14 @@ namespace RadioNewsPaper
 
             Loaded += MainPage_Loaded;
             FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
+            playRecAudio.MediaEnded += playRecAudio_MediaEnded;
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        void playRecAudio_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            recordPlayPopUp.IsOpen = false;
         }
 
         void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
@@ -44,6 +52,7 @@ namespace RadioNewsPaper
             //ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
         }
 
+        // Soon after loading Main Page
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             rdata = new RadioData();
@@ -75,6 +84,7 @@ namespace RadioNewsPaper
             bannerAd.LoadAd(BanneradRequest);
         }
 
+        #region Ad Handlers
         private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
         {
             //do nothing
@@ -96,6 +106,7 @@ namespace RadioNewsPaper
         {
             System.Diagnostics.Debug.WriteLine("Ad received successfully");
         }
+        #endregion
 
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -106,6 +117,12 @@ namespace RadioNewsPaper
             }
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            playRecAudio.AutoPlay = false;
+        }
+
+        #region Radio and News Taps
         private void RadioItem_Tap(object sender, SelectionChangedEventArgs e)
         {
             // If selected item is null, do nothing
@@ -135,7 +152,9 @@ namespace RadioNewsPaper
             // Reset selected item to null
             NewsPaperList.SelectedItem = null;
         }
+        #endregion
 
+        //Back key press
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             try
@@ -152,6 +171,8 @@ namespace RadioNewsPaper
             
         }
 
+        #region Favorite Item
+
         private void RadioFavItem_Tap(object sender, SelectionChangedEventArgs e)
         {
             // If selected item is null, do nothing
@@ -166,8 +187,6 @@ namespace RadioNewsPaper
             // Reset selected item to null
             FavList.SelectedItem = null;
         }
-
-
         private string[] radioTitles;
         private string[] radioUrls;
         private void favListLoaded(object sender, RoutedEventArgs e)
@@ -198,9 +217,12 @@ namespace RadioNewsPaper
             FavList.ItemsSource = App.ViewModel.FavItems;
         }
 
-        
+        #endregion
+
+        #region Recording List helpers
         private void RadioRecordingItem_Tap(object sender, SelectionChangedEventArgs e)
         {
+            playRecAudio.AutoPlay = true;
             recordPlayPopUp.IsOpen = true;
             RotateCircle.Begin();
             LongListSelector selector = sender as LongListSelector;
@@ -263,20 +285,15 @@ namespace RadioNewsPaper
             selector.SelectedItem = null;
         }
 
-        private void recListLoaded(object sender, RoutedEventArgs e)
-        {
-            RecList.ItemsSource = App.ViewModel.RecItems;
-        }
-
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            //IsolatedStorageFile storage = IsolatedStorageFile.GetUserStoreForApplication();
-            //storage.DeleteFile(new RecordingsViewModel().RecPath);
-        }
+            var myItem = (sender as MenuItem).DataContext as RecordingsViewModel;
 
-        private void nowPlaying_Click(object sender, EventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml", UriKind.RelativeOrAbsolute));
+            App.ViewModel.RecItems.Remove(myItem);
+            var data = JsonConvert.SerializeObject(App.ViewModel.RecItems);
+            LayoutRoot.UpdateLayout();
+            IsolatedStorageSettings.ApplicationSettings[App.CustomSoundKey] = data;
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
         private void closePopupTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -284,6 +301,24 @@ namespace RadioNewsPaper
             recordPlayPopUp.IsOpen = false;
             playRecAudio.Stop();
             RotateCircle.Stop();
+        }
+        #endregion
+
+        //Button on the appbar
+        private void nowPlaying_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        
+
+        private void MoreItem_Tap(object sender, SelectionChangedEventArgs e)
+        {
+            var myItem = ((LongListSelector)sender).SelectedItem as MoreItemViewModel;
+
+            WebBrowserTask webBrowserTask = new WebBrowserTask();
+            webBrowserTask.Uri = new Uri(myItem.StoreUrl);
+            webBrowserTask.Show();
         }
     }
 }
