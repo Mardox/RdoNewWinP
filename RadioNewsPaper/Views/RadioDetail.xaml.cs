@@ -446,18 +446,22 @@ namespace RadioNewsPaper.Views
             else
             {
                 if (!settings["favData"].ToString().Contains(radioTitles[index]))
+                {
                     settings["favData"] += radioTitles[index] + ",";
+                    MessageBox.Show("This station is added as favorite. To remove click on favorite button again.");
+                }
                 else if (settings["favData"].ToString().Contains(radioTitles[index]))
                 {
                     string tempSetting = settings["favData"] as string;
                     tempSetting = tempSetting.Replace(radioTitles[index] + ",", "");
                     settings["favData"] = tempSetting;
+                    MessageBox.Show("This station is removed from favorites.");
                 }
                     
             }
             settings.Save();
 
-            MessageBox.Show("This station is added as favorite. To remove click on favorite button again.");
+            
         }
 
         private void recordButtonClick(object sender, EventArgs e)

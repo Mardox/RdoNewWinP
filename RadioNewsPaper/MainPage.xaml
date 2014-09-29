@@ -118,7 +118,7 @@
                                 <Image Source="{Binding ImageUrl}" Height="100" Width="100"/>
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Text="{Binding MoreItemTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding StoreUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                    <!--<TextBlock Text="{Binding StoreUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>

@@ -44,6 +44,7 @@ namespace RadioNewsPaper
 
         void playRecAudio_MediaEnded(object sender, RoutedEventArgs e)
         {
+            RotateCircle.Stop();
             recordPlayPopUp.IsOpen = false;
         }
 
@@ -89,6 +90,8 @@ namespace RadioNewsPaper
         {
             //do nothing
             recordPlayPopUp.IsOpen = true;
+            playRecAudio.AutoPlay = true;
+            playRecAudio.Play();
         }
 
         private void OnAdReceived2(object sender, AdEventArgs e)
@@ -212,6 +215,10 @@ namespace RadioNewsPaper
                             }
                         }
                     }
+                }
+                else
+                {
+                    App.ViewModel.FavItems.Clear();
                 }
             }
             FavList.ItemsSource = App.ViewModel.FavItems;
