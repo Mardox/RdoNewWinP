@@ -88,7 +88,7 @@ namespace RadioNewsPaper.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My company.
+        ///   Looks up a localized string similar to Modern Apps.
         /// </summary>
         public static string CompanyName {
             get {
