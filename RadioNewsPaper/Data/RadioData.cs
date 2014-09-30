@@ -14,29 +14,25 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "XL Radio Gurbani",
-                                  "RadioTeenTaal",
-                                  "BOMBAY BEATS",
-                                  "Khalsa FM",
-                                  "Carnatic",
-                                  "DeSi-RaDiO",
-                                  "MAST FM",
-                                  "Akhand Path",
+                                  "RadioPalmWine",
+                                  "Yoruba Radio",
+                                  "Kapital FM",
+                                  "Dawahnigeria Quran",
+                                  "Space FM 90.1",
+                                  "Breeze Radio",
                               };
         string[] radioUrl = {
-                                "http://67.228.177.153:8459/Live",
-                                "http://195.154.176.33:8000",
-                                "http://205.164.35.115:80",
-                                "http://198.178.123.8:7798",
-                                "http://67.228.150.184:7220",
-                                "http://204.45.41.148:80",
-                                "http://64.202.98.32:6210",
-                                "http://162.221.191.51:9968/akhand",
+                                "http://67.23.246.19:8004",
+                                "http://67.23.246.19:8002",
+                                "http://97.74.73.104:9996",
+                                "http://108.163.197.114:8148",
+                                "http://78.129.159.25:8096",
+                                "http://5.63.145.172:7114",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/4927321894";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/6404055094";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/7880788291";
+        public string adBanner = "ca-app-pub-7607380003153721/8020389098";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/9497122296";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/1973855493";
 
         public string[] returnTitle()
         {

@@ -14,20 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.thehindu.com/",
-                                 "http://timesofindia.indiatimes.com/",
-                                 "http://indianexpress.com/",
-                                 "http://indiatoday.intoday.in/",
-                                 "http://zeenews.india.com/",
+                                 "http://www.vanguardngr.com/",
+                                 "http://www.punchng.com/",
+                                 "http://www.nigeriaworld.com/",
+                                 "http://ngrguardiannews.com/",
                              };
 
 
         string[] NewsTitles = {
-                                         "The Hindu",
-                                         "Times of India",
-                                         "The Indian Express",
-                                         "India Today",
-                                         "Zee News",
+                                         "Vanguard",
+                                         "Punch",
+                                         "Nigeria World",
+                                         "The Guardian",
                                      };
 
         public string[] returnNewsUrls()

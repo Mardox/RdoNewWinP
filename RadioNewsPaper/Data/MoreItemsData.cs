@@ -9,25 +9,19 @@ namespace RadioNewsPaper.Data
     public class MoreItemsData
     {
         public string[] MoreTitles = {
-                                         "PK Songs",
-                                         "Bangla Song",
-                                         "Bollywood Songs",
-                                         "Tamil Songs",
-                                         "Punjabi Movies",
+                                         "Nigerian Movies",
+                                         "Ghana Movies",
+                                         "Kenya Movies",
                                      };
         public string[] StoreUrls = {
-                                        "http://www.windowsphone.com/s?appid=0f24a896-922b-4871-b309-f252778b543b",
-                                        "http://www.windowsphone.com/s?appid=e19951dd-a100-4981-8047-b914929484f4",
-                                        "http://www.windowsphone.com/s?appid=29eab6b7-0b5f-456a-98f0-6f16737f6d71",
-                                        "http://www.windowsphone.com/s?appid=43baf4dc-8105-443c-8e26-8328f5f9fd4c",
-                                        "http://www.windowsphone.com/s?appid=f2766d96-faea-4256-8510-ee333a115bc3",
+                                        "http://www.windowsphone.com/s?appid=f7522b61-cb0f-4498-8dd7-7a8e6e506bed",
+                                        "http://www.windowsphone.com/s?appid=7526eff2-3a51-44e3-87df-4e531cec85a9",
+                                        "http://www.windowsphone.com/s?appid=7338cfa7-f555-493f-9783-7f818918b642",
                                     };
         public string[] ImageUrls = {
-                                        "/Assets/MoreIcons/newpksongs.png",
-                                        "/Assets/MoreIcons/banglasong.png",
-                                        "/Assets/MoreIcons/bollywoodsongslibrary.png",
-                                        "/Assets/MoreIcons/tamilsongscollection.png",
-                                        "/Assets/MoreIcons/punjabisongscollection.png",
+                                        "/Assets/MoreIcons/nigerianmovies.png",
+                                        "/Assets/MoreIcons/ghanamovies.png",
+                                        "/Assets/MoreIcons/kenya.png",
                                     };
     }
 }
