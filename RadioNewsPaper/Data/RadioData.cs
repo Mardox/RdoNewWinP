@@ -14,23 +14,23 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Apna eRadio",
-                                  "Apna Classic",
-                                  "Pakistan Radio",
-                                  "Radio Pak",
-                                  "DeSi-RaDiO",
+                                  "Marathi Radio",
+                                  "Radio Schizoid Chillout",
+                                  "XL Radio Gurbani",
+                                  "RadioTeenTaal",
+                                  "BOMBAY BEATS",
                               };
         string[] radioUrl = {
-                                "http://209.62.54.34:8000",
-                                "http://209.62.54.34:8300",
-                                "http://listen.radionomy.com/pakistanradio",
-                                "http://50.7.77.178:8412",
-                                "http://204.45.41.148:80",
+                                "http://208.80.53.106:16704",
+                                "http://78.46.73.237:8000/schizoid",
+                                "http://67.228.177.153:8459/Live",
+                                "http://195.154.176.33:8000",
+                                "http://205.164.35.115:80",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/1834254690";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/3310987893";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/4787721090";
+        public string adBanner = "ca-app-pub-7607380003153721/7741187491";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/9217920692";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/1694653895";
 
         public string[] returnTitle()
         {
