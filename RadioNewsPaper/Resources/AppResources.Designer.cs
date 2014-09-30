@@ -79,7 +79,7 @@ namespace RadioNewsPaper.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Marathi Radio.
+        ///   Looks up a localized string similar to All India Radio Online.
         /// </summary>
         public static string ApplicationTitle {
             get {

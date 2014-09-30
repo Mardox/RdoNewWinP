@@ -166,8 +166,9 @@
     <Content Include="Assets\background.jpg" />
     <Content Include="Assets\favs.png" />
     <Content Include="Assets\microphone.png" />
+    <Content Include="Assets\MoreIcons\banglasong.png" />
     <Content Include="Assets\MoreIcons\bollywoodsongslibrary.png" />
-    <Content Include="Assets\MoreIcons\marathisongs.png" />
+    <Content Include="Assets\MoreIcons\newpksongs.png" />
     <Content Include="Assets\MoreIcons\punjabisongscollection.png" />
     <Content Include="Assets\MoreIcons\tamilsongscollection.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
