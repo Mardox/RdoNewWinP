@@ -122,7 +122,7 @@ namespace RadioNewsPaper.Views
                 }
                 settings.Save();
 
-                if (forewardCount % 5 == 0)
+                if (forewardCount % 4 == 0)
                 {
                     interstitialAd2.ShowAd();
                 }

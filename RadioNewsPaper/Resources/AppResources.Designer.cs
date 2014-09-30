@@ -97,7 +97,7 @@ namespace RadioNewsPaper.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kalyanthegangster@gmail.com.
+        ///   Looks up a localized string similar to support@modernapps.biz.
         /// </summary>
         public static string Email {
             get {
