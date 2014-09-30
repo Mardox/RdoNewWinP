@@ -14,18 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.vanguardngr.com/",
-                                 "http://www.punchng.com/",
-                                 "http://www.nigeriaworld.com/",
-                                 "http://ngrguardiannews.com/",
+                                 "http://loudwire.com/",
+                                 "http://www.rollingstone.com/music/news",
+                                 "http://www.antimusic.com/dayinrock/",
+                                 "http://www.blabbermouth.net/",
+                                 "http://www.planetrock.com/news/rock-news/",
                              };
 
 
         string[] NewsTitles = {
-                                         "Vanguard",
-                                         "Punch",
-                                         "Nigeria World",
-                                         "The Guardian",
+                                         "Loudwire",
+                                         "RollingStone",
+                                         "Antimusic",
+                                         "Blabbermouth",
+                                         "Planet Rock",
                                      };
 
         public string[] returnNewsUrls()

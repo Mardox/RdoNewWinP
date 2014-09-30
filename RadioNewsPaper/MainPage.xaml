@@ -109,8 +109,8 @@
                 </phone:LongListSelector>
             </phone:PivotItem>
 
-            <phone:PivotItem Header="more">
-                <!--Double line list with text wrapping-->
+            <!--<phone:PivotItem Header="more">
+                --><!--Double line list with text wrapping--><!--
                 <phone:LongListSelector x:Name="MoreList" ItemsSource="{Binding MoreItems}" Margin="0,0,-12,0" SelectionChanged="MoreItem_Tap">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
@@ -118,13 +118,13 @@
                                 <Image Source="{Binding ImageUrl}" Height="100" Width="100"/>
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Text="{Binding MoreItemTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <!--<TextBlock Text="{Binding StoreUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+                                    --><!--<TextBlock Text="{Binding StoreUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>--><!--
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
-            </phone:PivotItem>
+            </phone:PivotItem>-->
 
         </phone:Pivot>
         
