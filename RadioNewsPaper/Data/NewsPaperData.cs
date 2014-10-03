@@ -14,20 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://rjrnewsonline.com/",
-                                 "http://go-jamaica.com/power/",
-                                 "http://www.jamaicaobserver.com",
-                                 "http://www.jamaica-star.com",
-                                 "http://go-jamaica.com",
+                                 "http://www.topix.com/world/mexico",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/mexico/index.html",
+                                 "http://www.theguardian.com/world/mexico",
+                                 "http://www.globalpost.com/news/regions/americas/mexico",
                              };
 
 
         string[] NewsTitles = {
-                                         "RJR News",
-                                         "GO-Jamaica",
-                                         "Jamaica Observer",
-                                         "Jamaica Star",
-                                         "Go Jamaica",
+                                         "Mexico News- Topix",
+                                         "New York Times - Mexico",
+                                         "The Guardian",
+                                         "Global Post",
                                      };
 
         public string[] returnNewsUrls()

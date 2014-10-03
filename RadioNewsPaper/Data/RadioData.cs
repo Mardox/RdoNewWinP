@@ -14,23 +14,27 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Radio Jamaica Brasileira Um novo conceito em webradio esta no ar",
-                                  "Power 106 FM Jamaica on Go-Jamaica",
-                                  "NewsTalk 93FM Streaming Live From our Studios at UWI MONA, JAMAICA",
-                                  "AUTO DJ RADIO BRASIL JAMAICA",
-                                  "Radio Mundo LusoRadio Mundo Luso",
+                                  "Sit-mexico Radio",
+                                  "Rock X Mexico Radio (Cabina 1)",
+                                  "RADIO MARIA MEXICO",
+                                  "XHBIO - FIESTA MEXICANA - Grupo Promomedios Radio. Guadalajara, Jalisco, Mexico.",
+                                  "Que Viva Mexico",
+                                  "Salsa Mexico HD",
+                                  "La Radio Cristiana Mexico"
                               };
         string[] radioUrl = {
-                                "http://199.233.233.42:14004",
-                                "http://205.234.238.42:5480",
-                                "http://91.121.67.122:7002",
-                                "http://170.75.144.146:11974",
-                                "http://217.129.160.26:8000",
+                                "http://85.17.30.50:9666",
+                                "http://72.29.70.19:8162",
+                                "http://50.7.181.186:8086",
+                                "http://189.205.46.150:8116",
+                                "http://listen.radionomy.com/QueVivaMexico",
+                                "http://199.217.118.10:7218",
+                                "http://listen.radionomy.com/LaRadioCristianaMexico"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/5068105892";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/6544839091";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/8021572298";
+        public string adBanner = "ca-app-pub-7607380003153721/1975038693";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/3451771894";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/4928505091";
 
         public string[] returnTitle()
         {
