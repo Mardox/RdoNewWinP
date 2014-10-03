@@ -14,20 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://loudwire.com/",
-                                 "http://www.rollingstone.com/music/news",
-                                 "http://www.antimusic.com/dayinrock/",
-                                 "http://www.blabbermouth.net/",
-                                 "http://www.planetrock.com/news/rock-news/",
+                                 "http://rjrnewsonline.com/",
+                                 "http://go-jamaica.com/power/",
+                                 "http://www.jamaicaobserver.com",
+                                 "http://www.jamaica-star.com",
+                                 "http://go-jamaica.com",
                              };
 
 
         string[] NewsTitles = {
-                                         "Loudwire",
-                                         "RollingStone",
-                                         "Antimusic",
-                                         "Blabbermouth",
-                                         "Planet Rock",
+                                         "RJR News",
+                                         "GO-Jamaica",
+                                         "Jamaica Observer",
+                                         "Jamaica Star",
+                                         "Go Jamaica",
                                      };
 
         public string[] returnNewsUrls()
