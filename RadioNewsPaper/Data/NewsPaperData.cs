@@ -14,18 +14,22 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.telegraph.co.uk/news/worldnews/southamerica/brazil/",
-                                 "http://riotimesonline.com/brazil-news/tag/brazil-news/#",
-                                 "http://www.theguardian.com/world/brazil",
-                                 "http://www.globalpost.com/news/regions/americas/brazil",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/indonesia/index.html",
+                                 "http://www.thejakartapost.com/",
+                                 "http://www.telegraph.co.uk/news/worldnews/asia/indonesia/",
+                                 "http://www.theguardian.com/world/indonesia",
+                                 "http://www.globalpost.com/news/regions/asia-pacific/indonesia",
+                                 "http://www.dailyindonesia.com/"
                              };
 
 
         string[] NewsTitles = {
+                                         "New York Times",
+                                         "the Jakarta Post",
                                          "The Telegraph",
-                                         "The Rio Times",
                                          "The Guardian",
-                                         "Global Post",
+                                         "The Global Post",
+                                         "Daily Indonesia"
                                      };
 
         public string[] returnNewsUrls()
