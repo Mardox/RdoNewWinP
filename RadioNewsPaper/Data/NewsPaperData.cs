@@ -14,18 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.topix.com/world/mexico",
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/mexico/index.html",
-                                 "http://www.theguardian.com/world/mexico",
-                                 "http://www.globalpost.com/news/regions/americas/mexico",
+                                 "http://latino.foxnews.com",
+                                 "http://www.latino-news.com",
+                                 "http://www.elhispanicnews.com",
+                                 "http://www.nydailynews.com/latino",
+                                 "http://www.huffingtonpost.com/latino-voices/"
                              };
 
 
         string[] NewsTitles = {
-                                         "Mexico News- Topix",
-                                         "New York Times - Mexico",
-                                         "The Guardian",
-                                         "Global Post",
+                                         "Fox News Latino",
+                                         "Latino News",
+                                         "El Hispanic News",
+                                         "New York Latino News",
+                                         "Huffington Post"
                                      };
 
         public string[] returnNewsUrls()

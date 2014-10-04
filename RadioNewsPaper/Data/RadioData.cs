@@ -14,27 +14,25 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Sit-mexico Radio",
-                                  "Rock X Mexico Radio (Cabina 1)",
-                                  "RADIO MARIA MEXICO",
-                                  "XHBIO - FIESTA MEXICANA - Grupo Promomedios Radio. Guadalajara, Jalisco, Mexico.",
-                                  "Que Viva Mexico",
-                                  "Salsa Mexico HD",
-                                  "La Radio Cristiana Mexico"
+                                  "Radio Latina",
+                                  "DB9000-TX",
+                                  "La Radio Latina - Memphis",
+                                  "Radio Latina Amor",
+                                  "Radio Latina Mix Internactional",
+                                  "Radio Latina Canada",
                               };
         string[] radioUrl = {
-                                "http://85.17.30.50:9666",
-                                "http://72.29.70.19:8162",
-                                "http://50.7.181.186:8086",
-                                "http://189.205.46.150:8116",
-                                "http://listen.radionomy.com/QueVivaMexico",
-                                "http://199.217.118.10:7218",
-                                "http://listen.radionomy.com/LaRadioCristianaMexico"
+                                "http://178.32.136.9:9097",
+                                "http://207.210.201.56:8000",
+                                "http://174.37.16.73:1209/Live",
+                                "http://198.154.112.233:8328",
+                                "http://162.217.125.32:8102",
+                                "http://69.64.52.74:7042",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/1975038693";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/3451771894";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/4928505091";
+        public string adBanner = "ca-app-pub-7607380003153721/7881971499";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/9358704694";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/1835437890";
 
         public string[] returnTitle()
         {
