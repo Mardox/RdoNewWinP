@@ -1,0 +1,7 @@
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\RadioPlayback.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\RadioPlayback.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\SilverlightMedia.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\SilverlightMedia.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.csprojResolveAssemblyReference.cache
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.pdb
