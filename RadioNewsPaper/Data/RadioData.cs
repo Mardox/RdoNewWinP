@@ -14,31 +14,29 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Rajawali Radio - Bandung, Indonesia",
-                                  "MUSIK DANGDUT INDONESIA",
-                                  "miratsul-anbiya indonesia",
-                                  "Radio Arts Indonesia",
-                                  "RADIO MARIA INDONESIA",
-                                  "Swara Indonesia",
-                                  "Radio Pemuda FM  Untuk Indonesia Karena Indonesia",
-                                  "Al Ghifari Server Indonesia",
-                                  "This is Indonesia NetRadio powered by Indosound dotcom"
+                                  "Bangla Radio1",
+                                  "BANGLA RADIO NEW",
+                                  "Bangla Wadio",
+                                  "us bangla radio ac richmond ave",
+                                  "BANGLA RADIO 2",
+                                  "AKTARA | Bangla Online Radio | Kolkata | Dhaka",
+                                  "Radio Mainamati",
+                                  "My Bangla Gaan",
                               };
         string[] radioUrl = {
-                                "http://125.160.17.86:8014",
-                                "http://198.71.90.155:8989",
-                                "http://128.199.225.150:8788/stream",
-                                "http://50.22.212.205:8138",
-                                "http://50.7.181.186:8062",
-                                "http://162.217.249.112:8600",
-                                "http://199.167.134.163:7014",
-                                "http://103.28.148.18:8058",
-                                "http://146.185.18.251:8004"
+                                "http://202.51.191.123:8000",
+                                "http://182.160.99.234:8182",
+                                "http://66.85.136.194:8201",
+                                "http://5.133.182.164:3064",
+                                "http://182.160.99.237:8010",
+                                "http://50.7.98.106:8520",
+                                "http://66.85.136.194:7011",
+                                "http://69.175.103.230:8000",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/7602769897";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/9079503090";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/1556236291";
+        public string adBanner = "ca-app-pub-7607380003153721/5986435899";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/7463169092";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/8939902297";
 
         public string[] returnTitle()
         {

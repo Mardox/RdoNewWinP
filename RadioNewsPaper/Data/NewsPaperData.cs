@@ -14,22 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/indonesia/index.html",
-                                 "http://www.thejakartapost.com/",
-                                 "http://www.telegraph.co.uk/news/worldnews/asia/indonesia/",
-                                 "http://www.theguardian.com/world/indonesia",
-                                 "http://www.globalpost.com/news/regions/asia-pacific/indonesia",
-                                 "http://www.dailyindonesia.com/"
+                                 "http://www.banglanews24.com/beta/",
+                                 "http://www.bbc.co.uk/bengali",
+                                 "http://www.allbanglanewspaper.com/",
+                                 "http://news-bangla.com/",
                              };
 
 
         string[] NewsTitles = {
-                                         "New York Times",
-                                         "the Jakarta Post",
-                                         "The Telegraph",
-                                         "The Guardian",
-                                         "The Global Post",
-                                         "Daily Indonesia"
+                                         "Bangala News",
+                                         "BBC Bangla",
+                                         "All Bangla Newspaper",
+                                         "News Bangala",
                                      };
 
         public string[] returnNewsUrls()
