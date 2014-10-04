@@ -14,20 +14,22 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://latino.foxnews.com",
-                                 "http://www.latino-news.com",
-                                 "http://www.elhispanicnews.com",
-                                 "http://www.nydailynews.com/latino",
-                                 "http://www.huffingtonpost.com/latino-voices/"
+                                 "http://www.ghanaweb.com",
+                                 "http://www.peacefmonline.com/",
+                                 "http://vibeghana.com/",
+                                 "http://www.modernghana.com/",
+                                 "http://www.ghananewsagency.org/",
+                                 "http://www.ghanareview.com/Restyle/"
                              };
 
 
         string[] NewsTitles = {
-                                         "Fox News Latino",
-                                         "Latino News",
-                                         "El Hispanic News",
-                                         "New York Latino News",
-                                         "Huffington Post"
+                                         "Ghana",
+                                         "Peace FM Online",
+                                         "Vibe Ghana",
+                                         "Modern Ghana",
+                                         "Ghana News Agency",
+                                         "Ghana Review International"
                                      };
 
         public string[] returnNewsUrls()
