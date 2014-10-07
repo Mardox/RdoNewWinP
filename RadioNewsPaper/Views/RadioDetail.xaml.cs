@@ -107,31 +107,10 @@ namespace RadioNewsPaper.Views
         private void OnAdReceived2(object sender, AdEventArgs e)
         {
             Debug.WriteLine("Received second ad");
-            #region Interstitial
-            try
+            if(RandomNumber() == 0)
             {
-                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-                if (!settings.Contains("radioForwardCount"))
-                {
-                    settings.Add("radioForwardCount", 1);
-                }
-                else
-                {
-                    forewardCount = (int)IsolatedStorageSettings.ApplicationSettings["radioForwardCount"];
-                    settings["radioForwardCount"] = forewardCount + 1;
-                }
-                settings.Save();
-
-                if (forewardCount % 4 == 0)
-                {
-                    interstitialAd2.ShowAd();
-                }
+                interstitialAd2.ShowAd();
             }
-            catch (Exception ex)
-            {
-                //Do nothing
-            }
-            #endregion
         }
 
         private void Instance_PlayStateChanged(object sender, EventArgs e)
@@ -337,26 +316,11 @@ namespace RadioNewsPaper.Views
         {
             IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
             IsolatedStorageSettings.ApplicationSettings.Save();
-            try
+            if(RandomNumber() == 0)
             {
-                int count = 1;
-                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-                if (!settings.Contains("radioBackCount"))
-                {
-                    settings.Add("radioBackCount", 1);
-                }
-                else
-                {
-                    count = (int)IsolatedStorageSettings.ApplicationSettings["radioBackCount"];
-                    settings["radioBackCount"] = count + 1;
-                }
-                settings.Save();
-                if (count % 3 == 0)
-                {
-                    interstitialAd.ShowAd();
-                }
+                interstitialAd.ShowAd();
             }
-            catch (Exception ex)
+            else
             {
                 NavigationService.GoBack();
             }
@@ -508,6 +472,12 @@ namespace RadioNewsPaper.Views
             }
 
             recordPopUp.IsOpen = false;
+        }
+
+        private int RandomNumber()
+        {
+            Random random = new Random();
+            return random.Next(0, 3);
         }
     }
 }
