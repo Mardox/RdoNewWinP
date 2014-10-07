@@ -261,31 +261,10 @@ namespace RadioNewsPaper
                 }
             }
 
-            #region Interstitial
-            try
+            if (RandomNumber() == 0)
             {
-                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-                if (!settings.Contains("radioPopupCount"))
-                {
-                    settings.Add("radioPopupCount", 1);
-                }
-                else
-                {
-                    popupCount = (int)IsolatedStorageSettings.ApplicationSettings["radioPopupCount"];
-                    settings["radioPopupCount"] = popupCount + 1;
-                }
-                settings.Save();
-
-                if (popupCount % 5 == 0)
-                {
-                    interstitialAd2.ShowAd();
-                }
+                interstitialAd2.ShowAd();
             }
-            catch (Exception ex)
-            {
-                //Do nothing
-            }
-            #endregion
 
             //playRecAudio.Play();
             // resetting selected so we can play the same sound over and over again
@@ -326,6 +305,12 @@ namespace RadioNewsPaper
             WebBrowserTask webBrowserTask = new WebBrowserTask();
             webBrowserTask.Uri = new Uri(myItem.StoreUrl);
             webBrowserTask.Show();
+        }
+
+        private int RandomNumber()
+        {
+            Random random = new Random();
+            return random.Next(0, 3);
         }
     }
 }
