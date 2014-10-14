@@ -1,0 +1,7 @@
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\SilverlightMedia.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\SilverlightMedia.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.csprojResolveAssemblyReference.cache
