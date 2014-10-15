@@ -26,7 +26,7 @@ namespace RadioNewsPaper
         private RadioData rdata;
         private InterstitialAd interstitialAd, interstitialAd2;
         int popupCount = 1;
-        
+
         // Constructor
         public MainPage()
         {
@@ -97,7 +97,7 @@ namespace RadioNewsPaper
         private void OnAdReceived2(object sender, AdEventArgs e)
         {
             Debug.WriteLine("Received second ad");
-            
+
         }
 
         void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
@@ -171,7 +171,7 @@ namespace RadioNewsPaper
                 e.Cancel = result != MessageBoxResult.OK;
             }
             base.OnBackKeyPress(e);
-            
+
         }
 
         #region Favorite Item
@@ -194,7 +194,7 @@ namespace RadioNewsPaper
         private string[] radioUrls;
         private void favListLoaded(object sender, RoutedEventArgs e)
         {
-            
+
             if (IsolatedStorageSettings.ApplicationSettings.Contains("favData"))
             {
                 string fav = IsolatedStorageSettings.ApplicationSettings["favData"] as string;
@@ -253,7 +253,7 @@ namespace RadioNewsPaper
             {
                 using (var storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
                 {
-                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, FileAccess.Read ,FileShare.Read, storageFolder))
+                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, FileAccess.Read, FileShare.Read, storageFolder))
                     {
                         BackgroundAudioPlayer.Instance.Close();
                         playRecAudio.SetSource(stream);
@@ -261,31 +261,10 @@ namespace RadioNewsPaper
                 }
             }
 
-            #region Interstitial
-            try
+            if (RandomNumber() == 0)
             {
-                IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-                if (!settings.Contains("radioPopupCount"))
-                {
-                    settings.Add("radioPopupCount", 1);
-                }
-                else
-                {
-                    popupCount = (int)IsolatedStorageSettings.ApplicationSettings["radioPopupCount"];
-                    settings["radioPopupCount"] = popupCount + 1;
-                }
-                settings.Save();
-
-                if (popupCount % 5 == 0)
-                {
-                    interstitialAd2.ShowAd();
-                }
+                interstitialAd2.ShowAd();
             }
-            catch (Exception ex)
-            {
-                //Do nothing
-            }
-            #endregion
 
             //playRecAudio.Play();
             // resetting selected so we can play the same sound over and over again
@@ -317,7 +296,7 @@ namespace RadioNewsPaper
             NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        
+
 
         private void MoreItem_Tap(object sender, SelectionChangedEventArgs e)
         {
@@ -326,6 +305,12 @@ namespace RadioNewsPaper
             WebBrowserTask webBrowserTask = new WebBrowserTask();
             webBrowserTask.Uri = new Uri(myItem.StoreUrl);
             webBrowserTask.Show();
+        }
+
+        private int RandomNumber()
+        {
+            Random random = new Random();
+            return random.Next(0, 3);
         }
     }
 }
