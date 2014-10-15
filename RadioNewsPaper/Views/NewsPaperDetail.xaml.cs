@@ -11,19 +11,23 @@ using RadioNewsPaper.Data;
 using RadioNewsPaper.ViewModels;
 using GoogleAds;
 
+
 namespace RadioNewsPaper.Views
 {
     public partial class NewsPaperDetail : PhoneApplicationPage
     {
         string index = "";
         NewsPaperData newsData;
+        RadioData rData;
+        private InterstitialAd interstitialAd, interstitialAd2;
+
         public NewsPaperDetail()
         {
             InitializeComponent();
-            Loaded += NewsPaperDetail_Loaded;
+
             NewsPaperBrowser.LoadCompleted += NewsPaperBrowser_LoadCompleted;
 
-            RadioData rData = new RadioData();
+            rData = new RadioData();
             AdView bannerAd = new AdView
             {
                 Format = AdFormats.Banner,
@@ -35,6 +39,48 @@ namespace RadioNewsPaper.Views
             ContentPanel.Children.Add(bannerAd);
             bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
             bannerAd.LoadAd(BanneradRequest);
+
+            Loaded += NewsPaperDetail_Loaded;
+
+            interstitialAd = new InterstitialAd(rData.detailInterstitial);
+            AdRequest adRequest = new AdRequest();
+
+            interstitialAd.ReceivedAd += OnAdReceived;
+            interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
+            interstitialAd.LoadAd(adRequest);
+
+            //Interstitial two
+            interstitialAd2 = new InterstitialAd(rData.detailInterstitial);
+            AdRequest adRequest2 = new AdRequest();
+
+            interstitialAd2.ReceivedAd += OnAdReceived2;
+            interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
+            interstitialAd2.LoadAd(adRequest2);
+
+
+        }
+
+        void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void OnAdReceived(object sender, AdEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Ad received successfully");
+        }
+
+        private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
+        {
+            //Do nothing
+        }
+
+        private void OnAdReceived2(object sender, AdEventArgs e)
+        {
+            if (RandomNumber() == 0)
+            {
+                interstitialAd2.ShowAd();
+            }
         }
 
         void NewsPaperBrowser_LoadCompleted(object sender, NavigationEventArgs e)
@@ -65,6 +111,25 @@ namespace RadioNewsPaper.Views
             newsData = new NewsPaperData();
             string[] newsTitles = newsData.returnNewsTitles();
             //pageName.Text = newsTitles[Convert.ToInt32(index)];
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            if (RandomNumber() == 0)
+            {
+                interstitialAd.ShowAd();
+            }
+            else
+            {
+                NavigationService.GoBack();
+            }
+        }
+
+
+        private int RandomNumber()
+        {
+            Random random = new Random();
+            return random.Next(0, 2);
         }
     }
 }
