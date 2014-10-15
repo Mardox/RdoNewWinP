@@ -107,7 +107,7 @@ namespace RadioNewsPaper.Views
         private void OnAdReceived2(object sender, AdEventArgs e)
         {
             Debug.WriteLine("Received second ad");
-            if(RandomNumber() == 0)
+            if (RandomNumber() == 0)
             {
                 interstitialAd2.ShowAd();
             }
@@ -193,7 +193,7 @@ namespace RadioNewsPaper.Views
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            
+
 
             base.OnNavigatedTo(e);
 
@@ -211,14 +211,14 @@ namespace RadioNewsPaper.Views
             }
             try
             {
-                int prevIndex = (int) IsolatedStorageSettings.ApplicationSettings["prevIndex"];
+                int prevIndex = (int)IsolatedStorageSettings.ApplicationSettings["prevIndex"];
                 if (index != prevIndex)
                 {
                     Play();
                 }
                 else
                 {
-                    if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
+                    if (BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
                     {
                         Play();
                     }
@@ -235,7 +235,7 @@ namespace RadioNewsPaper.Views
                 Play();
                 Debug.WriteLine("first time to radio detail page");
             }
-            
+
         }
 
         private void playButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -256,50 +256,10 @@ namespace RadioNewsPaper.Views
             {
                 UpdateButtons(true, false);
             }
-            
+
             UpdateButtons(true, false);
             UpdateState(null, null);
         }
-
-        //private void nextButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    BackgroundAudioPlayer.Instance.Stop();
-        //    UpdateButtons(true, false);
-        //    UpdateState(null, null);
-        //    if(index == radioUris.Length - 1)
-        //    {
-        //        index = 0;
-        //    }
-        //    else
-        //    {
-        //        index++;
-        //    }
-        //    bufferingProgress.IsIndeterminate = true;
-        //    BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-        //    BackgroundAudioPlayer.Instance.Volume = 1.0d;
-        //    UpdateButtons(false, true);
-        //    UpdateState(null, null);
-        //}
-
-        //private void backButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    BackgroundAudioPlayer.Instance.Stop();
-        //    UpdateButtons(true, false);
-        //    UpdateState(null, null);
-        //    if (index == 0)
-        //    {
-        //        index = radioUris.Length - 1;
-        //    }
-        //    else
-        //    {
-        //        index--;
-        //    }
-        //    bufferingProgress.IsIndeterminate = true;
-        //    BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-        //    BackgroundAudioPlayer.Instance.Volume = 1.0d;
-        //    UpdateButtons(false, true);
-        //    UpdateState(null, null);
-        //}
 
         void Play()
         {
@@ -316,7 +276,7 @@ namespace RadioNewsPaper.Views
         {
             IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
             IsolatedStorageSettings.ApplicationSettings.Save();
-            if(RandomNumber() == 0)
+            if (RandomNumber() == 0)
             {
                 interstitialAd.ShowAd();
             }
@@ -369,7 +329,7 @@ namespace RadioNewsPaper.Views
                 //Play
                 playAudio.SetSource(_audioStream);
 
-                
+
             }
         }
 
@@ -389,7 +349,7 @@ namespace RadioNewsPaper.Views
             recordButton.Content = "Record";
             _recorder.Stop();
             SaveTempAudio(_recorder.Buffer);
-            
+
         }
 
         private void closeGridTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -421,11 +381,11 @@ namespace RadioNewsPaper.Views
                     settings["favData"] = tempSetting;
                     MessageBox.Show("This station is removed from favorites.");
                 }
-                    
+
             }
             settings.Save();
 
-            
+
         }
 
         private void recordButtonClick(object sender, EventArgs e)
@@ -477,7 +437,7 @@ namespace RadioNewsPaper.Views
         private int RandomNumber()
         {
             Random random = new Random();
-            return random.Next(0, 3);
+            return random.Next(0, 2);
         }
     }
 }

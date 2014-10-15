@@ -26,7 +26,7 @@ namespace RadioNewsPaper
         private RadioData rdata;
         private InterstitialAd interstitialAd, interstitialAd2;
         int popupCount = 1;
-        
+
         // Constructor
         public MainPage()
         {
@@ -97,7 +97,7 @@ namespace RadioNewsPaper
         private void OnAdReceived2(object sender, AdEventArgs e)
         {
             Debug.WriteLine("Received second ad");
-            
+
         }
 
         void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
@@ -171,7 +171,7 @@ namespace RadioNewsPaper
                 e.Cancel = result != MessageBoxResult.OK;
             }
             base.OnBackKeyPress(e);
-            
+
         }
 
         #region Favorite Item
@@ -194,7 +194,7 @@ namespace RadioNewsPaper
         private string[] radioUrls;
         private void favListLoaded(object sender, RoutedEventArgs e)
         {
-            
+
             if (IsolatedStorageSettings.ApplicationSettings.Contains("favData"))
             {
                 string fav = IsolatedStorageSettings.ApplicationSettings["favData"] as string;
@@ -253,7 +253,7 @@ namespace RadioNewsPaper
             {
                 using (var storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
                 {
-                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, FileAccess.Read ,FileShare.Read, storageFolder))
+                    using (var stream = new IsolatedStorageFileStream(data.RecPath, FileMode.Open, FileAccess.Read, FileShare.Read, storageFolder))
                     {
                         BackgroundAudioPlayer.Instance.Close();
                         playRecAudio.SetSource(stream);
@@ -261,11 +261,10 @@ namespace RadioNewsPaper
                 }
             }
 
-            if(RandomNumber() == 0)
+            if (RandomNumber() == 0)
             {
                 interstitialAd2.ShowAd();
             }
-            
 
             //playRecAudio.Play();
             // resetting selected so we can play the same sound over and over again
@@ -296,6 +295,8 @@ namespace RadioNewsPaper
         {
             NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml", UriKind.RelativeOrAbsolute));
         }
+
+
 
         private void MoreItem_Tap(object sender, SelectionChangedEventArgs e)
         {
