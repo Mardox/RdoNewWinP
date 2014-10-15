@@ -7,3 +7,11 @@ C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\obj\Release\RadioP
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.pdb
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\GoogleAds.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\GoogleAds.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\RadioPlayback.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\RadioPlayback.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\SilverlightMedia.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\SilverlightMedia.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\GoogleAds.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.csprojResolveAssemblyReference.cache
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\obj\Release\RadioPlayback.pdb

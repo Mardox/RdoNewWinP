@@ -10,7 +10,6 @@ using Microsoft.Phone.Shell;
 using RadioNewsPaper.Data;
 using RadioNewsPaper.ViewModels;
 using GoogleAds;
-using RadioNewsPaper.Data;
 
 
 namespace RadioNewsPaper.Views

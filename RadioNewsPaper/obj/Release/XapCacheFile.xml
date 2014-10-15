@@ -1,48 +1,56 @@
-﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\RadioNewsPaper_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="11/10/2014 12:46:23 PM">
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="11/10/2014 12:29:43 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21/09/2014 4:11:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\appbar.music.wifi.png" archivePath="Assets\appbar.music.wifi.png" lastWriteTime="29/09/2014 4:50:46 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\background.jpg" archivePath="Assets\background.jpg" lastWriteTime="29/09/2014 4:50:46 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\favs.png" archivePath="Assets\favs.png" lastWriteTime="28/09/2014 2:54:42 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\microphone.png" archivePath="Assets\microphone.png" lastWriteTime="28/09/2014 2:54:42 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\banglasong.png" archivePath="Assets\MoreIcons\banglasong.png" lastWriteTime="9/10/2014 10:01:50 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\bollywoodsongslibrary.png" archivePath="Assets\MoreIcons\bollywoodsongslibrary.png" lastWriteTime="9/10/2014 10:01:50 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\newpksongs.png" archivePath="Assets\MoreIcons\newpksongs.png" lastWriteTime="9/10/2014 10:01:50 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\punjabisongscollection.png" archivePath="Assets\MoreIcons\punjabisongscollection.png" lastWriteTime="9/10/2014 10:01:50 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\tamilsongscollection.png" archivePath="Assets\MoreIcons\tamilsongscollection.png" lastWriteTime="9/10/2014 10:01:50 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="21/09/2014 4:11:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="21/09/2014 4:11:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="21/09/2014 4:11:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="21/09/2014 4:11:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\transport.ff.png" archivePath="Assets\transport.ff.png" lastWriteTime="22/09/2014 4:37:18 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\transport.pause.png" archivePath="Assets\transport.pause.png" lastWriteTime="22/09/2014 4:37:18 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\transport.play.png" archivePath="Assets\transport.play.png" lastWriteTime="28/09/2014 2:55:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\transport.rew.png" archivePath="Assets\transport.rew.png" lastWriteTime="22/09/2014 4:37:18 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\transport.stop.png" archivePath="Assets\transport.stop.png" lastWriteTime="28/09/2014 2:55:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="28/09/2014 2:54:45 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\README_FIRST.txt" archivePath="README_FIRST.txt" lastWriteTime="29/09/2014 4:50:47 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Add.png" archivePath="Toolkit.Content\ApplicationBar.Add.png" lastWriteTime="29/09/2014 4:50:47 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="28/09/2014 2:54:45 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="28/09/2014 2:54:45 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="29/09/2014 4:50:47 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="29/09/2014 4:50:47 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="9/10/2014 10:21:22 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="24/09/2014 10:03:06 AM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="21/09/2014 4:11:01 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="9/10/2014 10:20:07 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="9/10/2014 10:20:08 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="9/10/2014 10:20:08 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll" archivePath="Coding4Fun.Toolkit.Storage.dll" lastWriteTime="9/10/2014 10:20:08 PM" />
-  <file source="C:\Users\HooMan\Desktop\GoogleMobileAdsSdkWindowsPhone8-6.5.13\lib\windowsphone8\GoogleAds.dll" archivePath="GoogleAds.dll" lastWriteTime="26/06/2014 11:06:10 AM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="9/10/2014 10:20:12 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="9/10/2014 10:20:09 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\RadioPlayback.dll" archivePath="RadioPlayback.dll" lastWriteTime="9/10/2014 10:21:19 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll" archivePath="RateMyApp.dll" lastWriteTime="9/10/2014 10:20:09 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioPlayback\Bin\Release\SilverlightMedia.dll" archivePath="SilverlightMedia.dll" lastWriteTime="9/10/2014 10:21:19 PM" />
-  <file source="C:\Users\HooMan\Desktop\GoogleMobileAdsSdkWindowsPhone8-6.5.13\lib\windowsphone8\GoogleAds.xml" archivePath="GoogleAds.xml" lastWriteTime="26/06/2014 11:06:06 AM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" archivePath="Newtonsoft.Json.xml" lastWriteTime="9/10/2014 10:20:09 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="24/09/2014 10:03:06 AM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\GPL.txt" archivePath="GPL.txt" lastWriteTime="22/09/2014 4:50:39 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\LICENSE.txt" archivePath="LICENSE.txt" lastWriteTime="22/09/2014 4:50:39 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/10/2014 12:46:23 PM" />
+﻿<xapCache source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\RadioNewsPaper_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="10/15/2014 8:53:58 PM">
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\obj\Release\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="10/15/2014 8:53:53 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="9/22/2014 7:54:09 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\appbar.music.wifi.png" archivePath="Assets\appbar.music.wifi.png" lastWriteTime="9/28/2014 10:42:13 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\background.jpg" archivePath="Assets\background.jpg" lastWriteTime="9/29/2014 10:29:02 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\favs.png" archivePath="Assets\favs.png" lastWriteTime="9/26/2014 11:14:38 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\microphone.png" archivePath="Assets\microphone.png" lastWriteTime="9/25/2014 11:06:19 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\banglasong.png" archivePath="Assets\MoreIcons\banglasong.png" lastWriteTime="10/15/2014 8:27:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\bollywoodsongslibrary.png" archivePath="Assets\MoreIcons\bollywoodsongslibrary.png" lastWriteTime="10/15/2014 8:27:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\newpksongs.png" archivePath="Assets\MoreIcons\newpksongs.png" lastWriteTime="10/15/2014 8:27:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\punjabisongscollection.png" archivePath="Assets\MoreIcons\punjabisongscollection.png" lastWriteTime="10/15/2014 8:27:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\tamilsongscollection.png" archivePath="Assets\MoreIcons\tamilsongscollection.png" lastWriteTime="10/15/2014 8:27:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="9/22/2014 7:54:09 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="9/22/2014 7:54:09 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="9/22/2014 7:54:09 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="9/22/2014 7:54:09 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.ff.png" archivePath="Assets\transport.ff.png" lastWriteTime="9/22/2014 10:50:49 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.pause.png" archivePath="Assets\transport.pause.png" lastWriteTime="9/22/2014 10:50:49 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.play.png" archivePath="Assets\transport.play.png" lastWriteTime="9/27/2014 12:25:05 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.rew.png" archivePath="Assets\transport.rew.png" lastWriteTime="9/22/2014 10:50:49 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\transport.stop.png" archivePath="Assets\transport.stop.png" lastWriteTime="9/27/2014 12:26:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="9/26/2014 7:41:51 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\README_FIRST.txt" archivePath="README_FIRST.txt" lastWriteTime="9/28/2014 8:54:45 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Add.png" archivePath="Toolkit.Content\ApplicationBar.Add.png" lastWriteTime="9/28/2014 8:54:45 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="9/28/2014 8:54:45 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="9/28/2014 8:54:45 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="9/28/2014 8:54:40 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="9/28/2014 8:54:40 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="10/15/2014 8:36:54 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="9/23/2014 8:54:38 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="10/15/2014 8:36:54 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="10/15/2014 8:36:54 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="10/15/2014 8:36:54 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="10/15/2014 8:36:54 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="10/15/2014 8:36:54 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="10/15/2014 8:36:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="10/15/2014 8:36:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="10/15/2014 8:36:59 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll" archivePath="Coding4Fun.Toolkit.Storage.dll" lastWriteTime="10/15/2014 8:36:59 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\GoogleAds.dll" archivePath="GoogleAds.dll" lastWriteTime="10/15/2014 8:36:55 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="10/15/2014 8:37:01 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="10/15/2014 8:37:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\RadioPlayback.dll" archivePath="RadioPlayback.dll" lastWriteTime="10/15/2014 8:53:49 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll" archivePath="RateMyApp.dll" lastWriteTime="10/15/2014 8:37:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\SilverlightMedia.dll" archivePath="SilverlightMedia.dll" lastWriteTime="10/15/2014 8:53:48 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\GoogleAds.xml" archivePath="GoogleAds.xml" lastWriteTime="10/15/2014 8:36:55 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.xml" archivePath="Newtonsoft.Json.xml" lastWriteTime="10/15/2014 8:37:00 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="9/22/2014 7:54:09 AM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\GoogleAds.dll" archivePath="GoogleAds.dll" lastWriteTime="10/15/2014 8:36:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioPlayback\Bin\Release\GoogleAds.xml" archivePath="GoogleAds.xml" lastWriteTime="10/15/2014 8:36:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.dll" archivePath="GoogleAds.dll" lastWriteTime="10/15/2014 8:36:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.xml" archivePath="GoogleAds.xml" lastWriteTime="10/15/2014 8:36:58 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\GPL.txt" archivePath="GPL.txt" lastWriteTime="12/5/2013 9:30:36 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\LICENSE.txt" archivePath="LICENSE.txt" lastWriteTime="12/5/2013 9:30:36 PM" />
+  <file source="C:\Users\Kalyan\Source\Repos\RdoNewWinP\RadioNewsPaper\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="10/15/2014 8:53:57 PM" />
 </xapCache>

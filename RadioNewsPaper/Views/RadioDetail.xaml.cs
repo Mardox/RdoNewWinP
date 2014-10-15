@@ -261,46 +261,6 @@ namespace RadioNewsPaper.Views
             UpdateState(null, null);
         }
 
-        //private void nextButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    BackgroundAudioPlayer.Instance.Stop();
-        //    UpdateButtons(true, false);
-        //    UpdateState(null, null);
-        //    if(index == radioUris.Length - 1)
-        //    {
-        //        index = 0;
-        //    }
-        //    else
-        //    {
-        //        index++;
-        //    }
-        //    bufferingProgress.IsIndeterminate = true;
-        //    BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-        //    BackgroundAudioPlayer.Instance.Volume = 1.0d;
-        //    UpdateButtons(false, true);
-        //    UpdateState(null, null);
-        //}
-
-        //private void backButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        //{
-        //    BackgroundAudioPlayer.Instance.Stop();
-        //    UpdateButtons(true, false);
-        //    UpdateState(null, null);
-        //    if (index == 0)
-        //    {
-        //        index = radioUris.Length - 1;
-        //    }
-        //    else
-        //    {
-        //        index--;
-        //    }
-        //    bufferingProgress.IsIndeterminate = true;
-        //    BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
-        //    BackgroundAudioPlayer.Instance.Volume = 1.0d;
-        //    UpdateButtons(false, true);
-        //    UpdateState(null, null);
-        //}
-
         void Play()
         {
             bufferingProgress.IsIndeterminate = true;

@@ -5,3 +5,9 @@ C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\Sil
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.xml
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.csprojResolveAssemblyReference.cache
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\Bin\Release\SilverlightMedia.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\Bin\Release\SilverlightMedia.pdb
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\Bin\Release\GoogleAds.xml
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.csprojResolveAssemblyReference.cache
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.dll
+C:\Users\Kalyan\Source\Repos\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.pdb
