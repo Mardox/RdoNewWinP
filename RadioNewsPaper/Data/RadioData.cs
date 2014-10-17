@@ -14,27 +14,29 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Maxima Fm Honduras",
-                                  "Radio Verbo Honduras",
-                                  "Radio Station Name: Xtrema Fm Honduras",
-                                  "Radio Boqueron",
-                                  "Radio Honduras 504  San Pedro Sula",
-                                  "LUNA FM HONDURAS",
-                                  "Gala Stereo",
+                                  "Top Albania Radio",
+                                  "RADIO MARIA ALBANIA",
+                                  "CityFM Radio Albania",
+                                  "Radio 7 Albania",
+                                  "Albania FM",
+                                  "Quran in Albanian by EDC",
+                                  "LAR : London Albanian Radio",
+                                  "Radio EnergyFM Albania - Shqip"
                               };
         string[] radioUrl = {
-                                "http://listen.radionomy.com/Maxima-Fm-Honduras",
-                                "http://200.59.26.125:8000",
-                                "http://192.235.87.113:10290",
-                                "http://38.96.175.24:8308",
-                                "http://216.38.54.82:8504",
-                                "http://198.204.232.221:9984",
-                                "http://198.24.147.106:9640",
+                                "http://66.55.93.205:9078",
+                                "http://50.7.181.186:8008",
+                                "http://206.190.136.141:2872/Live",
+                                "http://50.117.8.242:5664/Live",
+                                "http://87.98.216.129:9812",
+                                "http://37.58.72.235:9996",
+                                "http://50.7.184.106:8701",
+                                "http://78.46.52.186:18122"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/2913388291";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/4390121493";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/5866854698";
+        public string adBanner = "ca-app-pub-7607380003153721/5587653092";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/7064386297";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/8541119493";
 
         public string[] returnTitle()
         {

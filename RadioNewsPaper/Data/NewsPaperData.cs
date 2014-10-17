@@ -14,18 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.hondurasnews.com/",
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/honduras/index.html",
-                                 "http://www.huffingtonpost.com/news/honduras/",
-                                 "http://www.hondurasweekly.com/",
+                                 "http://www.telegraph.co.uk/news/worldnews/europe/albania/",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/albania/index.html",
+                                 "http://www.theguardian.com/world/albania",
+                                 "http://world.einnews.com/country/albania",
                              };
 
 
         string[] NewsTitles = {
-                                         "Hondura news",
+                                         "The Telegraph",
                                          "New York Times",
-                                         "Huffington Post",
-                                         "Honduras Weekly",
+                                         "The Guardian",
+                                         "World News Report",
                                      };
 
         public string[] returnNewsUrls()
