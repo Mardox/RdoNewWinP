@@ -14,22 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.peruthisweek.com/news",
-                                 "http://www.peruviantimes.com/",
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/peru/index.html",
-                                 "http://www.telegraph.co.uk/news/worldnews/southamerica/peru/",
-                                 "http://www.andina.com.pe/ingles/",
-                                 "http://www.theguardian.com/world/peru"
+                                 "http://www.theguardian.com/world/ukraine",
+                                 "http://www.ukrinform.ua/eng/",
+                                 "http://www.unian.info/",
+                                 "http://www.day.kiev.ua/en",
+                                 "http://www.ukrainianjournal.com/",
                              };
 
 
         string[] NewsTitles = {
-                                         "Peru This Week",
-                                         "Peruvian Times",
-                                         "New York Times",
-                                         "Telegraph",
-                                         "Andina",
-                                         "The guardian"
+                                         "The Guardian",
+                                         "Ukraine Form",
+                                         "Unian",
+                                         "Day",
+                                         "Ukrainuan Journal",
                                      };
 
         public string[] returnNewsUrls()
