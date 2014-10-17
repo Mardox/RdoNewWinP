@@ -278,7 +278,14 @@ namespace RadioNewsPaper.Views
             IsolatedStorageSettings.ApplicationSettings.Save();
             if (RandomNumber() == 0)
             {
-                interstitialAd.ShowAd();
+                try
+                {
+                    interstitialAd.ShowAd();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
+                }
             }
             else
             {
