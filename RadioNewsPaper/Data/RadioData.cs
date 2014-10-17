@@ -14,29 +14,27 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Philippines Ofw_HomeRadio",
-                                  "Atlantis Radio Philippines | Pinoy Radio | Pure Pop Love Songs",
-                                  "Hope 777 Radio Philippines",
-                                  "Kfm Philippines",
-                                  "The Edge Philippines ",
-                                  "CyberPinoy Radio Philippines",
-                                  "Red Planet Radio Stations | Philippines Radio",
-                                  "V-Hive Radio Philippines - The hottest pinoy radio station - filipino",
+                                  "Maxima Fm Honduras",
+                                  "Radio Verbo Honduras",
+                                  "Radio Station Name: Xtrema Fm Honduras",
+                                  "Radio Boqueron",
+                                  "Radio Honduras 504  San Pedro Sula",
+                                  "LUNA FM HONDURAS",
+                                  "Gala Stereo",
                               };
         string[] radioUrl = {
-                                "http://206.190.131.100:9910",
-                                "http://184.107.128.20:8000",
-                                "http://206.190.131.100:9896",
-                                "http://206.190.131.100:9872",
-                                "http://46.105.125.110:9432",
-                                "http://85.25.109.132:8002",
-                                "http://184.107.128.20:8888",
-                                "http://192.99.8.192:3154/vhiveradiostream"
+                                "http://listen.radionomy.com/Maxima-Fm-Honduras",
+                                "http://200.59.26.125:8000",
+                                "http://192.235.87.113:10290",
+                                "http://38.96.175.24:8308",
+                                "http://216.38.54.82:8504",
+                                "http://198.204.232.221:9984",
+                                "http://198.24.147.106:9640",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/6006455497";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/7483188690";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/8959921893";
+        public string adBanner = "ca-app-pub-7607380003153721/2913388291";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/4390121493";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/5866854698";
 
         public string[] returnTitle()
         {

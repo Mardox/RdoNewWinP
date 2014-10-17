@@ -14,18 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.philippinenews.com/index.php/en/",
-                                 "http://www.philstar.com/headlines",
-                                 "http://www.philnews.com/",
-                                 "http://www.gmanetwork.com/news/",
+                                 "http://www.hondurasnews.com/",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/honduras/index.html",
+                                 "http://www.huffingtonpost.com/news/honduras/",
+                                 "http://www.hondurasweekly.com/",
                              };
 
 
         string[] NewsTitles = {
-                                         "Philippine News",
-                                         "Phil Star",
-                                         "Phil News",
-                                         "GMA Network",
+                                         "Hondura news",
+                                         "New York Times",
+                                         "Huffington Post",
+                                         "Honduras Weekly",
                                      };
 
         public string[] returnNewsUrls()
