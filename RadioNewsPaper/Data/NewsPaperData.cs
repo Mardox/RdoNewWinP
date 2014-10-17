@@ -14,20 +14,22 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://en.mercopress.com/argentina",
-                                 "http://www.theguardian.com/world/argentina",
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/argentina/index.html",
-                                 "http://topics.bloomberg.com/argentina/",
-                                 "http://www.telegraph.co.uk/news/worldnews/southamerica/argentina/",
+                                 "http://allafrica.com/senegal/",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/senegal/index.html",
+                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/senegal/",
+                                 "http://www.theguardian.com/world/senegal",
+                                 "http://abcnews.go.com/topics/news/senegal.htm",
+                                 "http://www.topix.com/sn/dakar"
                              };
 
 
         string[] NewsTitles = {
-                                         "Merco Press",
-                                         "The Guardian",
-                                         "The New York Times",
-                                         "Bloomberg",
+                                         "All Africa",
+                                         "New York Times",
                                          "Telegraph",
+                                         "The Guardian",
+                                         "ABC News",
+                                         "Topix"
                                      };
 
         public string[] returnNewsUrls()

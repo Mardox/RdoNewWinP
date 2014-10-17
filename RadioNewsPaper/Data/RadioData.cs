@@ -14,31 +14,25 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "RADIO MARIA ARGENTINA",
-                                  "ARGENTINA ROCK & POP",
-                                  "Radio Cristal Villa Union La Rioja Argentina",
-                                  "Argentina Streamingcom",
-                                  "Radio De Dios Eben-Ezer Argentina",
-                                  "Radio Taller 105.3 'Nuestra Seora de Lourdes' - Santa Fe (Capital) Santa Fe - Repblica Argentina",
-                                  "Argentina Flow",
-                                  "Radio Nueva Argentina 89.9 Mhz.",
-                                  "Radio Cyber Carlos Paz - Argentina",
+                                  "Radio FM SENEGAL",
+                                  "Radio AFRICA 7 SENEGAL",
+                                  "NGOR FM From Dakar Senegal",
+                                  "RFDI",
+                                  "Xamsadine wakhtaan -  Senegal",
+                                  "RFM - Powered by SenewebNetworks: RFM DAKAR 94.0 SENEGA",
                               };
         string[] radioUrl = {
-                                "http://50.7.181.186:8004",
-                                "http://67.228.177.215:9988",
-                                "http://186.153.160.226:8000",
-                                "http://174.142.39.158:9988",
-                                "http://184.107.179.162:3566",
-                                "http://74.222.5.162:7996",
-                                "http://50.7.70.42:7175",
-                                "http://190.104.217.181:9804",
-                                "http://78.129.163.73:16307",
+                                "http://192.235.87.113:10734",
+                                "http://192.235.87.113:10732",
+                                "http://67.228.177.153:1067/Live",
+                                "http://198.178.123.8:8324",
+                                "http://198.178.123.20:7200",
+                                "http://173.236.81.218:9002",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/1995058298";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/4948524692";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/6425257896";
+        public string adBanner = "ca-app-pub-7607380003153721/9378724296";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/1855457493";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/3332190698";
 
         public string[] returnTitle()
         {
