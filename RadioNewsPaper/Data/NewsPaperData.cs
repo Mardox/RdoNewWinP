@@ -14,20 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://loudwire.com/",
-                                 "http://www.rollingstone.com/music/news",
-                                 "http://www.antimusic.com/dayinrock/",
-                                 "http://www.blabbermouth.net/",
-                                 "http://www.planetrock.com/news/rock-news/",
+                                 "http://en.mercopress.com/argentina",
+                                 "http://www.theguardian.com/world/argentina",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/argentina/index.html",
+                                 "http://topics.bloomberg.com/argentina/",
+                                 "http://www.telegraph.co.uk/news/worldnews/southamerica/argentina/",
                              };
 
 
         string[] NewsTitles = {
-                                         "Loudwire",
-                                         "RollingStone",
-                                         "Antimusic",
-                                         "Blabbermouth",
-                                         "Planet Rock",
+                                         "Merco Press",
+                                         "The Guardian",
+                                         "The New York Times",
+                                         "Bloomberg",
+                                         "Telegraph",
                                      };
 
         public string[] returnNewsUrls()
