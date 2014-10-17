@@ -14,29 +14,29 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Malibuteam",
-                                  "Malijet",
-                                  "Radio Mali Mlin Dj Baja",
-                                  "Bygolly Old Time Radio",
-                                  "XFM MALIN",
-                                  "RADIO NIETA MALI",
-                                  "Radio ARC-EN CIEL MALI",
-                                  "Radio STUDIO TABALE MALI",
+                                  "Philippines Ofw_HomeRadio",
+                                  "Atlantis Radio Philippines | Pinoy Radio | Pure Pop Love Songs",
+                                  "Hope 777 Radio Philippines",
+                                  "Kfm Philippines",
+                                  "The Edge Philippines ",
+                                  "CyberPinoy Radio Philippines",
+                                  "Red Planet Radio Stations | Philippines Radio",
+                                  "V-Hive Radio Philippines - The hottest pinoy radio station - filipino",
                               };
         string[] radioUrl = {
-                                "http://62.212.132.53:8354",
-                                "http://188.165.156.104:5800",
-                                "http://50.22.219.97:37683",
-                                "http://50.22.223.16:8608",
-                                "http://210.1.31.58:8688",
-                                "http://192.235.87.113:10882",
-                                "http://192.235.87.113:10688",
-                                "http://192.235.87.113:10902"
+                                "http://206.190.131.100:9910",
+                                "http://184.107.128.20:8000",
+                                "http://206.190.131.100:9896",
+                                "http://206.190.131.100:9872",
+                                "http://46.105.125.110:9432",
+                                "http://85.25.109.132:8002",
+                                "http://184.107.128.20:8888",
+                                "http://192.99.8.192:3154/vhiveradiostream"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/9099522699";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/1576255896";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/3052989091";
+        public string adBanner = "ca-app-pub-7607380003153721/6006455497";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/7483188690";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/8959921893";
 
         public string[] returnTitle()
         {

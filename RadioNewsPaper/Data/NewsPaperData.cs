@@ -14,22 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://allafrica.com/mali/",
-                                 "http://www.aljazeera.com/category/country/mali",
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/mali/index.html",
-                                 "http://www.theguardian.com/world/mali",
-                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/mali/",
-                                 "http://www.breakingnews.com/topic/mali/"
+                                 "http://www.philippinenews.com/index.php/en/",
+                                 "http://www.philstar.com/headlines",
+                                 "http://www.philnews.com/",
+                                 "http://www.gmanetwork.com/news/",
                              };
 
 
         string[] NewsTitles = {
-                                         "All Africa",
-                                         "Aljazeera",
-                                         "New York Times",
-                                         "The Guardian",
-                                         "The Telegraph",
-                                         "Breaking News"
+                                         "Philippine News",
+                                         "Phil Star",
+                                         "Phil News",
+                                         "GMA Network",
                                      };
 
         public string[] returnNewsUrls()
