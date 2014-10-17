@@ -14,21 +14,29 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "DJFM Ukraine",
-                                  "MiX FM Ukraine",
-                                  "RADIO MARIA UKRAINE",
-                                  "Filadelfia MD",
+                                  "Malibuteam",
+                                  "Malijet",
+                                  "Radio Mali Mlin Dj Baja",
+                                  "Bygolly Old Time Radio",
+                                  "XFM MALIN",
+                                  "RADIO NIETA MALI",
+                                  "Radio ARC-EN CIEL MALI",
+                                  "Radio STUDIO TABALE MALI",
                               };
         string[] radioUrl = {
-                                "http://217.20.164.163:8010",
-                                "http://195.189.227.16:8192",
-                                "http://50.7.181.186:8022",
-                                "http://77.92.76.190:8750",
+                                "http://62.212.132.53:8354",
+                                "http://188.165.156.104:5800",
+                                "http://50.22.219.97:37683",
+                                "http://50.22.223.16:8608",
+                                "http://210.1.31.58:8688",
+                                "http://192.235.87.113:10882",
+                                "http://192.235.87.113:10688",
+                                "http://192.235.87.113:10902"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/3192589891";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/4669323093";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/6146056297";
+        public string adBanner = "ca-app-pub-7607380003153721/9099522699";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/1576255896";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/3052989091";
 
         public string[] returnTitle()
         {

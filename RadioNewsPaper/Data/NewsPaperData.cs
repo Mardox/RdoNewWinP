@@ -14,20 +14,22 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.theguardian.com/world/ukraine",
-                                 "http://www.ukrinform.ua/eng/",
-                                 "http://www.unian.info/",
-                                 "http://www.day.kiev.ua/en",
-                                 "http://www.ukrainianjournal.com/",
+                                 "http://allafrica.com/mali/",
+                                 "http://www.aljazeera.com/category/country/mali",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/mali/index.html",
+                                 "http://www.theguardian.com/world/mali",
+                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/mali/",
+                                 "http://www.breakingnews.com/topic/mali/"
                              };
 
 
         string[] NewsTitles = {
+                                         "All Africa",
+                                         "Aljazeera",
+                                         "New York Times",
                                          "The Guardian",
-                                         "Ukraine Form",
-                                         "Unian",
-                                         "Day",
-                                         "Ukrainuan Journal",
+                                         "The Telegraph",
+                                         "Breaking News"
                                      };
 
         public string[] returnNewsUrls()
