@@ -285,6 +285,7 @@ namespace RadioNewsPaper.Views
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
+                    NavigationService.GoBack();
                 }
             }
             else
