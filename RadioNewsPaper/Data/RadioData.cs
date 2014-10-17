@@ -14,29 +14,17 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "Top Albania Radio",
-                                  "RADIO MARIA ALBANIA",
-                                  "CityFM Radio Albania",
-                                  "Radio 7 Albania",
-                                  "Albania FM",
-                                  "Quran in Albanian by EDC",
-                                  "LAR : London Albanian Radio",
-                                  "Radio EnergyFM Albania - Shqip"
+                                  "DJ Zone - Snimkata Na No6tta - Kanal KOM - Plovdiv, Bulgaria",
+                                  "Bulgarian Christian Radio",
                               };
         string[] radioUrl = {
-                                "http://66.55.93.205:9078",
-                                "http://50.7.181.186:8008",
-                                "http://206.190.136.141:2872/Live",
-                                "http://50.117.8.242:5664/Live",
-                                "http://87.98.216.129:9812",
-                                "http://37.58.72.235:9996",
-                                "http://50.7.184.106:8701",
-                                "http://78.46.52.186:18122"
+                                "http://80.83.123.210:9986",
+                                "http://176.31.111.65:8126",
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/5587653092";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/7064386297";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/8541119493";
+        public string adBanner = "ca-app-pub-7607380003153721/6454963891";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/7931697098";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/9408430299";
 
         public string[] returnTitle()
         {

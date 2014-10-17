@@ -14,18 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.telegraph.co.uk/news/worldnews/europe/albania/",
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/albania/index.html",
-                                 "http://www.theguardian.com/world/albania",
-                                 "http://world.einnews.com/country/albania",
+                                 "http://www.bta.bg/en",
+                                 "http://www.telegraph.co.uk/news/worldnews/europe/bulgaria/",
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/bulgaria/index.html",
+                                 "http://www.theguardian.com/world/bulgaria",
+                                 "http://www.standartnews.com/english/"
                              };
 
 
         string[] NewsTitles = {
+                                         "Bulgarian News",
                                          "The Telegraph",
                                          "New York Times",
                                          "The Guardian",
-                                         "World News Report",
+                                         "Stand Art",
                                      };
 
         public string[] returnNewsUrls()
