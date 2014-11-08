@@ -129,7 +129,8 @@ namespace RadioNewsPaper.Views
         private int RandomNumber()
         {
             Random random = new Random();
-            return random.Next(0, 2);
+            return random.Next(0, 1);
+            //return 0;
         }
     }
 }

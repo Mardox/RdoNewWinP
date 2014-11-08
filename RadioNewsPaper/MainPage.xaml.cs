@@ -64,13 +64,13 @@ namespace RadioNewsPaper
             interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
             interstitialAd.LoadAd(adRequest);
 
-            //Interstitial two
-            interstitialAd2 = new InterstitialAd(rdata.detailInterstitial);
-            AdRequest adRequest2 = new AdRequest();
+            ////Interstitial two
+            //interstitialAd2 = new InterstitialAd(rdata.detailInterstitial);
+            //AdRequest adRequest2 = new AdRequest();
 
-            interstitialAd2.ReceivedAd += OnAdReceived2;
-            interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
-            interstitialAd2.LoadAd(adRequest2);
+            //interstitialAd2.ReceivedAd += OnAdReceived2;
+            //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
+            //interstitialAd2.LoadAd(adRequest2);
 
             AdView bannerAd = new AdView
             {
