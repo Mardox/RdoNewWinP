@@ -310,7 +310,8 @@ namespace RadioNewsPaper
         private int RandomNumber()
         {
             Random random = new Random();
-            return random.Next(0, 3);
+            //return random.Next(0, 3);
+            return 0;
         }
     }
 }

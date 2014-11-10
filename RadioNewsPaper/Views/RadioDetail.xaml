@@ -47,7 +47,7 @@
             </StackPanel>
                 <StackPanel Orientation="Vertical" Height="Auto">
                     <TextBlock Padding="2" Text="You are listening :" FontSize="30" Width="Auto"/>
-                    <TextBlock Padding="2" Foreground="RoyalBlue" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="30"/>
+                    <TextBlock Padding="2" Foreground="RoyalBlue" TextWrapping="Wrap" x:Name="artistName" Text="" FontSize="30" Height="50"/> 
                 </StackPanel>
 
                 <StackPanel Name="adPanel" Orientation="Vertical" Height="Auto">

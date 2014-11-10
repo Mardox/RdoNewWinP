@@ -280,10 +280,9 @@ namespace RadioNewsPaper.Views
             {
                 interstitialAd.ShowAd();
             }
-            else
-            {
-                NavigationService.GoBack();
-            }
+            
+            NavigationService.GoBack();
+            
         }
 
         #region Recording section
@@ -437,7 +436,8 @@ namespace RadioNewsPaper.Views
         private int RandomNumber()
         {
             Random random = new Random();
-            return random.Next(0, 2);
+            //return random.Next(0, 2);
+            return 0;
         }
     }
 }

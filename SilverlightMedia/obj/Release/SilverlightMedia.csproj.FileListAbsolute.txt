@@ -1,0 +1,4 @@
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\SilverlightMedia.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\Bin\Release\SilverlightMedia.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\obj\Release\SilverlightMedia.pdb

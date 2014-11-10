@@ -118,18 +118,19 @@ namespace RadioNewsPaper.Views
             if (RandomNumber() == 0)
             {
                 interstitialAd.ShowAd();
+
             }
-            else
-            {
-                NavigationService.GoBack();
-            }
+            
+            NavigationService.GoBack();
+            
         }
 
 
         private int RandomNumber()
         {
             Random random = new Random();
-            return random.Next(0, 2);
+            // return random.Next(0, 2);
+            return 0;
         }
     }
 }

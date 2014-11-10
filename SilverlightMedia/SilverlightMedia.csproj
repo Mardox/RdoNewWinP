@@ -121,24 +121,6 @@
   <ItemGroup>
     <None Include="Settings.StyleCop" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="GoogleAds, Version=6.5.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\windowsphone8\GoogleAds.dll</HintPath>
-    </Reference>
-    <Reference Include="Shoutcast.Sample.Phone">
-      <HintPath>..\..\..\..\ShoutcastMSS_v1_beta2 (2)\Src\Shoutcast.Sample.Phone\Bin\Debug\Shoutcast.Sample.Phone.dll</HintPath>
-    </Reference>
-    <Reference Include="Shoutcast.Sample.Phone.Background">
-      <HintPath>..\..\..\..\ShoutcastMSS_v1_beta2 (2)\Src\Shoutcast.Sample.Phone.Background\Bin\Debug\Shoutcast.Sample.Phone.Background.dll</HintPath>
-    </Reference>
-    <Reference Include="Shoutcast.Sample.Phone.Background.PlaybackAgent">
-      <HintPath>..\..\..\..\ShoutcastMSS_v1_beta2 (2)\Src\Shoutcast.Sample.Phone.Background\Bin\Debug\Shoutcast.Sample.Phone.Background.PlaybackAgent.dll</HintPath>
-    </Reference>
-    <Reference Include="Silverlight.Media.Phone">
-      <HintPath>..\..\..\..\ShoutcastMSS_v1_beta2 (2)\Src\Silverlight.Media.Shoutcast\Bin\Debug\Silverlight.Media.Phone.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <ProjectExtensions />
