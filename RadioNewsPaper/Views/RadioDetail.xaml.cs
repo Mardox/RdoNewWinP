@@ -70,7 +70,7 @@ namespace RadioNewsPaper.Views
 
         void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
         {
-            NavigationService.GoBack();
+
         }
 
         private void OnAdReceived(object sender, AdEventArgs e)
@@ -109,7 +109,7 @@ namespace RadioNewsPaper.Views
             Debug.WriteLine("Received second ad");
             if (RandomNumber() == 0)
             {
-                interstitialAd2.ShowAd();
+               // interstitialAd2.ShowAd();
             }
         }
 
@@ -276,14 +276,8 @@ namespace RadioNewsPaper.Views
         {
             IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
             IsolatedStorageSettings.ApplicationSettings.Save();
-            if (RandomNumber() == 0)
-            {
-                interstitialAd.ShowAd();
-            }
-            else
-            {
-                NavigationService.GoBack();
-            }
+            interstitialAd.ShowAd();
+            NavigationService.GoBack();
         }
 
         #region Recording section

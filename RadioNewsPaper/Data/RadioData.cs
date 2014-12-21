@@ -32,9 +32,9 @@ namespace RadioNewsPaper.Data
                                 "http://198.178.123.20:8222"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/4788904298";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/6265637496";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/7742370691";
+        public string adBanner = "ca-app-pub-7607380003153721/3460590695";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/6414057098";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/4937323893";
 
         public string[] returnTitle()
         {
