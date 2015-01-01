@@ -14,23 +14,23 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "RADIO MARIA UGANDA",
-                                  "Radio Uganda Boston",
-                                  "Yo Voice &  Beyond",
-                                  "Ssuubi FM",
-                                  "Kubutaka Radio"
+                                  "Sahara Radio",
+                                  "Radio Dzair Sahara",
+                                  "SAHARA TERCINTA",
+                                  "Frog Town",
+                                  "Radio Dzair"
                               };
         string[] radioUrl = {
-                                "http://50.7.181.186:8052",
-                                "http://50.7.70.58:8651",
-                                "http://50.7.70.58:8653",
-                                "http://50.22.212.195:8181",
-                                "http://198.178.123.5:8756"
+                                "http://38.96.148.26:9896",
+                                "http://188.165.242.25:8026/stream",
+                                "http://199.167.134.163:7044",
+                                "http://85.25.73.102:10958",
+                                "http://188.165.242.25:8026/stream2"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/1666983093";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/3143716297";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/4620449492";
+        public string adBanner = "ca-app-pub-7607380003153721/9050649092";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/1527382296";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/3004115497";
 
         public string[] returnTitle()
         {

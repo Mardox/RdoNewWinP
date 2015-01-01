@@ -14,22 +14,18 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.monitor.co.ug/",
-                                 "http://www.newvision.co.ug/",
-                                 "http://www.redpepper.co.ug/",
-                                 "http://www.bukedde.co.ug/",
-                                 "http://www.observer.ug/",
-                                 "http://allafrica.com/uganda/"
+                                 "http://saharareporters.com/News",
+                                 "http://saharareporters.com/reports",
+                                 "http://saharareporters.com/breaking-news",
+                                 "http://www.latestnigeriannews.com/latest-news/saharareporters/"
                              };
 
 
         string[] NewsTitles = {
-                                         "Daily Monitor",
-                                         "New Vision",
-                                         "Red Paper",
-                                         "Bukedde",
-                                         "The Observer",
-                                         "All Africa"
+                                         "SR News",
+                                         "SR News Reports",
+                                         "Breaking News",
+                                         "Reporters Headline"
                                      };
 
         public string[] returnNewsUrls()
