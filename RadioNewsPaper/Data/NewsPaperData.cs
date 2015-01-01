@@ -14,22 +14,20 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://www.ghanaweb.com",
-                                 "http://www.peacefmonline.com/",
-                                 "http://vibeghana.com/",
-                                 "http://www.modernghana.com/",
-                                 "http://www.ghananewsagency.org/",
-                                 "http://www.ghanareview.com/Restyle/"
+                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/togo/index.html",
+                                 "http://www.bbc.com/news/world-africa-14106781",
+                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/togo/",
+                                 "http://allafrica.com/togo/",
+                                 "http://www.onlinenewspapers.com/togo.htm"
                              };
 
 
         string[] NewsTitles = {
-                                         "Ghana",
-                                         "Peace FM Online",
-                                         "Vibe Ghana",
-                                         "Modern Ghana",
-                                         "Ghana News Agency",
-                                         "Ghana Review International"
+                                         "NY Togo",
+                                         "BBC News",
+                                         "Telegraph",
+                                         "All Africa",
+                                         "Online Togo"
                                      };
 
         public string[] returnNewsUrls()
