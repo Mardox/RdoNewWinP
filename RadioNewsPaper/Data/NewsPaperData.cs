@@ -14,20 +14,22 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://topics.nytimes.com/top/news/international/countriesandterritories/togo/index.html",
-                                 "http://www.bbc.com/news/world-africa-14106781",
-                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/togo/",
-                                 "http://allafrica.com/togo/",
-                                 "http://www.onlinenewspapers.com/togo.htm"
+                                 "http://allafrica.com/angola/",
+                                 "http://www.portalangop.co.ao/angola/en_us/",
+                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/angola/",
+                                 "http://www.bbc.com/news/world-africa-13036732",
+                                 "http://www.theguardian.com/world/angola",
+                                 "http://www.onlinenewspapers.com/angola.htm"
                              };
 
 
         string[] NewsTitles = {
-                                         "NY Togo",
-                                         "BBC News",
-                                         "Telegraph",
                                          "All Africa",
-                                         "Online Togo"
+                                         "Angola Press",
+                                         "Angola News",
+                                         "BBC News",
+                                         "Angola Gardian",
+                                         "Angolan"
                                      };
 
         public string[] returnNewsUrls()

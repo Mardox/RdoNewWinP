@@ -14,27 +14,27 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "RADIO MARIA TOGO",
-                                  "Radio Degnigban",
-                                  "RADIO MERVEILLE Togo",
-                                  "TOGO LIBRE",
-                                  "RADIO TOGO KTO",
-                                  "PROTOGON HARDSTYLE ",
-                                  "Radio LOME TOGO"
+                                  "RFDI",
+                                  "Radio Jet7 Angola",
+                                  "Media d'Afrique",
+                                  "Rdio Marimba",
+                                  "RADIO DORILAND KIDS",
+                                  "Radio Gospel Angola",
+                                  "Ministerio Shalom"
                               };
         string[] radioUrl = {
-                                "http://50.7.181.186:8050",
-                                "http://198.27.80.37:5546/stream",
-                                "http://174.123.20.131:8240",
-                                "http://192.235.87.113:10720",
-                                "http://listen.radionomy.com/RADIOTOGOKTO",
-                                "http://37.59.20.121:8002/test.aac",
-                                "http://192.235.87.113:11560"
+                                "http://198.178.123.8:8324",
+                                "http://50.7.77.179:8090",
+                                "http://195.154.240.161:8022",
+                                "http://192.184.9.79:8094",
+                                "http://85.25.16.7:8070",
+                                "http://78.129.163.73:21877",
+                                "http://209.105.232.220:8256"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/8389671091";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/9866404295";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/2343137494";
+        public string adBanner = "ca-app-pub-7607380003153721/4760050292";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/6236783496";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/7713516692";
 
         public string[] returnTitle()
         {
