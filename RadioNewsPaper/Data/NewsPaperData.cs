@@ -14,22 +14,22 @@ namespace RadioNewsPaper.Data
         }
 
         string[] NewsUrl =   {
-                                 "http://allafrica.com/angola/",
-                                 "http://www.portalangop.co.ao/angola/en_us/",
-                                 "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/angola/",
-                                 "http://www.bbc.com/news/world-africa-13036732",
-                                 "http://www.theguardian.com/world/angola",
-                                 "http://www.onlinenewspapers.com/angola.htm"
+                                 "http://www.monitor.co.ug/",
+                                 "http://www.newvision.co.ug/",
+                                 "http://www.redpepper.co.ug/",
+                                 "http://www.bukedde.co.ug/",
+                                 "http://www.observer.ug/",
+                                 "http://allafrica.com/uganda/"
                              };
 
 
         string[] NewsTitles = {
-                                         "All Africa",
-                                         "Angola Press",
-                                         "Angola News",
-                                         "BBC News",
-                                         "Angola Gardian",
-                                         "Angolan"
+                                         "Daily Monitor",
+                                         "New Vision",
+                                         "Red Paper",
+                                         "Bukedde",
+                                         "The Observer",
+                                         "All Africa"
                                      };
 
         public string[] returnNewsUrls()

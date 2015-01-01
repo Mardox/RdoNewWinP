@@ -14,27 +14,23 @@ namespace RadioNewsPaper.Data
         }
 
         string[] radioTitle = {
-                                  "RFDI",
-                                  "Radio Jet7 Angola",
-                                  "Media d'Afrique",
-                                  "Rdio Marimba",
-                                  "RADIO DORILAND KIDS",
-                                  "Radio Gospel Angola",
-                                  "Ministerio Shalom"
+                                  "RADIO MARIA UGANDA",
+                                  "Radio Uganda Boston",
+                                  "Yo Voice &  Beyond",
+                                  "Ssuubi FM",
+                                  "Kubutaka Radio"
                               };
         string[] radioUrl = {
-                                "http://198.178.123.8:8324",
-                                "http://50.7.77.179:8090",
-                                "http://195.154.240.161:8022",
-                                "http://192.184.9.79:8094",
-                                "http://85.25.16.7:8070",
-                                "http://78.129.163.73:21877",
-                                "http://209.105.232.220:8256"
+                                "http://50.7.181.186:8052",
+                                "http://50.7.70.58:8651",
+                                "http://50.7.70.58:8653",
+                                "http://50.22.212.195:8181",
+                                "http://198.178.123.5:8756"
                             };
 
-        public string adBanner = "ca-app-pub-7607380003153721/4760050292";
-        public string homeInterstitial = "ca-app-pub-7607380003153721/6236783496";
-        public string detailInterstitial = "ca-app-pub-7607380003153721/7713516692";
+        public string adBanner = "ca-app-pub-7607380003153721/1666983093";
+        public string homeInterstitial = "ca-app-pub-7607380003153721/3143716297";
+        public string detailInterstitial = "ca-app-pub-7607380003153721/4620449492";
 
         public string[] returnTitle()
         {
