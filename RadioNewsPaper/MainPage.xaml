@@ -1,5 +1,4 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="RadioNewsPaper.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -9,30 +8,49 @@
     xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
     xmlns:ctrl="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:WindowsPhone8="clr-namespace:Microsoft.AdMediator.WindowsPhone8;assembly=Microsoft.AdMediator.WindowsPhone8"
+    x:Class="RadioNewsPaper.MainPage"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
     <phone:PhoneApplicationPage.Resources>
         <Storyboard x:Name="RotateCircle" RepeatBehavior="Forever">
             <DoubleAnimation 
-                Duration="0:0:4" To="360"
-                Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"
-                Storyboard.TargetName="ReelGrid"
-                d:IsOptimized="True" />
+        		Duration="0:0:4" To="360"
+        		Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"
+        		Storyboard.TargetName="ReelGrid"
+        		d:IsOptimized="True" />
         </Storyboard>
     </phone:PhoneApplicationPage.Resources>
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True"
+                              IsVisible="True"
+                              Mode="Default">
+            <shell:ApplicationBarIconButton IconUri="/Assets/appbar.music.wifi.png"
+                                            Click="nowPlaying_Click"
+                                            Text="now playing" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
         <Image Source="/Assets/background.jpg" Stretch="UniformToFill" />
         <!--Pivot Control-->
-        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
+        <phone:Pivot Title="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <!--Pivot item one-->
             <phone:PivotItem Header="radio">
                 <!--Double line list with text wrapping-->
@@ -89,20 +107,20 @@
             <phone:PivotItem Header="my recordings">
                 <!--Double line list with text wrapping-->
                 <phone:LongListSelector x:Name="RecList" Margin="0,0,-12,0" ItemsSource="{Binding RecItems}" SelectionChanged="RadioRecordingItem_Tap">
-                    
+
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Orientation="Horizontal">
-                                <Image Source="/Assets/ApplicationIcon.png" Height="100" Width="100"/>
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="{Binding RecTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding RecTime}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
                                 <toolkit:ContextMenuService.ContextMenu>
                                     <toolkit:ContextMenu>
                                         <toolkit:MenuItem Header="delete" Click="Delete_Click"/>
                                     </toolkit:ContextMenu>
                                 </toolkit:ContextMenuService.ContextMenu>
+                                <Image Source="/Assets/ApplicationIcon.png" Height="100" Width="100"/>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding RecTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                    <TextBlock Text="{Binding RecTime}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                </StackPanel>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
@@ -110,7 +128,9 @@
             </phone:PivotItem>
 
             <!--<phone:PivotItem Header="more">
-                --><!--Double line list with text wrapping--><!--
+                -->
+            <!--Double line list with text wrapping-->
+            <!--
                 <phone:LongListSelector x:Name="MoreList" ItemsSource="{Binding MoreItems}" Margin="0,0,-12,0" SelectionChanged="MoreItem_Tap">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
@@ -118,7 +138,9 @@
                                 <Image Source="{Binding ImageUrl}" Height="100" Width="100"/>
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Text="{Binding MoreItemTitle}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    --><!--<TextBlock Text="{Binding StoreUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>--><!--
+                                    -->
+            <!--<TextBlock Text="{Binding StoreUrl}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+            <!--
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>
@@ -127,58 +149,58 @@
             </phone:PivotItem>-->
 
         </phone:Pivot>
-        
+
         <Popup x:Name="recordPlayPopUp" IsOpen="False">
             <Border  BorderThickness="8" BorderBrush="#CCCCCC" Width="300" Height="400" Margin="100,200" Background="{StaticResource PhoneBackgroundBrush}" >
                 <StackPanel Background="Transparent" >
                     <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closePopupTap">
                         <Ellipse Fill="Red"/>
                         <TextBlock Text="X" Foreground="White"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center" 
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center" 
                                        />
                     </Grid>
 
                     <StackPanel Orientation="Vertical">
 
                         <Grid Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20"
-                               Name="ReelGrid"
-                      RenderTransformOrigin=".5, .5">
+							x:Name="ReelGrid"
+							RenderTransformOrigin=".5, .5">
                             <Grid.RenderTransform>
                                 <CompositeTransform />
                             </Grid.RenderTransform>
                             <Ellipse Fill="{StaticResource PhoneAccentBrush}" />
 
                             <Ellipse 
-                        Fill="{StaticResource PhoneForegroundBrush}"
-                        Height="20"
-                        Width="20" />
+								Fill="{StaticResource PhoneForegroundBrush}"
+								Height="20"
+								Width="20" />
                             <Rectangle 
-                        Fill="{StaticResource PhoneForegroundBrush}"
-                        Height="20"
-                        Width="20"
-                        VerticalAlignment="Top"
-                        Margin="0,20,0,0" />
+								Fill="{StaticResource PhoneForegroundBrush}"
+								Height="20"
+								Width="20"
+								VerticalAlignment="Top"
+								Margin="0,20,0,0" />
                             <Rectangle 
-                        Fill="{StaticResource PhoneForegroundBrush}"
-                        Height="20"
-                        Width="20"
-                        VerticalAlignment="Bottom"
-                        Margin="0,0,0,20" />
+								Fill="{StaticResource PhoneForegroundBrush}"
+								Height="20"
+								Width="20"
+								VerticalAlignment="Bottom"
+								Margin="0,0,0,20" />
                             <Rectangle 
-                        Fill="{StaticResource PhoneForegroundBrush}"
-                        Height="20"
-                        Width="20"
-                        HorizontalAlignment="Left"
-                        Margin="20,0,0,0" />
+								Fill="{StaticResource PhoneForegroundBrush}"
+								Height="20"
+								Width="20"
+								HorizontalAlignment="Left"
+								Margin="20,0,0,0" />
                             <Rectangle 
-                        Fill="{StaticResource PhoneForegroundBrush}"
-                        Height="20"
-                        Width="20"
-                        HorizontalAlignment="Right"
-                        Margin="0,0,20,0" />
+								Fill="{StaticResource PhoneForegroundBrush}"
+								Height="20"
+								Width="20"
+								HorizontalAlignment="Right"
+								Margin="0,0,20,0" />
                         </Grid>
-                        
+
                         <!--<Button Name="playButton" Content="Play" Height="100" Width="150" Click="recPlayClick" />-->
                         <TextBlock Text="Playing" FontSize="36" Height="100" Width="150" Padding="20" Foreground="{StaticResource PhoneForegroundBrush}"/>
 
@@ -186,23 +208,16 @@
                 </StackPanel>
             </Border>
         </Popup>
-        <MediaElement Name="playRecAudio" Volume="1" AutoPlay="False"/>
-        
+        <WindowsPhone8:AdMediatorControl x:Name="AdMediator_A18543" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-2EA1A9F5-C32A-40E6-8236-B5ECD9F5401F" VerticalAlignment="Bottom" Width="480"/>
+
+        <MediaElement x:Name="playRecAudio" Volume="1" AutoPlay="False"/>
+
         <ctrl:FeedbackOverlay x:Name="FeedbackOverlay"
-                FeedbackTo="{Binding Path=LocalizedResources.Email, Source={StaticResource LocalizedStrings}}"
-                ApplicationName="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-                CompanyName="{Binding Path=LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"/>
+			ctrl:FeedbackOverlay.FeedbackTo="{Binding LocalizedResources.Email, Source={StaticResource LocalizedStrings}}"
+			ctrl:FeedbackOverlay.ApplicationName="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+			ctrl:FeedbackOverlay.CompanyName="{Binding LocalizedResources.CompanyName, Source={StaticResource LocalizedStrings}}"/>
 
+       
     </Grid>
-
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsMenuEnabled="True"
-                              IsVisible="True"
-                              Mode="Default">
-            <shell:ApplicationBarIconButton IconUri="/Assets/appbar.music.wifi.png"
-                                            Click="nowPlaying_Click"
-                                            Text="now playing" />
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

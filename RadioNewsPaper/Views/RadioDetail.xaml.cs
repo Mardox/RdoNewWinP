@@ -35,6 +35,9 @@ namespace RadioNewsPaper.Views
         public RadioDetail()
         {
             InitializeComponent();
+
+            GoogleAnalytics.EasyTracker.GetTracker().SendView("RadioPlayer");
+
             rData = new RadioData();
             radioTitles = rData.returnTitle();
             radioUris = rData.returnUrl();

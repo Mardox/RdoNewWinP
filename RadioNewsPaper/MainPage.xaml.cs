@@ -19,6 +19,7 @@ using Microsoft.Phone.BackgroundAudio;
 using Microsoft.Phone.Tasks;
 using Newtonsoft.Json;
 using Parse;
+using Microsoft.AdMediator;
 
 
 namespace RadioNewsPaper
@@ -43,32 +44,61 @@ namespace RadioNewsPaper
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
 
+            AdMediator_A18543.AdSdkError += AdMediator_Bottom_AdError;
+            AdMediator_A18543.AdMediatorFilled += AdMediator_Bottom_AdFilled;
+            AdMediator_A18543.AdMediatorError += AdMediator_Bottom_AdMediatorError;
+            AdMediator_A18543.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
+
+            AdMediator_A18543.Disable();
+        }
+
+
+
+        void AdMediator_Bottom_AdSdkEvent(object sender, Microsoft.AdMediator.Core.Events.AdSdkEventArgs e)
+        {
+            Debug.WriteLine("AdSdk event {0} by {1}", e.EventName, e.Name);}
+
+        void AdMediator_Bottom_AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
+        {
+            Debug.WriteLine("AdMediatorError:" + e.Error + " " + e.ErrorCode );
+            // if (e.ErrorCode == AdMediatorErrorCode.NoAdAvailable)
+            // AdMediator will not show an ad for this mediation cycle
+        }
+
+        void AdMediator_Bottom_AdFilled(object sender, Microsoft.AdMediator.Core.Events.AdSdkEventArgs e)
+        {
+            Debug.WriteLine("AdFilled:" + e.Name);
+        }
+
+        void AdMediator_Bottom_AdError(object sender, Microsoft.AdMediator.Core.Events.AdFailedEventArgs e)
+        {
+            Debug.WriteLine("AdSdkError by {0} ErrorCode: {1} ErrorDescription: {2} Error: {3}", e.Name, e.ErrorCode, e.ErrorDescription, e.Error);
+        }
+
+
+
+        //private async void loadData()
+        //{
+
+
             //var testObject = new ParseObject("Data");
             //testObject["country"] = "Ghana";
             //testObject["type"] = "Radio";
             //testObject["name"] = "HIGHLIFE RADIO - GHANA";
             //testObject["data"] = "http://173.192.205.185:80";
             //testObject.SaveAsync();
-            loadData();
-           
-        }
-
-        private async void loadData()
-        {
             //ParseQuery<ParseObject> query = ParseObject.GetQuery("Data");
             //ParseObject data = await query.GetAsync("uTZ039aBk1");
             //string url = data.Get<string>("data");
             //Debug.WriteLine(data);
 
-            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana");
-            IEnumerable<ParseObject> results = await stations.FindAsync();
+            //var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana");
+            //IEnumerable<ParseObject> results = await stations.FindAsync();
+            //ParseObject item = results.ElementAt(1);
 
-            ParseObject item = results.ElementAt(1);
+            //Debug.WriteLine(item["name"]);
 
-
-            Debug.WriteLine(item["name"]);
-
-        }
+        //}
 
         void playRecAudio_MediaEnded(object sender, RoutedEventArgs e)
         {
@@ -84,6 +114,8 @@ namespace RadioNewsPaper
         // Soon after loading Main Page
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+
+            GoogleAnalytics.EasyTracker.GetTracker().SendView("MainPage");
             rdata = new RadioData();
             interstitialAd = new InterstitialAd(rdata.homeInterstitial);
             AdRequest adRequest = new AdRequest();
@@ -100,19 +132,19 @@ namespace RadioNewsPaper
             //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
             //interstitialAd2.LoadAd(adRequest2);
 
-            AdView bannerAd = new AdView
-            {
-                Format = AdFormats.Banner,
-                AdUnitID = rdata.adBanner
-            };
+            //AdView bannerAd = new AdView
+            //{
+            //    Format = AdFormats.Banner,
+            //    AdUnitID = rdata.adBanner
+            //};
 
 
-            AdRequest BanneradRequest = new AdRequest();
-            // Assumes we've defined a Grid that has a name
-            // directive of ContentPanel.
-            LayoutRoot.Children.Add(bannerAd);
-            bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
-            bannerAd.LoadAd(BanneradRequest);
+            //AdRequest BanneradRequest = new AdRequest();
+            //// Assumes we've defined a Grid that has a name
+            //// directive of ContentPanel.
+            //LayoutRoot.Children.Add(bannerAd);
+            //bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
+            //bannerAd.LoadAd(BanneradRequest);
         }
 
         #region Ad Handlers
