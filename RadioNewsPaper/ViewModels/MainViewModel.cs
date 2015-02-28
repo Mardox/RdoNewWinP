@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using Parse;
 using System.Collections;
 using System.Linq;
+using System.Net;
+using System.IO;
 
 namespace RadioNewsPaper.ViewModels
 {
@@ -140,8 +142,8 @@ namespace RadioNewsPaper.ViewModels
             for (int i = 0; i < results.Count() ; i++)
             {
                 ParseObject item = results.ElementAt(i);
-  
                 this.RadioItems.Add(new RadioViewModel() { RadioTitle = item["name"].ToString(), RadioUrl = item["data"].ToString() });
+
             }
 
             //Items = new ObservableCollection<ItemViewModel>();
@@ -153,6 +155,8 @@ namespace RadioNewsPaper.ViewModels
             //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
             //}
         }
+
+
 
         async void LoadNewsPaperData()
         {

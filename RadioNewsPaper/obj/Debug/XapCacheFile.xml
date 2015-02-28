@@ -1,8 +1,8 @@
-﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="28/02/2015 10:36:55 PM">
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="28/02/2015 10:36:53 PM" />
+﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="28/02/2015 11:29:27 PM">
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="28/02/2015 11:28:08 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21/09/2014 4:11:01 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\appbar.music.wifi.png" archivePath="Assets\appbar.music.wifi.png" lastWriteTime="10/11/2014 6:22:15 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\background.jpg" archivePath="Assets\background.jpg" lastWriteTime="10/11/2014 6:22:15 PM" />
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\background.jpg" archivePath="Assets\background.jpg" lastWriteTime="28/02/2015 11:29:19 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\favs.png" archivePath="Assets\favs.png" lastWriteTime="10/11/2014 6:22:15 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\microphone.png" archivePath="Assets\microphone.png" lastWriteTime="10/11/2014 6:22:15 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\MoreIcons\ghanamovies.png" archivePath="Assets\MoreIcons\ghanamovies.png" lastWriteTime="10/11/2014 7:05:41 PM" />
@@ -46,5 +46,5 @@
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="24/09/2014 10:03:06 AM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\GPL.txt" archivePath="GPL.txt" lastWriteTime="22/09/2014 4:50:39 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\LICENSE.txt" archivePath="LICENSE.txt" lastWriteTime="22/09/2014 4:50:39 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="28/02/2015 10:36:55 PM" />
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="28/02/2015 11:29:26 PM" />
 </xapCache>
