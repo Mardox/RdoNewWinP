@@ -10,6 +10,7 @@ using RadioNewsPaper.Resources;
 using RadioNewsPaper.ViewModels;
 using Parse;
 using System.Xml;
+using RadioNewsPaper.Data;
 
 namespace RadioNewsPaper
 {
@@ -80,6 +81,9 @@ namespace RadioNewsPaper
             //Init Parse
             this.InitializeComponent();
             ParseClient.Initialize("B4wG1R2PtmR0lQ740PtfDy6YpmzyhsuMM4kYZw9m", "CZZ36tHGiTtlEzoqIMxzKGNpCjfhFrmGbT36tGSg");
+
+            
+
         }
 
         // Code to execute when the application is launching (eg, from Start)

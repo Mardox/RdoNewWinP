@@ -26,7 +26,7 @@ namespace RadioNewsPaper
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private RadioData rdata;
+
         private InterstitialAd interstitialAd, interstitialAd2;
         int popupCount = 1;
 
@@ -49,7 +49,7 @@ namespace RadioNewsPaper
             AdMediator_A18543.AdMediatorError += AdMediator_Bottom_AdMediatorError;
             AdMediator_A18543.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
 
-            AdMediator_A18543.Disable();
+            //AdMediator_A18543.Disable();
         }
 
 
@@ -116,8 +116,7 @@ namespace RadioNewsPaper
         {
 
             GoogleAnalytics.EasyTracker.GetTracker().SendView("MainPage");
-            rdata = new RadioData();
-            interstitialAd = new InterstitialAd(rdata.homeInterstitial);
+            interstitialAd = new InterstitialAd(RadioData.homeInterstitial);
             AdRequest adRequest = new AdRequest();
 
             interstitialAd.ReceivedAd += OnAdReceived;
@@ -254,8 +253,8 @@ namespace RadioNewsPaper
         }
 
 
-        private string[] radioTitles;
-        private string[] radioUrls;
+        List<string> radioTitles = new List<string>();
+        List<string> radioUrls = new List<string>();
         private void favListLoaded(object sender, RoutedEventArgs e)
         {
 
@@ -266,12 +265,11 @@ namespace RadioNewsPaper
                 {
                     App.ViewModel.FavItems.Clear();
                     string[] tempFav = fav.Split(',');
-                    RadioData rData = new RadioData();
-                    radioTitles = rData.returnTitle();
-                    radioUrls = rData.returnUrl();
+                    radioTitles = RadioData.returnTitle();
+                    radioUrls = RadioData.returnUrl();
                     foreach (string favItem in tempFav)
                     {
-                        for (int i = 0; i < radioTitles.Length; i++)
+                        for (int i = 0; i < radioTitles.Count(); i++)
                         {
                             if (favItem == radioTitles[i])
                             {

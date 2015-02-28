@@ -25,9 +25,9 @@ namespace RadioNewsPaper.Views
 {
     public partial class RadioDetail : PhoneApplicationPage
     {
-        public string[] radioTitles;
-        public string[] radioUris;
-        RadioData rData;
+        List<string> radioTitles = new List<string>();
+        List<string> radioUrls = new List<string>();
+
         int index, forewardCount = 1;
         private InterstitialAd interstitialAd, interstitialAd2;
 
@@ -38,12 +38,11 @@ namespace RadioNewsPaper.Views
 
             GoogleAnalytics.EasyTracker.GetTracker().SendView("RadioPlayer");
 
-            rData = new RadioData();
-            radioTitles = rData.returnTitle();
-            radioUris = rData.returnUrl();
+            radioTitles = RadioData.returnTitle();
+            radioUrls = RadioData.returnUrl();
 
             Loaded += RadioDetail_Loaded;
-            interstitialAd = new InterstitialAd(rData.detailInterstitial);
+            interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
             AdRequest adRequest = new AdRequest();
 
             interstitialAd.ReceivedAd += OnAdReceived;
@@ -51,12 +50,12 @@ namespace RadioNewsPaper.Views
             interstitialAd.LoadAd(adRequest);
 
             //Interstitial two
-            interstitialAd2 = new InterstitialAd(rData.detailInterstitial);
-            AdRequest adRequest2 = new AdRequest();
+            //interstitialAd2 = new InterstitialAd(rData.detailInterstitial);
+            //AdRequest adRequest2 = new AdRequest();
 
-            interstitialAd2.ReceivedAd += OnAdReceived2;
-            interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
-            interstitialAd2.LoadAd(adRequest2);
+            //interstitialAd2.ReceivedAd += OnAdReceived2;
+            //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
+            //interstitialAd2.LoadAd(adRequest2);
 
             //AdView bannerAd = new AdView
             //{
@@ -267,7 +266,7 @@ namespace RadioNewsPaper.Views
         void Play()
         {
             bufferingProgress.IsIndeterminate = true;
-            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUris[index], EnabledPlayerControls.Pause);
+            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUrls[index], EnabledPlayerControls.Pause);
             //Volume is by default set to the Maximum
             BackgroundAudioPlayer.Instance.Volume = 1.0d;
             IsolatedStorageSettings.ApplicationSettings["isPLaying"] = true;

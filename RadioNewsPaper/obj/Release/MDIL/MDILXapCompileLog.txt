@@ -1,5 +1,7 @@
 Compile filter specified.  Only the following files will be processed:
 c:\users\hooman\desktop\windows apps\rdonewwinp\radionewspaper\bin\release\mdil\radionewspaper.dll
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\AdDuplex.WindowsPhone.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\AdDuplex.WindowsPhone.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Coding4Fun.Toolkit.Audio.dll
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Coding4Fun.Toolkit.Audio.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Coding4Fun.Toolkit.Controls.dll
@@ -10,6 +12,38 @@ Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Coding4Fun.Toolkit.Storage.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\GoogleAds.dll
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\GoogleAds.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\GoogleAnalytics.Core.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\GoogleAnalytics.Core.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\GoogleAnalytics.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\GoogleAnalytics.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Inneractive.Ad.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Inneractive.Ad.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.Core.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.Core.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.AdDuplex.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.AdDuplex.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.GoogleAdMob.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.GoogleAdMob.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.InMobi.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.InMobi.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.Inneractive.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.Inneractive.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.MicrosoftAdvertising.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.MicrosoftAdvertising.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.MobFox.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.MobFox.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.Smaato.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.AdMediator.WindowsPhone8.Smaato.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Advertising.Mobile.Common.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Advertising.Mobile.Common.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Advertising.Mobile.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Advertising.Mobile.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Advertising.Mobile.UI.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Advertising.Mobile.UI.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Phone.Controls.Maps.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Phone.Controls.Maps.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Phone.Controls.Toolkit.dll
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Microsoft.Phone.Controls.Toolkit.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\Newtonsoft.Json.dll
@@ -32,5 +66,13 @@ Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\RateMyApp.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\SilverlightMedia.dll
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\SilverlightMedia.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\SOMAWP8.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\SOMAWP8.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\System.Net.Http.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\System.Net.Http.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\System.Net.Http.Extensions.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\System.Net.Http.Extensions.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\System.Net.Http.Primitives.dll
+File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\System.Net.Http.Primitives.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\WMAppManifest.xml
 File C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\MDIL\WMAppManifest.xml is not in the compile filter. Skipping.

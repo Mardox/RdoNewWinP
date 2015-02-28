@@ -19,7 +19,7 @@ namespace RadioNewsPaper.Views
     {
         string index = "";
         NewsPaperData newsData;
-        RadioData rData;
+       // RadioData rData;
         private InterstitialAd interstitialAd, interstitialAd2;
 
         public NewsPaperDetail()
@@ -30,7 +30,7 @@ namespace RadioNewsPaper.Views
 
             GoogleAnalytics.EasyTracker.GetTracker().SendView("NewsPaper");
 
-            rData = new RadioData();
+            //rData = new RadioData();
             //AdView bannerAd = new AdView
             //{
             //    Format = AdFormats.Banner,
@@ -45,7 +45,7 @@ namespace RadioNewsPaper.Views
 
             Loaded += NewsPaperDetail_Loaded;
 
-            interstitialAd = new InterstitialAd(rData.detailInterstitial);
+            interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
             AdRequest adRequest = new AdRequest();
 
             interstitialAd.ReceivedAd += OnAdReceived;
