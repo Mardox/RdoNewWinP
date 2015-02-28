@@ -55,17 +55,17 @@ namespace RadioNewsPaper.Views
             interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
             interstitialAd2.LoadAd(adRequest2);
 
-            AdView bannerAd = new AdView
-            {
-                Format = AdFormats.Banner,
-                AdUnitID = rData.adBanner
-            };
-            AdRequest BanneradRequest = new AdRequest();
-            // Assumes we've defined a Grid that has a name
-            // directive of ContentPanel.
-            adPanel.Children.Add(bannerAd);
-            bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
-            bannerAd.LoadAd(BanneradRequest);
+            //AdView bannerAd = new AdView
+            //{
+            //    Format = AdFormats.Banner,
+            //    AdUnitID = rData.adBanner
+            //};
+            //AdRequest BanneradRequest = new AdRequest();
+            //// Assumes we've defined a Grid that has a name
+            //// directive of ContentPanel.
+            //adPanel.Children.Add(bannerAd);
+            //bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
+            //bannerAd.LoadAd(BanneradRequest);
         }
 
         void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)

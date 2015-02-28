@@ -7,6 +7,9 @@ using RadioNewsPaper.Views;
 using System.IO.IsolatedStorage;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Parse;
+using System.Collections;
+using System.Linq;
 
 namespace RadioNewsPaper.ViewModels
 {
@@ -128,28 +131,52 @@ namespace RadioNewsPaper.ViewModels
             
         }
 
-        void LoadRadioData()
+        async void LoadRadioData()
         {
-            //Items = new ObservableCollection<ItemViewModel>();
-            RadioData rData = new RadioData();
-            radioTitles = rData.returnTitle();
-            radioUrls = rData.returnUrl();
-            for (int i = 0; i < radioTitles.Length; i++)
+
+            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana").WhereEqualTo("type", "Radio");
+            IEnumerable<ParseObject> results = await stations.FindAsync();
+
+            for (int i = 0; i < results.Count() ; i++)
             {
-                this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
+                ParseObject item = results.ElementAt(i);
+  
+                this.RadioItems.Add(new RadioViewModel() { RadioTitle = item["name"].ToString(), RadioUrl = item["data"].ToString() });
             }
+
+            //Items = new ObservableCollection<ItemViewModel>();
+            //RadioData rData = new RadioData();
+            //radioTitles = rData.returnTitle();
+            //radioUrls = rData.returnUrl();
+            //for (int i = 0; i < radioTitles.Length; i++)
+            //{
+            //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
+            //}
         }
 
-        void LoadNewsPaperData()
+        async void LoadNewsPaperData()
         {
-            Items = new ObservableCollection<ItemViewModel>();
-            NewsPaperData nData = new NewsPaperData();
-            newsTitles = nData.returnNewsTitles();
-            newsUrls = nData.returnNewsUrls();
-            for (int i = 0; i < newsTitles.Length; i++)
+
+
+            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana").WhereEqualTo("type", "News");
+            IEnumerable<ParseObject> results = await stations.FindAsync();
+
+            for (int i = 0; i < results.Count(); i++)
             {
-                this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = newsTitles[i], NewsUrl = newsUrls[i] });
+                ParseObject item = results.ElementAt(i);
+
+                this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = item["name"].ToString(), NewsUrl = item["data"].ToString() });
             }
+
+
+            //Items = new ObservableCollection<ItemViewModel>();
+            //NewsPaperData nData = new NewsPaperData();
+            //newsTitles = nData.returnNewsTitles();
+            //newsUrls = nData.returnNewsUrls();
+            //for (int i = 0; i < newsTitles.Length; i++)
+            //{
+            //    this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = newsTitles[i], NewsUrl = newsUrls[i] });
+            //}
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

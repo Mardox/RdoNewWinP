@@ -18,6 +18,8 @@ using System.IO;
 using Microsoft.Phone.BackgroundAudio;
 using Microsoft.Phone.Tasks;
 using Newtonsoft.Json;
+using Parse;
+
 
 namespace RadioNewsPaper
 {
@@ -40,6 +42,32 @@ namespace RadioNewsPaper
             playRecAudio.MediaEnded += playRecAudio_MediaEnded;
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+
+            //var testObject = new ParseObject("Data");
+            //testObject["country"] = "Ghana";
+            //testObject["type"] = "Radio";
+            //testObject["name"] = "HIGHLIFE RADIO - GHANA";
+            //testObject["data"] = "http://173.192.205.185:80";
+            //testObject.SaveAsync();
+            loadData();
+           
+        }
+
+        private async void loadData()
+        {
+            //ParseQuery<ParseObject> query = ParseObject.GetQuery("Data");
+            //ParseObject data = await query.GetAsync("uTZ039aBk1");
+            //string url = data.Get<string>("data");
+            //Debug.WriteLine(data);
+
+            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana");
+            IEnumerable<ParseObject> results = await stations.FindAsync();
+
+            ParseObject item = results.ElementAt(1);
+
+
+            Debug.WriteLine(item["name"]);
+
         }
 
         void playRecAudio_MediaEnded(object sender, RoutedEventArgs e)
@@ -77,6 +105,8 @@ namespace RadioNewsPaper
                 Format = AdFormats.Banner,
                 AdUnitID = rdata.adBanner
             };
+
+
             AdRequest BanneradRequest = new AdRequest();
             // Assumes we've defined a Grid that has a name
             // directive of ContentPanel.
@@ -107,7 +137,7 @@ namespace RadioNewsPaper
 
         private void OnAdReceived(object sender, AdEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Ad received successfully");
+            Debug.WriteLine("Ad received successfully");
         }
         #endregion
 
@@ -190,6 +220,8 @@ namespace RadioNewsPaper
             // Reset selected item to null
             FavList.SelectedItem = null;
         }
+
+
         private string[] radioTitles;
         private string[] radioUrls;
         private void favListLoaded(object sender, RoutedEventArgs e)

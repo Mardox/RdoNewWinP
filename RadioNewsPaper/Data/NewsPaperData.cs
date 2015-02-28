@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Parse;
 
 namespace RadioNewsPaper.Data
 {
@@ -10,7 +11,7 @@ namespace RadioNewsPaper.Data
     {
         public NewsPaperData()
         {
-
+            
         }
 
         string[] NewsUrl =   {

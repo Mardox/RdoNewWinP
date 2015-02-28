@@ -8,6 +8,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RadioNewsPaper.Resources;
 using RadioNewsPaper.ViewModels;
+using Parse;
 
 namespace RadioNewsPaper
 {
@@ -73,6 +74,11 @@ namespace RadioNewsPaper
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+
+
+            //Init Parse
+            this.InitializeComponent();
+            ParseClient.Initialize("B4wG1R2PtmR0lQ740PtfDy6YpmzyhsuMM4kYZw9m", "CZZ36tHGiTtlEzoqIMxzKGNpCjfhFrmGbT36tGSg");
         }
 
         // Code to execute when the application is launching (eg, from Start)

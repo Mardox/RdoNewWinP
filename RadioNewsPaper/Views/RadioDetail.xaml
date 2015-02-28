@@ -57,7 +57,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,400,10,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,0,10">
                 <!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />-->
                 <Image x:Name="play" Source="/Assets/transport.play.png" Height="140" Width="140" Tap="playButtonTap"/>
                 <Image x:Name="stop" Source="/Assets/transport.stop.png" Visibility="Collapsed" Height="140" Width="140" Tap="stopButtonTap" />
