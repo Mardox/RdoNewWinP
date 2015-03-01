@@ -34,6 +34,7 @@ namespace RadioNewsPaper.Views
         int index;
         private InterstitialAd interstitialAd, interstitialAd2;
 
+
           // Timer for updating the UI
 
         // Indexes into the array of ApplicationBar.Buttons
@@ -59,6 +60,22 @@ namespace RadioNewsPaper.Views
             _pauseButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PauseButtonIndex]));
             _playButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PlayButtonIndex]));
             //_nextButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[NextButtonIndex]));
+
+
+            interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
+            AdRequest adRequest = new AdRequest();
+
+            interstitialAd.ReceivedAd += OnAdReceived;
+            interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
+            interstitialAd.LoadAd(adRequest);
+
+            //Interstitial two
+            //interstitialAd2 = new InterstitialAd(RadioData.detailInterstitial);
+            //AdRequest adRequest2 = new AdRequest();
+
+            //interstitialAd2.ReceivedAd += OnAdReceived2;
+            //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
+            //interstitialAd2.LoadAd(adRequest2);
         }
 
         void RadioDetail_OnLoaded(object sender, RoutedEventArgs e)
@@ -74,6 +91,32 @@ namespace RadioNewsPaper.Views
             BackgroundAudioPlayer.Instance.PlayStateChanged += Instance_PlayStateChanged;
 
             Instance_PlayStateChanged(null, null);
+        }
+
+
+        void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void OnAdReceived(object sender, AdEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Ad received successfully");
+        }
+
+
+        private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
+        {
+            //Do nothing
+        }
+
+        private void OnAdReceived2(object sender, AdEventArgs e)
+        {
+            Debug.WriteLine("Received second ad");
+            if (RandomNumber() == 0)
+            {
+                interstitialAd2.ShowAd();
+            }
         }
 
         /// <summary>
@@ -164,6 +207,21 @@ namespace RadioNewsPaper.Views
             playButton_Click(null, null);
 
         }
+
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+
+            if (RandomNumber() == 0)
+            {
+                interstitialAd.ShowAd();
+            }
+            else
+            {
+                NavigationService.GoBack();
+            }
+        }
+
 
         /// <summary>
         ///     Updates the status indicators including the State, Track title,
@@ -268,14 +326,70 @@ namespace RadioNewsPaper.Views
         //}
     
 
+
+        #region Recording section
+        private MicrophoneRecorder _recorder = new MicrophoneRecorder();
+        private IsolatedStorageFileStream _audioStream;
+        private string _tempFileName = "tempWav.wav";
+
+        private void startClick(object sender, RoutedEventArgs e)
+        {
+            playButton.IsEnabled = false;
+            saveButton.IsEnabled = false;
+            recordButton.Content = "Stop";
+            RotateCircle.Begin();
+            _recorder.Start();
+        }
+
+        private void SaveTempAudio(MemoryStream buffer)
+        {
+            if (buffer == null)
+                throw new ArgumentNullException("Attempting to save an empty audio file");
+
+            //Clean media element hold on audioStream
+            if (_audioStream != null)
+            {
+                playAudio.Stop();
+                playAudio.Source = null;
+
+                _audioStream.Dispose();
+            }
+
+            var bytes = buffer.GetWavAsByteArray(_recorder.SampleRate);
+
+            using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                if (isoStore.FileExists(_tempFileName))
+                {
+                    isoStore.DeleteFile(_tempFileName);
+                }
+                _tempFileName = string.Format("{0}.wav", DateTime.Now.ToFileTime());
+                _audioStream = isoStore.CreateFile(_tempFileName);
+                _audioStream.Write(bytes, 0, bytes.Length);
+
+                //Play
+                playAudio.SetSource(_audioStream);
+
+
+            }
+        }
+
+        private void playClick(object sender, RoutedEventArgs e)
+        {
+            BackgroundAudioPlayer.Instance.Close();
+            saveButton.Visibility = Visibility.Collapsed;
+            playButton.Visibility = Visibility.Visible;
+            playAudio.Play();
+        }
+
         private void stopClick(object sender, RoutedEventArgs e)
         {
             RotateCircle.Stop();
-            //playButton.IsEnabled = true;
-            //saveButton.IsEnabled = true;
-            //recordButton.Content = "Record";
-            //_recorder.Stop();
-            //SaveTempAudio(_recorder.Buffer);
+            playButton.IsEnabled = true;
+            saveButton.IsEnabled = true;
+            recordButton.Content = "Record";
+            _recorder.Stop();
+            SaveTempAudio(_recorder.Buffer);
 
         }
 
@@ -284,20 +398,15 @@ namespace RadioNewsPaper.Views
             recordPopUp.IsOpen = false;
         }
 
-
-        private MicrophoneRecorder _recorder = new MicrophoneRecorder();
-        private IsolatedStorageFileStream _audioStream;
-        private string _tempFileName = "tempWav.wav";
+        #endregion
 
         private void toggleFavorite_Click(object sender, EventArgs e)
         {
             IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
-            ParseObject currentStation = radioStations[index];
             if (!settings.Contains("favData"))
             {
                 settings.Add("favData", currentStation.ObjectId + ",");
-                MessageBox.Show("This station is added as favorite. To remove click on favorite button again.");
             }
             else
             {
@@ -369,7 +478,7 @@ namespace RadioNewsPaper.Views
         private int RandomNumber()
         {
             Random random = new Random();
-            return random.Next(0, 1);
+            return random.Next(0, 2);
         }
     }
 }
