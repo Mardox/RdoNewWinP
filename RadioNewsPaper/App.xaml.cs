@@ -11,6 +11,14 @@ using RadioNewsPaper.ViewModels;
 using Parse;
 using System.Xml;
 using RadioNewsPaper.Data;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+
 
 namespace RadioNewsPaper
 {
@@ -82,9 +90,20 @@ namespace RadioNewsPaper
             this.InitializeComponent();
             ParseClient.Initialize("B4wG1R2PtmR0lQ740PtfDy6YpmzyhsuMM4kYZw9m", "CZZ36tHGiTtlEzoqIMxzKGNpCjfhFrmGbT36tGSg");
 
-            
+            // After calling ParseClient.Initialize():
+            this.Startup += async (sender, args) =>
+            {
+                // This optional line tracks statistics around app opens, including push effectiveness:
+                ParseAnalytics.TrackAppOpens(RootFrame);
+
+                // By convention, the empty string is considered a "Broadcast" channel
+                // Note that we had to add "async" to the definition to use the await keyword
+                await ParsePush.SubscribeAsync("Ghana");
+            };
 
         }
+
+
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
@@ -173,6 +192,7 @@ namespace RadioNewsPaper
                 Debugger.Break();
             }
         }
+
 
         #region Phone application initialization
 

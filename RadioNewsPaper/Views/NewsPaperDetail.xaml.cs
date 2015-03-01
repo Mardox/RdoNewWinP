@@ -11,14 +11,14 @@ using RadioNewsPaper.Data;
 using RadioNewsPaper.ViewModels;
 using GoogleAds;
 using System.Diagnostics;
-
+using Parse;
 
 namespace RadioNewsPaper.Views
 {
     public partial class NewsPaperDetail : PhoneApplicationPage
     {
         string index = "";
-        NewsPaperData newsData;
+
        // RadioData rData;
         private InterstitialAd interstitialAd, interstitialAd2;
 
@@ -124,9 +124,10 @@ namespace RadioNewsPaper.Views
             //MessageBox.Show(index);
             //mainViewModel = new MainViewModel();
             //mainViewModel.NewsSource(Convert.ToInt32(index));
-            newsData = new NewsPaperData();
-            string[] newsUrls = newsData.returnNewsUrls();
-            NewsPaperBrowser.Navigate(new Uri(newsUrls[Convert.ToInt32(index)], UriKind.Absolute));
+
+            List<ParseObject> newsPapers = NewsPaperData.returnPapers();
+            ParseObject currentPaper = newsPapers[Convert.ToInt32(index)];
+            NewsPaperBrowser.Navigate(new Uri(currentPaper["data"].ToString(), UriKind.Absolute));
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -139,8 +140,8 @@ namespace RadioNewsPaper.Views
             {
                 index = temp;
             }
-            newsData = new NewsPaperData();
-            string[] newsTitles = newsData.returnNewsTitles();
+
+            List<string> newsTitles = NewsPaperData.returnNewsTitles();
             //pageName.Text = newsTitles[Convert.ToInt32(index)];
         }
 

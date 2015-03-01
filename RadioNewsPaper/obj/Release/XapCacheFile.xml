@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\RadioNewsPaper_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="1/03/2015 3:28:57 AM">
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="1/03/2015 3:28:54 AM" />
+﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\RadioNewsPaper_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="1/03/2015 4:41:29 PM">
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="1/03/2015 4:41:26 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\AdMediator.config" archivePath="AdMediator.config" lastWriteTime="1/03/2015 1:35:56 AM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\analytics.xml" archivePath="analytics.xml" lastWriteTime="1/03/2015 1:11:32 AM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21/09/2014 4:11:01 PM" />
@@ -80,5 +80,5 @@
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="21/09/2014 4:11:01 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\GPL.txt" archivePath="GPL.txt" lastWriteTime="22/09/2014 4:50:39 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\SilverlightMedia\LICENSE.txt" archivePath="LICENSE.txt" lastWriteTime="22/09/2014 4:50:39 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="1/03/2015 3:28:56 AM" />
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="1/03/2015 4:41:28 PM" />
 </xapCache>

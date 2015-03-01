@@ -237,54 +237,60 @@ namespace RadioNewsPaper
 
         #region Favorite Item
 
-        private void RadioFavItem_Tap(object sender, SelectionChangedEventArgs e)
-        {
-            // If selected item is null, do nothing
-            if (FavList.SelectedItem == null)
-                return;
+        //private void RadioFavItem_Tap(object sender, SelectionChangedEventArgs e)
+        //{
+        //    // If selected item is null, do nothing
+        //    if (FavList.SelectedItem == null)
+        //        return;
 
-            var longlistselector = (sender as LongListSelector);
-            int index = longlistselector.ItemsSource.IndexOf(longlistselector.SelectedItem);
-            //MessageBox.Show(index.ToString());
-            NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml?favIndex=" + index, UriKind.Relative));
+        //    var longlistselector = (sender as LongListSelector);
+        //    int index = longlistselector.ItemsSource.IndexOf(longlistselector.SelectedItem);
+        //    //MessageBox.Show(index.ToString());
+        //    NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml?favIndex=" + index, UriKind.Relative));
 
-            // Reset selected item to null
-            FavList.SelectedItem = null;
-        }
+        //    // Reset selected item to null
+        //    FavList.SelectedItem = null;
+        //}
 
 
         List<string> radioTitles = new List<string>();
         List<string> radioUrls = new List<string>();
-        private void favListLoaded(object sender, RoutedEventArgs e)
-        {
 
-            if (IsolatedStorageSettings.ApplicationSettings.Contains("favData"))
-            {
-                string fav = IsolatedStorageSettings.ApplicationSettings["favData"] as string;
-                if (fav != "")
-                {
-                    App.ViewModel.FavItems.Clear();
-                    string[] tempFav = fav.Split(',');
-                    radioTitles = RadioData.returnTitle();
-                    radioUrls = RadioData.returnUrl();
-                    foreach (string favItem in tempFav)
-                    {
-                        for (int i = 0; i < radioTitles.Count(); i++)
-                        {
-                            if (favItem == radioTitles[i])
-                            {
-                                App.ViewModel.FavItems.Add(new RadioFavViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i], FavIndex = i });
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    App.ViewModel.FavItems.Clear();
-                }
-            }
-            FavList.ItemsSource = App.ViewModel.FavItems;
-        }
+        List<ParseObject> radioStations = new List<ParseObject>();
+        List<ParseObject> favRadioStations = new List<ParseObject>();
+
+        //private void favListLoaded(object sender, RoutedEventArgs e)
+        //{
+
+        //    if (IsolatedStorageSettings.ApplicationSettings.Contains("favData"))
+        //    {
+        //        string fav = IsolatedStorageSettings.ApplicationSettings["favData"] as string;
+        //        if (fav != "")
+        //        {
+        //            App.ViewModel.FavItems.Clear();
+        //            string[] tempFav = fav.Split(',');
+        //            //radioTitles = RadioData.returnTitle();
+        //            //radioUrls = RadioData.returnUrl();
+        //            foreach (string favItem in tempFav)
+        //            {
+        //                for (int i = 0; i < radioStations.Count(); i++)
+        //                {
+        //                    if (favItem == radioStations[i].ObjectId)
+        //                    {
+        //                        favRadioStations.Add(radioStations[i]);
+        //                        ParseObject currentFavStation = radioStations[i];
+        //                        App.ViewModel.FavItems.Add(new RadioFavViewModel() { RadioTitle = currentFavStation["name"].ToString(), RadioUrl = currentFavStation["data"].ToString(), FavIndex = i });
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            App.ViewModel.FavItems.Clear();
+        //        }
+        //    }
+        //    FavList.ItemsSource = App.ViewModel.FavItems;
+        //}
 
         #endregion
 

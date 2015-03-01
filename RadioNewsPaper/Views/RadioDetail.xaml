@@ -52,7 +52,7 @@
 
                 <StackPanel Name="adPanel" Orientation="Vertical" Height="Auto">
                     <TextBlock Padding="2" Text="Status:" FontSize="30" Width="Auto"/>
-                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="12" Background="Transparent"/>
+                    <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="50" Background="Transparent"/>
                     <TextBlock Padding="2,2,2,10" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="30" />
                 </StackPanel>
             </StackPanel>
@@ -143,9 +143,9 @@
         <shell:ApplicationBar IsMenuEnabled="True"
                               IsVisible="True"
                               Mode="Default">
-            <shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
                                             Click="toggleFavorite_Click"
-                                            Text="Favorite" />
+                                            Text="Favorite" />-->
             <shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
                                             Click="recordButtonClick"
                                             Text="Record" />

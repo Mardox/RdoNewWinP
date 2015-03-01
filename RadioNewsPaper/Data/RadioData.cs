@@ -14,6 +14,8 @@ namespace RadioNewsPaper.Data
          static List<string> radioTitle = new List<string>();
          static List<string> radioUrl = new List<string>();
 
+         static List<ParseObject> radioStations = new List<ParseObject>();
+
         //public RadioData()
         //{
         //    LoadRadioData();
@@ -33,6 +35,8 @@ namespace RadioNewsPaper.Data
                     ParseObject item = results.ElementAt(i);
                     radioTitle.Add(item["name"].ToString());
                     radioUrl.Add(item["data"].ToString());
+
+                    radioStations.Add(item);
                 }
                
             }
@@ -79,6 +83,11 @@ namespace RadioNewsPaper.Data
         public static List<string> returnUrl()
         {
             return radioUrl;
+        }
+
+        public static List<ParseObject> returnStations()
+        {
+            return radioStations;
         }
 
     }

@@ -20,15 +20,18 @@ using RadioNewsPaper.ViewModels;
 using System.Collections.ObjectModel;
 using Coding4Fun.Toolkit.Controls;
 using Newtonsoft.Json;
+using Parse;
 
 namespace RadioNewsPaper.Views
 {
     public partial class RadioDetail : PhoneApplicationPage
     {
-        List<string> radioTitles = new List<string>();
-        List<string> radioUrls = new List<string>();
 
-        int index, forewardCount = 1;
+        List<ParseObject> radioStations = new List<ParseObject>();
+
+        ParseObject currentStation;
+
+        int index;
         private InterstitialAd interstitialAd, interstitialAd2;
 
         //constructor
@@ -38,8 +41,7 @@ namespace RadioNewsPaper.Views
 
             GoogleAnalytics.EasyTracker.GetTracker().SendView("RadioPlayer");
 
-            radioTitles = RadioData.returnTitle();
-            radioUrls = RadioData.returnUrl();
+            radioStations = RadioData.returnStations();
 
             Loaded += RadioDetail_Loaded;
             interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
@@ -93,27 +95,51 @@ namespace RadioNewsPaper.Views
 
             BackgroundAudioPlayer.Instance.PlayStateChanged += new EventHandler(this.Instance_PlayStateChanged);
 
-            if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
+            //if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
+            //{
+            //    this.UpdateButtons(false, true);
+            //    this.UpdateState(null, null);
+
+            //}
+
+            try
             {
-                this.UpdateButtons(false, true);
-                this.UpdateState(null, null);
+                int prevIndex = (int)IsolatedStorageSettings.ApplicationSettings["prevIndex"];
+                if (index != prevIndex)
+                {
+                    Play();
+                }
+                else
+                {
+                    if (BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
+                        if ((bool)IsolatedStorageSettings.ApplicationSettings["isPLaying"] == false)
+                        {
+                            Play();
+                        }
+                }
 
             }
-        }
-
-        private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
-        {
-            //Do nothing
-        }
-
-        private void OnAdReceived2(object sender, AdEventArgs e)
-        {
-            Debug.WriteLine("Received second ad");
-            if (RandomNumber() == 0)
+            catch (KeyNotFoundException)
             {
-                interstitialAd2.ShowAd();
+                Play();
+                Debug.WriteLine("first time to radio detail page");
             }
+
         }
+
+        //private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
+        //{
+        //    //Do nothing
+        //}
+
+        //private void OnAdReceived2(object sender, AdEventArgs e)
+        //{
+        //    Debug.WriteLine("Received second ad");
+        //    if (RandomNumber() == 0)
+        //    {
+        //        interstitialAd2.ShowAd();
+        //    }
+        //}
 
         private void Instance_PlayStateChanged(object sender, EventArgs e)
         {
@@ -131,19 +157,20 @@ namespace RadioNewsPaper.Views
             {
                 case PlayState.Playing:
                     this.UpdateState(null, null);
-                    UpdateButtons(false, true);
+                    //PlayButton(true);
                     this.timer.Start();
                     statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
                     break;
 
                 case PlayState.Paused:
                     this.timer.Stop();
+                    //PlayButton(false);
                     this.UpdateState(null, null);
                     statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
                     break;
                 case PlayState.Stopped:
                     this.timer.Stop();
-                    UpdateButtons(true, false);
+                    //PlayButton(false);
                     this.UpdateState(null, null);
                     statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
                     break;
@@ -166,7 +193,7 @@ namespace RadioNewsPaper.Views
                 {
                     stationName.Text = audioTrack.Title;
                     artistName.Text = audioTrack.Artist;
-                    bufferingProgress.IsIndeterminate = false;
+                    bufferingProgress.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
@@ -179,14 +206,14 @@ namespace RadioNewsPaper.Views
             }
         }
 
-        private void UpdateButtons(bool playButton, bool stopButton)
+        private void PlayButton(bool playing)
         {
-            if (playButton)
+            if (!playing)
             {
                 play.Visibility = Visibility.Visible;
                 stop.Visibility = Visibility.Collapsed;
             }
-            else if (stopButton)
+            else 
             {
                 stop.Visibility = Visibility.Visible;
                 play.Visibility = Visibility.Collapsed;
@@ -204,39 +231,17 @@ namespace RadioNewsPaper.Views
             if (NavigationContext.QueryString.TryGetValue("index", out temp))
             {
                 index = Convert.ToInt32(temp);
+                currentStation = radioStations[index];
             }
             else if (NavigationContext.QueryString.TryGetValue("favIndex", out temp))
             {
                 int tempIndex = Convert.ToInt32(temp);
                 var element = App.ViewModel.FavItems.ElementAt(tempIndex);
                 index = element.FavIndex;
+                currentStation = radioStations[index];
             }
-            try
-            {
-                int prevIndex = (int)IsolatedStorageSettings.ApplicationSettings["prevIndex"];
-                if (index != prevIndex)
-                {
-                    Play();
-                }
-                else
-                {
-                    if (BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
-                    {
-                        Play();
-                    }
-                }
 
-                //if(BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
-                if ((bool)IsolatedStorageSettings.ApplicationSettings["isPLaying"] == false)
-                {
-                    Play();
-                }
-            }
-            catch (KeyNotFoundException)
-            {
-                Play();
-                Debug.WriteLine("first time to radio detail page");
-            }
+           
 
         }
 
@@ -247,37 +252,57 @@ namespace RadioNewsPaper.Views
 
         private void stopButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            IsolatedStorageSettings.ApplicationSettings["isPLaying"] = false;
-            IsolatedStorageSettings.ApplicationSettings.Save();
-            this.timer.Stop();
-            try
-            {
-                BackgroundAudioPlayer.Instance.Stop();
-            }
-            catch (Exception)
-            {
-                UpdateButtons(true, false);
-            }
-
-            UpdateButtons(true, false);
-            UpdateState(null, null);
+            Play();
         }
 
         void Play()
         {
-            bufferingProgress.IsIndeterminate = true;
-            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, radioTitles[index], null, null, null, radioUrls[index], EnabledPlayerControls.Pause);
-            //Volume is by default set to the Maximum
-            BackgroundAudioPlayer.Instance.Volume = 1.0d;
-            IsolatedStorageSettings.ApplicationSettings["isPLaying"] = true;
-            IsolatedStorageSettings.ApplicationSettings.Save();
-            //UpdateButtons(false, true);
+
+            if ((bool)IsolatedStorageSettings.ApplicationSettings["isPLaying"] == false || (int)IsolatedStorageSettings.ApplicationSettings["prevIndex"] != index)
+            {
+                IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
+                IsolatedStorageSettings.ApplicationSettings.Save();
+
+                PlayButton(true);
+                //Set the loading bar to indetirmened 
+                bufferingProgress.Visibility = Visibility.Visible;
+
+                BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null, currentStation["data"].ToString(), EnabledPlayerControls.Pause);
+                //Volume is by default set to the Maximum
+                //BackgroundAudioPlayer.Instance.Volume = 1.0d;
+
+                IsolatedStorageSettings.ApplicationSettings["isPLaying"] = true;
+                IsolatedStorageSettings.ApplicationSettings.Save();
+
+                Debug.WriteLine("Playing the Station");
+
+            }else{
+
+                this.timer.Stop();
+
+                try
+                {
+                    BackgroundAudioPlayer.Instance.Stop();
+                }
+                catch (Exception)
+                {
+
+                }
+
+                PlayButton(false);
+                UpdateState(null, null);
+
+                IsolatedStorageSettings.ApplicationSettings["isPLaying"] = false;
+                IsolatedStorageSettings.ApplicationSettings.Save();
+
+                Debug.WriteLine("Station is paused");
+            }
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
-            IsolatedStorageSettings.ApplicationSettings.Save();
+           
+
             if (RandomNumber() == 0)
             {
                 interstitialAd.ShowAd();
@@ -365,21 +390,23 @@ namespace RadioNewsPaper.Views
         {
             IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
 
+            ParseObject currentStation = radioStations[index];
             if (!settings.Contains("favData"))
             {
-                settings.Add("favData", radioTitles[index] + ",");
+                settings.Add("favData", currentStation.ObjectId + ",");
+                MessageBox.Show("This station is added as favorite. To remove click on favorite button again.");
             }
             else
             {
-                if (!settings["favData"].ToString().Contains(radioTitles[index]))
+                if (!settings["favData"].ToString().Contains(currentStation.ObjectId))
                 {
-                    settings["favData"] += radioTitles[index] + ",";
+                    settings["favData"] += currentStation.ObjectId + ",";
                     MessageBox.Show("This station is added as favorite. To remove click on favorite button again.");
                 }
-                else if (settings["favData"].ToString().Contains(radioTitles[index]))
+                else if (settings["favData"].ToString().Contains(currentStation.ObjectId))
                 {
                     string tempSetting = settings["favData"] as string;
-                    tempSetting = tempSetting.Replace(radioTitles[index] + ",", "");
+                    tempSetting = tempSetting.Replace(currentStation.ObjectId + ",", "");
                     settings["favData"] = tempSetting;
                     MessageBox.Show("This station is removed from favorites.");
                 }
