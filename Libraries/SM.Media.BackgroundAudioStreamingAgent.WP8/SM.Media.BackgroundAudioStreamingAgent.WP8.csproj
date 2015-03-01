@@ -66,16 +66,32 @@
     <Reference Include="Autofac">
       <HintPath>..\..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="SM.Media">
+      <HintPath>..\..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.Media.Builder">
+      <HintPath>..\..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.Media.Platform.WP8">
+      <HintPath>..\..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Platform.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.Media.Web.HttpClientReader">
+      <HintPath>..\..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Web.HttpClientReader.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.TsParser">
+      <HintPath>..\..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.TsParser.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -88,13 +104,7 @@
         </ProjectReference>
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="SM.Media.Platform.WP8">
-          <HintPath>..\..\bin\$(Configuration)\WP8\SM.Media.Platform.WP8.dll</HintPath>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <Choose>
     <When Condition="Exists('..\SM.Media\SM.Media.csproj')">
@@ -106,13 +116,7 @@
         </ProjectReference>
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="SM.Media">
-          <HintPath>..\..\bin\$(Configuration)\SM.Media.dll</HintPath>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <Choose>
     <When Condition="Exists('..\SM.Media.Web.HttpClientReader\SM.Media.Web.HttpClientReader.csproj')">
@@ -123,13 +127,7 @@
         </ProjectReference>
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="SM.Media.Web.HttpClientReader">
-          <HintPath>..\..\bin\$(Configuration)\SM.Media.Web.HttpClientReader.dll</HintPath>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <Choose>
     <When Condition="Exists('..\SM.TsParser\SM.TsParser.csproj')">
@@ -141,13 +139,7 @@
         </ProjectReference>
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="SM.TsParser">
-          <HintPath>..\..\bin\$(Configuration)\SM.TsParser.dll</HintPath>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

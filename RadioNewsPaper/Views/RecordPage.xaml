@@ -62,10 +62,10 @@
                         Margin="0,0,20,0" />
             </Grid>
             
-            <Button Name="recordStartButton" Content="Start" Height="100" Width="200" HorizontalAlignment="Left" Margin="0,318,0,189" Click="startClick"/>
+            <!--<Button Name="recordStartButton" Content="Start" Height="100" Width="200" HorizontalAlignment="Left" Margin="0,318,0,189" Click="startClick"/>
             <Button Name="recordStopButton" Content="Stop" Height="100" Width="200" HorizontalAlignment="Left" Margin="0,318,0,189" Click="stopClick" Visibility="Collapsed"/>
             <Button Name="playButton" Content="Play" Height="100" Width="200" Margin="256,318,0,189" Click="playClick"/>
-            <MediaElement Name="playAudio" AutoPlay="False"/>
+            <MediaElement Name="playAudio" AutoPlay="False"/>-->
 
         </Grid>
     </Grid>

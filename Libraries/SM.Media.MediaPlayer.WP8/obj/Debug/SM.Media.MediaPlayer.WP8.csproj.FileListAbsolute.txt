@@ -16,3 +16,4 @@ C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.W
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\obj\Debug\SM.Media.MediaPlayer.WP8.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\obj\Debug\SM.Media.MediaPlayer.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\obj\Debug\SM.Media.MediaPlayer.WP8.csprojResolveAssemblyReference.cache

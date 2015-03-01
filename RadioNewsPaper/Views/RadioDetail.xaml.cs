@@ -13,12 +13,11 @@ using System.IO.IsolatedStorage;
 using System.Windows.Threading;
 using System.Diagnostics;
 using GoogleAds;
-using Coding4Fun.Toolkit.Audio;
-using Coding4Fun.Toolkit.Audio.Helpers;
+//using Coding4Fun.Toolkit.Audio;
+//using Coding4Fun.Toolkit.Audio.Helpers;
 using System.IO;
 using RadioNewsPaper.ViewModels;
 using System.Collections.ObjectModel;
-using Coding4Fun.Toolkit.Controls;
 using Newtonsoft.Json;
 using Parse;
 
@@ -327,78 +326,78 @@ namespace RadioNewsPaper.Views
     
 
 
-        #region Recording section
-        private MicrophoneRecorder _recorder = new MicrophoneRecorder();
-        private IsolatedStorageFileStream _audioStream;
-        private string _tempFileName = "tempWav.wav";
+        //#region Recording section
+        //private MicrophoneRecorder _recorder = new MicrophoneRecorder();
+        //private IsolatedStorageFileStream _audioStream;
+        //private string _tempFileName = "tempWav.wav";
 
-        private void startClick(object sender, RoutedEventArgs e)
-        {
-            playButton.IsEnabled = false;
-            saveButton.IsEnabled = false;
-            recordButton.Content = "Stop";
-            RotateCircle.Begin();
-            _recorder.Start();
-        }
+        //private void startClick(object sender, RoutedEventArgs e)
+        //{
+        //    playButton.IsEnabled = false;
+        //    saveButton.IsEnabled = false;
+        //    recordButton.Content = "Stop";
+        //    RotateCircle.Begin();
+        //    _recorder.Start();
+        //}
 
-        private void SaveTempAudio(MemoryStream buffer)
-        {
-            if (buffer == null)
-                throw new ArgumentNullException("Attempting to save an empty audio file");
+        //private void SaveTempAudio(MemoryStream buffer)
+        //{
+        //    if (buffer == null)
+        //        throw new ArgumentNullException("Attempting to save an empty audio file");
 
-            //Clean media element hold on audioStream
-            if (_audioStream != null)
-            {
-                playAudio.Stop();
-                playAudio.Source = null;
+        //    //Clean media element hold on audioStream
+        //    if (_audioStream != null)
+        //    {
+        //        playAudio.Stop();
+        //        playAudio.Source = null;
 
-                _audioStream.Dispose();
-            }
+        //        _audioStream.Dispose();
+        //    }
 
-            var bytes = buffer.GetWavAsByteArray(_recorder.SampleRate);
+        //    var bytes = buffer.GetWavAsByteArray(_recorder.SampleRate);
 
-            using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-                if (isoStore.FileExists(_tempFileName))
-                {
-                    isoStore.DeleteFile(_tempFileName);
-                }
-                _tempFileName = string.Format("{0}.wav", DateTime.Now.ToFileTime());
-                _audioStream = isoStore.CreateFile(_tempFileName);
-                _audioStream.Write(bytes, 0, bytes.Length);
+        //    using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
+        //    {
+        //        if (isoStore.FileExists(_tempFileName))
+        //        {
+        //            isoStore.DeleteFile(_tempFileName);
+        //        }
+        //        _tempFileName = string.Format("{0}.wav", DateTime.Now.ToFileTime());
+        //        _audioStream = isoStore.CreateFile(_tempFileName);
+        //        _audioStream.Write(bytes, 0, bytes.Length);
 
-                //Play
-                playAudio.SetSource(_audioStream);
+        //        //Play
+        //        playAudio.SetSource(_audioStream);
 
 
-            }
-        }
+        //    }
+        //}
 
-        private void playClick(object sender, RoutedEventArgs e)
-        {
-            BackgroundAudioPlayer.Instance.Close();
-            saveButton.Visibility = Visibility.Collapsed;
-            playButton.Visibility = Visibility.Visible;
-            playAudio.Play();
-        }
+        //private void playClick(object sender, RoutedEventArgs e)
+        //{
+        //    BackgroundAudioPlayer.Instance.Close();
+        //    saveButton.Visibility = Visibility.Collapsed;
+        //    playButton.Visibility = Visibility.Visible;
+        //    playAudio.Play();
+        //}
 
-        private void stopClick(object sender, RoutedEventArgs e)
-        {
-            RotateCircle.Stop();
-            playButton.IsEnabled = true;
-            saveButton.IsEnabled = true;
-            recordButton.Content = "Record";
-            _recorder.Stop();
-            SaveTempAudio(_recorder.Buffer);
+        //private void stopClick(object sender, RoutedEventArgs e)
+        //{
+        //    RotateCircle.Stop();
+        //    playButton.IsEnabled = true;
+        //    saveButton.IsEnabled = true;
+        //    recordButton.Content = "Record";
+        //    _recorder.Stop();
+        //    SaveTempAudio(_recorder.Buffer);
 
-        }
+        //}
 
-        private void closeGridTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            recordPopUp.IsOpen = false;
-        }
+        //private void closeGridTap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    recordPopUp.IsOpen = false;
+        //}
 
-        #endregion
+        //#endregion
 
         private void toggleFavorite_Click(object sender, EventArgs e)
         {
@@ -429,51 +428,51 @@ namespace RadioNewsPaper.Views
 
         }
 
-        private void recordButtonClick(object sender, EventArgs e)
-        {
-            recordPopUp.IsOpen = true;
-        }
+        //private void recordButtonClick(object sender, EventArgs e)
+        //{
+        //    recordPopUp.IsOpen = true;
+        //}
 
-        private void saveClick(object sender, RoutedEventArgs e)
-        {
-            InputPrompt fileName = new InputPrompt();
+        //private void saveClick(object sender, RoutedEventArgs e)
+        //{
+        //    InputPrompt fileName = new InputPrompt();
 
-            fileName.Title = "Sound name";
-            fileName.Message = "What should be the file name";
+        //    fileName.Title = "Sound name";
+        //    fileName.Message = "What should be the file name";
 
-            fileName.Completed += fileName_Completed;
-            fileName.Show();
-        }
+        //    fileName.Completed += fileName_Completed;
+        //    fileName.Show();
+        //}
 
-        private void fileName_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
-        {
-            if (e.PopUpResult == PopUpResult.Ok)
-            {
-                if (e.Result != null)
-                {
-                    RecordingsViewModel rvm = new RecordingsViewModel();
-                    rvm.RecTitle = e.Result;
-                    rvm.RecPath = string.Format("/recordAudio/{0}.wav", DateTime.Now.ToFileTime());
-                    rvm.RecTime = DateTime.Now.ToShortDateString();
+        //private void fileName_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+        //{
+        //    if (e.PopUpResult == PopUpResult.Ok)
+        //    {
+        //        if (e.Result != null)
+        //        {
+        //            RecordingsViewModel rvm = new RecordingsViewModel();
+        //            rvm.RecTitle = e.Result;
+        //            rvm.RecPath = string.Format("/recordAudio/{0}.wav", DateTime.Now.ToFileTime());
+        //            rvm.RecTime = DateTime.Now.ToShortDateString();
 
-                    using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
-                    {
-                        if (!isoStore.DirectoryExists("/recordAudio/"))
-                            isoStore.CreateDirectory("/recordAudio/");
-                        isoStore.MoveFile(_tempFileName, rvm.RecPath);
-                    }
+        //            using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
+        //            {
+        //                if (!isoStore.DirectoryExists("/recordAudio/"))
+        //                    isoStore.CreateDirectory("/recordAudio/");
+        //                isoStore.MoveFile(_tempFileName, rvm.RecPath);
+        //            }
 
-                    App.ViewModel.RecItems.Add(rvm);
+        //            App.ViewModel.RecItems.Add(rvm);
 
-                    var data = JsonConvert.SerializeObject(App.ViewModel.RecItems);
+        //            var data = JsonConvert.SerializeObject(App.ViewModel.RecItems);
 
-                    IsolatedStorageSettings.ApplicationSettings[App.CustomSoundKey] = data;
-                    IsolatedStorageSettings.ApplicationSettings.Save();
-                }
-            }
+        //            IsolatedStorageSettings.ApplicationSettings[App.CustomSoundKey] = data;
+        //            IsolatedStorageSettings.ApplicationSettings.Save();
+        //        }
+        //    }
 
-            recordPopUp.IsOpen = false;
-        }
+        //    recordPopUp.IsOpen = false;
+        //}
 
         private int RandomNumber()
         {

@@ -46,9 +46,9 @@
             <!--<shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
                                             Click="toggleFavorite_Click"
                                             Text="Favorite" />-->
-            <shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
         		Click="recordButtonClick"
-        		Text="Record" />
+        		Text="Record" />-->
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
@@ -107,7 +107,7 @@
                 
             </StackPanel>-->
 
-            <Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
+            <!--<Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
                 <Border  BorderThickness="8" BorderBrush="#CCCCCC" Height="450">
                     <StackPanel Background="{StaticResource PhoneBackgroundBrush}" Width="430">
                         <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closeGridTap">
@@ -174,7 +174,7 @@
                         <MediaElement x:Name="playAudio" AutoPlay="False"/>
                     </StackPanel>
                 </Border>
-            </Popup>
+            </Popup>-->
 
             
 

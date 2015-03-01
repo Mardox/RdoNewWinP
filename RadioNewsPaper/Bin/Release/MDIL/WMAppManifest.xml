@@ -20,8 +20,8 @@
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
       <ExtendedTask Name="BackgroundTask">
-        <BackgroundServiceAgent Specifier="AudioStreamingAgent" Name="RadioPlayback" Source="RadioPlayback" Type="RadioPlayback.AudioTrackStreamer" />
-        <BackgroundServiceAgent Specifier="AudioPlayerAgent" Name="RadioPlayback" Source="RadioPlayback" Type="RadioPlayback.AudioPlayer" />
+        <BackgroundServiceAgent Specifier="AudioStreamingAgent" Name="SM.Media.BackgroundAudioStreamingAgent.WP8" Source="SM.Media.BackgroundAudioStreamingAgent.WP8" Type="SM.Media.BackgroundAudioStreamingAgent.AudioTrackStreamer" />
+        <BackgroundServiceAgent Specifier="AudioPlayerAgent" Name="SM.Media.BackgroundAudioStreamingAgent.WP8" Source="SM.Media.BackgroundAudioStreamingAgent.WP8" Type="SM.Media.BackgroundAudioStreamingAgent.AudioPlayer" />
       </ExtendedTask>
     </Tasks>
     <Tokens>
