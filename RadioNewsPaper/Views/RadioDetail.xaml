@@ -1,4 +1,5 @@
 ﻿<phone:PhoneApplicationPage
+    x:Class="RadioNewsPaper.Views.RadioDetail"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -6,55 +7,26 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:GoogleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
-    xmlns:WindowsPhone8="clr-namespace:Microsoft.AdMediator.WindowsPhone8;assembly=Microsoft.AdMediator.WindowsPhone8"
-    x:Class="RadioNewsPaper.Views.RadioDetail"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     Loaded="RadioDetail_OnLoaded"
     shell:SystemTray.IsVisible="True">
 
-    
     <phone:PhoneApplicationPage.Resources>
         <Storyboard x:Name="RotateCircle" RepeatBehavior="Forever">
             <DoubleAnimation 
-        		Duration="0:0:4" To="360"
-        		Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"
-        		Storyboard.TargetName="ReelGrid"
-        		d:IsOptimized="True" />
+                Duration="0:0:4" To="360"
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"
+                Storyboard.TargetName="ReelGrid"
+                d:IsOptimized="True" />
         </Storyboard>
     </phone:PhoneApplicationPage.Resources>
 
-    <phone:PhoneApplicationPage.FontFamily>
-        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
-    </phone:PhoneApplicationPage.FontFamily>
-    <phone:PhoneApplicationPage.FontSize>
-        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
-    </phone:PhoneApplicationPage.FontSize>
-    <phone:PhoneApplicationPage.Foreground>
-        <StaticResource ResourceKey="PhoneForegroundBrush"/>
-    </phone:PhoneApplicationPage.Foreground>
-
-    
-
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" x:Name="AppBar">
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.rew.rest.png" Text="previous" Click="prevButton_Click"/>-->
-            <shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.play.rest.png" Text="play" Click="playButton_Click" IsEnabled="False"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.pause.rest.png" Text="pause" Click="pauseButton_Click" IsEnabled="False"/>
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.ff.rest.png" Text="next" Click="nextButton_Click"/>-->
-
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
-                                            Click="toggleFavorite_Click"
-                                            Text="Favorite" />-->
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
-        		Click="recordButtonClick"
-        		Text="Record" />-->
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -63,20 +35,19 @@
         <Image Source="/Assets/background.jpg" Stretch="UniformToFill" Grid.RowSpan="2"/>
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Now playing" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Height="32" HorizontalAlignment="Left" Margin="12,397,0,0" x:Name="txtState" Text="State: N/A" VerticalAlignment="Top" Width="438" />
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
+            <TextBlock Height="32" HorizontalAlignment="Left" Margin="12,497,0,0" x:Name="txtState" Text="State: N/A" VerticalAlignment="Top" Width="438" />
             <TextBlock Height="45" HorizontalAlignment="Left" Margin="12,24,0,0" x:Name="txtTrack" Text="Track:" VerticalAlignment="Top" Width="438" FontSize="28" />
             <ProgressBar HorizontalAlignment="Left" Margin="12,100,0,0" x:Name="positionIndicator" VerticalAlignment="Top" Width="438"/>
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,120,0,0" x:Name="textPosition" Text="00:00:00" VerticalAlignment="Top" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="368,120,0,0" x:Name="textRemaining" Text="-00:00:00" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,120,0,0" Name="textPosition" Text="00:00:00" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="368,120,0,0" Name="textRemaining" Text="-00:00:00" VerticalAlignment="Top" />
             <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="50" Background="Transparent"/>
 
-           
             <!--<StackPanel x:Name="mainPanel" Orientation="Vertical">
             <StackPanel Orientation="Vertical" Height="Auto">
                 <TextBlock Padding="2" Text="Station :" FontSize="30" Width="Auto"/>
@@ -95,97 +66,101 @@
             </StackPanel>-->
 
             <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,0,10">
-                -->
-            <!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />-->
-            <!--
+                --><!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />--><!--
                 <Image x:Name="play" Source="/Assets/transport.play.png" Height="140" Width="140" Tap="playButtonTap"/>
                 <Image x:Name="stop" Source="/Assets/transport.stop.png" Visibility="Collapsed" Height="140" Width="140" Tap="stopButtonTap" />
-                -->
-            <!--<Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />-->
-            <!--<Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>-->
-            <!--
+                --><!--<Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />-->
+                    <!--<Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>--><!--
                 
             </StackPanel>-->
 
-            <!--<Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
+            <Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
                 <Border  BorderThickness="8" BorderBrush="#CCCCCC" Height="450">
                     <StackPanel Background="{StaticResource PhoneBackgroundBrush}" Width="430">
                         <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closeGridTap">
                             <Ellipse Fill="Red"/>
                             <TextBlock Text="X" Foreground="White"
-								HorizontalAlignment="Center"
-								VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" 
                                        />
                         </Grid>
-
+                        
                         <StackPanel Orientation="Horizontal">
-
+                            
                             <Grid Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20"
-								x:Name="ReelGrid"
-								RenderTransformOrigin=".5, .5">
+                               Name="ReelGrid"
+                      RenderTransformOrigin=".5, .5">
                                 <Grid.RenderTransform>
                                     <CompositeTransform />
                                 </Grid.RenderTransform>
                                 <Ellipse Fill="{StaticResource PhoneAccentBrush}" />
 
                                 <Ellipse 
-									Fill="{StaticResource PhoneForegroundBrush}"
-									Height="20"
-									Width="20" />
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20" />
                                 <Rectangle 
-									Fill="{StaticResource PhoneForegroundBrush}"
-									Height="20"
-									Width="20"
-									VerticalAlignment="Top"
-									Margin="0,20,0,0" />
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        VerticalAlignment="Top"
+                        Margin="0,20,0,0" />
                                 <Rectangle 
-									Fill="{StaticResource PhoneForegroundBrush}"
-									Height="20"
-									Width="20"
-									VerticalAlignment="Bottom"
-									Margin="0,0,0,20" />
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,0,20" />
                                 <Rectangle 
-									Fill="{StaticResource PhoneForegroundBrush}"
-									Height="20"
-									Width="20"
-									HorizontalAlignment="Left"
-									Margin="20,0,0,0" />
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        HorizontalAlignment="Left"
+                        Margin="20,0,0,0" />
                                 <Rectangle 
-									Fill="{StaticResource PhoneForegroundBrush}"
-									Height="20"
-									Width="20"
-									HorizontalAlignment="Right"
-									Margin="0,0,20,0" />
+                        Fill="{StaticResource PhoneForegroundBrush}"
+                        Height="20"
+                        Width="20"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,20,0" />
                             </Grid>
 
                             <StackPanel Orientation="Vertical" Margin="20">
-                                <ToggleButton x:Name="recordButton" Content="Record" 
-									Height="100" Width="150"
-									Checked="startClick"
-									Unchecked="stopClick"/>
-                                <Button x:Name="playButton" IsEnabled="False" Content="Play" Height="100" Width="150" Click="playClick" />
-                                <Button x:Name="saveButton" IsEnabled="False" Content="Save" Height="100" Width="150" Click="saveClick" />
+                                <!--<ToggleButton Name="recordButton" Content="Record" 
+                                          Height="100" Width="150"
+                                          Checked="startClick"
+                                          Unchecked="stopClick"/>-->
+                                <!--<Button Name="playButton" IsEnabled="False" Content="Play" Height="100" Width="150" Click="playClick" />
+                                <Button Name="saveButton" IsEnabled="False" Content="Save" Height="100" Width="150" Click="saveClick" />-->
                             </StackPanel>
 
                         </StackPanel>
-
-
-
-                        <MediaElement x:Name="playAudio" AutoPlay="False"/>
+                        
+                        
+                        
+                        <MediaElement Name="playAudio" AutoPlay="False"/>
                     </StackPanel>
                 </Border>
-            </Popup>-->
-
-            
+            </Popup>
 
         </Grid>
-        <Grid  x:Name="AdPlaceholder" Grid.Row="2" Margin="0,0,0,0">
-            <WindowsPhone8:AdMediatorControl x:Name="AdMediator_06EC95" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-4D114544-E992-4627-9510-8ACE0BD87B06"  VerticalAlignment="Bottom" Width="480"/>
-        </Grid>
-       
-
+        
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" x:Name="AppBar">
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.rew.rest.png" Text="previous" Click="prevButton_Click"/>-->
+            <shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.play.rest.png" Text="play" Click="playButton_Click" IsEnabled="False"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.pause.rest.png" Text="pause" Click="pauseButton_Click" IsEnabled="False"/>
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.ff.rest.png" Text="next" Click="nextButton_Click"/>-->
     
-     
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
+                                            Click="toggleFavorite_Click"
+                                            Text="Favorite" />-->
+            <shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
+                                            Click="recordButtonClick"
+                                            Text="Record" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
