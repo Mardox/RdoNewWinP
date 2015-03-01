@@ -174,6 +174,10 @@
     <Content Include="Assets\MoreIcons\ghanamovies.png" />
     <Content Include="Assets\MoreIcons\kenya.png" />
     <Content Include="Assets\MoreIcons\nigerianmovies.png" />
+    <Content Include="Assets\Player\appbar.transport.ff.rest.png" />
+    <Content Include="Assets\Player\appbar.transport.pause.rest.png" />
+    <Content Include="Assets\Player\appbar.transport.play.rest.png" />
+    <Content Include="Assets\Player\appbar.transport.rew.rest.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -209,14 +213,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RadioPlayback\RadioPlayback.csproj">
-      <Project>{4235ab6a-38c0-40da-a4d7-c5230e081bbc}</Project>
-      <Name>RadioPlayback</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="AdDuplex.WindowsPhone">
       <HintPath>..\packages\AdDuplexWP8.2.8.1.0\lib\wp8\AdDuplex.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Coding4Fun.Toolkit.Audio">
       <HintPath>..\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll</HintPath>
@@ -298,6 +299,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll</HintPath>
     </Reference>
+    <Reference Include="SM.Media">
+      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.Media.Builder">
+      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.Media.Platform.WP8">
+      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Platform.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.Media.Web.HttpClientReader">
+      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Web.HttpClientReader.dll</HintPath>
+    </Reference>
+    <Reference Include="SM.TsParser">
+      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.TsParser.dll</HintPath>
+    </Reference>
     <Reference Include="SOMAWP8">
       <HintPath>..\packages\SOMAW81_Package.1.1.6\lib\wp8\SOMAWP8.dll</HintPath>
     </Reference>
@@ -310,6 +326,24 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\SM.Media.BackgroundAudioStreamingAgent.WP8.csproj">
+      <Project>{9f8af48d-82ba-4cb6-a691-e96e683b96c4}</Project>
+      <Name>SM.Media.BackgroundAudioStreamingAgent.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\SM.Media.MediaPlayer.WP8\SM.Media.MediaPlayer.WP8.csproj">
+      <Project>{503beb79-3826-4966-9767-f957f1d83e0c}</Project>
+      <Name>SM.Media.MediaPlayer.WP8</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.PlayerFramework.WP8.Core, Version=2.0.0.0">
+      <Name>Microsoft Player Framework</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

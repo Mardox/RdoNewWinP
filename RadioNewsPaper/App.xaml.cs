@@ -18,6 +18,9 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Microsoft.Phone.BackgroundAudio;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
 
 namespace RadioNewsPaper

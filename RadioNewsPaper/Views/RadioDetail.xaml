@@ -12,6 +12,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
+    Loaded="RadioDetail_OnLoaded"
     shell:SystemTray.IsVisible="True">
 
     <phone:PhoneApplicationPage.Resources>
@@ -38,9 +39,16 @@
             <TextBlock Text="Now playing" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel x:Name="mainPanel" Orientation="Vertical">
+
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
+            <TextBlock Height="32" HorizontalAlignment="Left" Margin="12,497,0,0" x:Name="txtState" Text="State: N/A" VerticalAlignment="Top" Width="438" />
+            <TextBlock Height="45" HorizontalAlignment="Left" Margin="12,24,0,0" x:Name="txtTrack" Text="Track:" VerticalAlignment="Top" Width="438" FontSize="28" />
+            <ProgressBar HorizontalAlignment="Left" Margin="12,100,0,0" x:Name="positionIndicator" VerticalAlignment="Top" Width="438"/>
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,120,0,0" Name="textPosition" Text="00:00:00" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="368,120,0,0" Name="textRemaining" Text="-00:00:00" VerticalAlignment="Top" />
+            <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="50" Background="Transparent"/>
+
+            <!--<StackPanel x:Name="mainPanel" Orientation="Vertical">
             <StackPanel Orientation="Vertical" Height="Auto">
                 <TextBlock Padding="2" Text="Station :" FontSize="30" Width="Auto"/>
                     <TextBlock Padding="2" Foreground="DarkOrange" TextWrapping="Wrap" x:Name="stationName" Text="" FontSize="30"/>
@@ -55,16 +63,16 @@
                     <ProgressBar x:Name="bufferingProgress" IsIndeterminate="True" Foreground="{StaticResource PhoneForegroundBrush}" Height="50" Background="Transparent"/>
                     <TextBlock Padding="2,2,2,10" TextWrapping="Wrap" x:Name="statusBox" Text="" FontSize="30" />
                 </StackPanel>
-            </StackPanel>
+            </StackPanel>-->
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,0,10">
-                <!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />-->
+            <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,0,10">
+                --><!--<Image x:Name="back" Source="/Assets/transport.rew.png" Height="80" Width="80" Tap="backButtonTap" />--><!--
                 <Image x:Name="play" Source="/Assets/transport.play.png" Height="140" Width="140" Tap="playButtonTap"/>
                 <Image x:Name="stop" Source="/Assets/transport.stop.png" Visibility="Collapsed" Height="140" Width="140" Tap="stopButtonTap" />
-                <!--<Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />-->
-                    <!--<Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>-->
+                --><!--<Image x:Name="next" Source="/Assets/transport.ff.png" Height="80" Width="80" Tap="nextButtonTap" />-->
+                    <!--<Image x:Name="record" Source="/Assets/microphone.png" Visibility="Visible" Height="140" Width="140" Tap="recordButtonTap"/>--><!--
                 
-            </StackPanel>
+            </StackPanel>-->
 
             <Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
                 <Border  BorderThickness="8" BorderBrush="#CCCCCC" Height="450">
@@ -118,12 +126,12 @@
                             </Grid>
 
                             <StackPanel Orientation="Vertical" Margin="20">
-                                <ToggleButton Name="recordButton" Content="Record" 
+                                <!--<ToggleButton Name="recordButton" Content="Record" 
                                           Height="100" Width="150"
                                           Checked="startClick"
-                                          Unchecked="stopClick"/>
-                                <Button Name="playButton" IsEnabled="False" Content="Play" Height="100" Width="150" Click="playClick" />
-                                <Button Name="saveButton" IsEnabled="False" Content="Save" Height="100" Width="150" Click="saveClick" />
+                                          Unchecked="stopClick"/>-->
+                                <!--<Button Name="playButton" IsEnabled="False" Content="Play" Height="100" Width="150" Click="playClick" />
+                                <Button Name="saveButton" IsEnabled="False" Content="Save" Height="100" Width="150" Click="saveClick" />-->
                             </StackPanel>
 
                         </StackPanel>
@@ -140,9 +148,12 @@
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsMenuEnabled="True"
-                              IsVisible="True"
-                              Mode="Default">
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False" x:Name="AppBar">
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.rew.rest.png" Text="previous" Click="prevButton_Click"/>-->
+            <shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.play.rest.png" Text="play" Click="playButton_Click" IsEnabled="False"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.pause.rest.png" Text="pause" Click="pauseButton_Click" IsEnabled="False"/>
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Player/appbar.transport.ff.rest.png" Text="next" Click="nextButton_Click"/>-->
+    
             <!--<shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
                                             Click="toggleFavorite_Click"
                                             Text="Favorite" />-->

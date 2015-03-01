@@ -34,7 +34,19 @@ namespace RadioNewsPaper.Views
         int index;
         private InterstitialAd interstitialAd, interstitialAd2;
 
-        //constructor
+          // Timer for updating the UI
+
+        // Indexes into the array of ApplicationBar.Buttons
+        //const int PrevButtonIndex = 0;
+        const int PlayButtonIndex = 0;
+        const int PauseButtonIndex = 1;
+        //const int NextButtonIndex = 3;
+        //readonly ApplicationBarIconButton _nextButton;
+        readonly ApplicationBarIconButton _pauseButton;
+        readonly ApplicationBarIconButton _playButton;
+        //readonly ApplicationBarIconButton _prevButton;
+        DispatcherTimer _timer;
+
         public RadioDetail()
         {
             InitializeComponent();
@@ -43,181 +55,89 @@ namespace RadioNewsPaper.Views
 
             radioStations = RadioData.returnStations();
 
-            Loaded += RadioDetail_Loaded;
-            interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
-            AdRequest adRequest = new AdRequest();
-
-            interstitialAd.ReceivedAd += OnAdReceived;
-            interstitialAd.DismissingOverlay += interstitialAd_DismissingOverlay;
-            interstitialAd.LoadAd(adRequest);
-
-            //Interstitial two
-            //interstitialAd2 = new InterstitialAd(rData.detailInterstitial);
-            //AdRequest adRequest2 = new AdRequest();
-
-            //interstitialAd2.ReceivedAd += OnAdReceived2;
-            //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
-            //interstitialAd2.LoadAd(adRequest2);
-
-            //AdView bannerAd = new AdView
-            //{
-            //    Format = AdFormats.Banner,
-            //    AdUnitID = rData.adBanner
-            //};
-            //AdRequest BanneradRequest = new AdRequest();
-            //// Assumes we've defined a Grid that has a name
-            //// directive of ContentPanel.
-            //adPanel.Children.Add(bannerAd);
-            //bannerAd.VerticalAlignment = VerticalAlignment.Bottom;
-            //bannerAd.LoadAd(BanneradRequest);
+            //_prevButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PrevButtonIndex]));
+            _pauseButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PauseButtonIndex]));
+            _playButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PlayButtonIndex]));
+            //_nextButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[NextButtonIndex]));
         }
 
-        void interstitialAd_DismissingOverlay(object sender, AdEventArgs e)
+        void RadioDetail_OnLoaded(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
-        }
-
-        private void OnAdReceived(object sender, AdEventArgs e)
-        {
-            System.Diagnostics.Debug.WriteLine("Ad received successfully");
-        }
-
-        private DispatcherTimer timer;
-        void RadioDetail_Loaded(object sender, RoutedEventArgs e)
-        {
-
             // Initialize a timer to update the UI every half-second.
-            this.timer = new DispatcherTimer();
-            this.timer.Interval = TimeSpan.FromSeconds(0.5);
-            this.timer.Tick += new EventHandler(this.UpdateState);
+            _timer = new DispatcherTimer
+                     {
+                         Interval = TimeSpan.FromSeconds(0.5)
+                     };
 
-            // Changing the Instance State of the BackgroundAudioPlayer
+            _timer.Tick += UpdateState;
 
-            BackgroundAudioPlayer.Instance.PlayStateChanged += new EventHandler(this.Instance_PlayStateChanged);
+            BackgroundAudioPlayer.Instance.PlayStateChanged += Instance_PlayStateChanged;
 
-            //if (BackgroundAudioPlayer.Instance.PlayerState == PlayState.Playing)
-            //{
-            //    this.UpdateButtons(false, true);
-            //    this.UpdateState(null, null);
-
-            //}
-
-            try
-            {
-                int prevIndex = (int)IsolatedStorageSettings.ApplicationSettings["prevIndex"];
-                if (index != prevIndex)
-                {
-                    Play();
-                }
-                else
-                {
-                    if (BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing)
-                        if ((bool)IsolatedStorageSettings.ApplicationSettings["isPLaying"] == false)
-                        {
-                            Play();
-                        }
-                }
-
-            }
-            catch (KeyNotFoundException)
-            {
-                Play();
-                Debug.WriteLine("first time to radio detail page");
-            }
-
+            Instance_PlayStateChanged(null, null);
         }
 
-        //private void interstitialAd_DismissingOverlay2(object sender, AdEventArgs e)
-        //{
-        //    //Do nothing
-        //}
-
-        //private void OnAdReceived2(object sender, AdEventArgs e)
-        //{
-        //    Debug.WriteLine("Received second ad");
-        //    if (RandomNumber() == 0)
-        //    {
-        //        interstitialAd2.ShowAd();
-        //    }
-        //}
-
-        private void Instance_PlayStateChanged(object sender, EventArgs e)
+        /// <summary>
+        ///     PlayStateChanged event handler.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void Instance_PlayStateChanged(object sender, EventArgs e)
         {
-            PlayState playState = PlayState.Unknown;
-            try
-            {
-                playState = BackgroundAudioPlayer.Instance.PlayerState;
-            }
-            catch (InvalidOperationException)
-            {
-                playState = PlayState.Stopped;
-            }
-
-            switch (playState)
+            switch (BackgroundAudioPlayer.Instance.PlayerState)
             {
                 case PlayState.Playing:
-                    this.UpdateState(null, null);
-                    //PlayButton(true);
-                    this.timer.Start();
-                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
-                    break;
+                    // Update the UI.
+                    {
+                        var track = BackgroundAudioPlayer.Instance.Track;
 
-                case PlayState.Paused:
-                    this.timer.Stop();
-                    //PlayButton(false);
-                    this.UpdateState(null, null);
-                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
+                        if (null != track)
+                        {
+                            var duration = track.Duration;
+
+                            if (duration > TimeSpan.Zero)
+                            {
+                                positionIndicator.IsIndeterminate = false;
+                                positionIndicator.Maximum = duration.TotalSeconds;
+                            }
+                        }
+                    }
+
+                    _playButton.IsEnabled = false;
+                    _pauseButton.IsEnabled = true;
+                    bufferingProgress.Visibility = Visibility.Collapsed;
+
+                    UpdateState(null, null);
+
+                    // Start the timer for updating the UI.
+                    _timer.Start();
+
                     break;
                 case PlayState.Stopped:
-                    this.timer.Stop();
-                    //PlayButton(false);
-                    this.UpdateState(null, null);
-                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
-                    break;
                 case PlayState.BufferingStarted:
-                    statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
+                    _playButton.IsEnabled = false;
+                    bufferingProgress.Visibility = Visibility.Visible;
                     break;
-                default:
+                case PlayState.Paused:
+                    // Update the UI.
+
+                    _playButton.IsEnabled = true;
+                    _pauseButton.IsEnabled = false;
+
+                    UpdateState(null, null);
+
+                    // Stop the timer for updating the UI.
+                    _timer.Stop();
+
+                    break;
+                case PlayState.Unknown:
+                    _playButton.IsEnabled = false;
+                    _pauseButton.IsEnabled = true;
+
                     break;
             }
-        }
 
-        private void UpdateState(object sender, EventArgs e)
-        {
-            // The code below changes the Song Name Track
-            //statusBox.Text = BackgroundAudioPlayer.Instance.PlayerState.ToString();
-            try
-            {
-                AudioTrack audioTrack = BackgroundAudioPlayer.Instance.Track;
-                if (audioTrack != null)
-                {
-                    stationName.Text = audioTrack.Title;
-                    artistName.Text = audioTrack.Artist;
-                    bufferingProgress.Visibility = Visibility.Collapsed;
-                }
-                else
-                {
-                    statusBox.Text = "Buffering";
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-            }
-        }
-
-        private void PlayButton(bool playing)
-        {
-            if (!playing)
-            {
-                play.Visibility = Visibility.Visible;
-                stop.Visibility = Visibility.Collapsed;
-            }
-            else 
-            {
-                stop.Visibility = Visibility.Visible;
-                play.Visibility = Visibility.Collapsed;
-            }
+            //_nextButton.IsEnabled = true;
+            //_prevButton.IsEnabled = true;
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -241,141 +161,121 @@ namespace RadioNewsPaper.Views
                 currentStation = radioStations[index];
             }
 
-           
+            playButton_Click(null, null);
 
         }
 
-        private void playButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
+        /// <summary>
+        ///     Updates the status indicators including the State, Track title,
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void UpdateState(object sender, EventArgs e)
         {
-            Play();
-        }
-
-        private void stopButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            Play();
-        }
-
-        void Play()
-        {
-
-            if ((bool)IsolatedStorageSettings.ApplicationSettings["isPLaying"] == false || (int)IsolatedStorageSettings.ApplicationSettings["prevIndex"] != index)
+            try
             {
-                IsolatedStorageSettings.ApplicationSettings["prevIndex"] = index;
-                IsolatedStorageSettings.ApplicationSettings.Save();
+                var player = BackgroundAudioPlayer.Instance;
 
-                PlayButton(true);
-                //Set the loading bar to indetirmened 
-                bufferingProgress.Visibility = Visibility.Visible;
+                if (null == player)
+                    return;
 
-                BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null, currentStation["data"].ToString(), EnabledPlayerControls.Pause);
-                //Volume is by default set to the Maximum
-                //BackgroundAudioPlayer.Instance.Volume = 1.0d;
+                txtState.Text = string.Format("State: {0}", player.PlayerState);
 
-                IsolatedStorageSettings.ApplicationSettings["isPLaying"] = true;
-                IsolatedStorageSettings.ApplicationSettings.Save();
+                var track = player.Track;
 
-                Debug.WriteLine("Playing the Station");
+                if (null != track)
+                    txtTrack.Text = string.Format("Track: {0}", track.Title);
 
-            }else{
+                // Set the current position on the ProgressBar.
+                positionIndicator.Value = player.Position.TotalSeconds;
 
-                this.timer.Stop();
+                // Update the current playback position.
+                var position = player.Position;
+                textPosition.Text = string.Format("{0:d2}:{1:d2}:{2:d2}", position.Hours, position.Minutes, position.Seconds);
 
-                try
+                // Update the time remaining digits.
+                if (null != track)
                 {
-                    BackgroundAudioPlayer.Instance.Stop();
+                    var timeRemaining = track.Duration - position;
+                    textRemaining.Text = string.Format("-{0:d2}:{1:d2}:{2:d2}", timeRemaining.Hours, timeRemaining.Minutes, timeRemaining.Seconds);
                 }
-                catch (Exception)
-                {
-
-                }
-
-                PlayButton(false);
-                UpdateState(null, null);
-
-                IsolatedStorageSettings.ApplicationSettings["isPLaying"] = false;
-                IsolatedStorageSettings.ApplicationSettings.Save();
-
-                Debug.WriteLine("Station is paused");
             }
-        }
-
-        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
-        {
-           
-
-            if (RandomNumber() == 0)
+            catch (Exception ex)
             {
-                interstitialAd.ShowAd();
-            }
-            else
-            {
-                NavigationService.GoBack();
+                Debug.WriteLine("MainPage.UpdateState() failed: " + ex.Message);
             }
         }
 
-        #region Recording section
-        private MicrophoneRecorder _recorder = new MicrophoneRecorder();
-        private IsolatedStorageFileStream _audioStream;
-        private string _tempFileName = "tempWav.wav";
+        /// <summary>
+        ///     Click handler for the Skip Previous button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //void prevButton_Click(object sender, EventArgs e)
+        //{
+        //    // Show the indeterminate progress bar.
+        //    positionIndicator.IsIndeterminate = true;
 
-        private void startClick(object sender, RoutedEventArgs e)
+        //    // Disable the button so the user can't click it multiple times before 
+        //    // the background audio agent is able to handle their request.
+        //    //_prevButton.IsEnabled = false;
+
+        //    // Tell the background audio agent to skip to the previous track.
+        //    BackgroundAudioPlayer.Instance.SkipPrevious();
+        //}
+
+        /// <summary>
+        ///     Click handler for the Play button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void playButton_Click(object sender, EventArgs e)
         {
-            playButton.IsEnabled = false;
-            saveButton.IsEnabled = false;
-            recordButton.Content = "Stop";
-            RotateCircle.Begin();
-            _recorder.Start();
+            // Tell the background audio agent to play the current track.
+            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
+                currentStation["data"].ToString(),
+                EnabledPlayerControls.All);
+            BackgroundAudioPlayer.Instance.Play();
         }
 
-        private void SaveTempAudio(MemoryStream buffer)
+        /// <summary>
+        ///     Click handler for the Pause button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void pauseButton_Click(object sender, EventArgs e)
         {
-            if (buffer == null)
-                throw new ArgumentNullException("Attempting to save an empty audio file");
-
-            //Clean media element hold on audioStream
-            if (_audioStream != null)
-            {
-                playAudio.Stop();
-                playAudio.Source = null;
-
-                _audioStream.Dispose();
-            }
-
-            var bytes = buffer.GetWavAsByteArray(_recorder.SampleRate);
-
-            using (IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-                if (isoStore.FileExists(_tempFileName))
-                {
-                    isoStore.DeleteFile(_tempFileName);
-                }
-                _tempFileName = string.Format("{0}.wav", DateTime.Now.ToFileTime());
-                _audioStream = isoStore.CreateFile(_tempFileName);
-                _audioStream.Write(bytes, 0, bytes.Length);
-
-                //Play
-                playAudio.SetSource(_audioStream);
-
-
-            }
+            // Tell the background audio agent to pause the current track.
+            BackgroundAudioPlayer.Instance.Pause();
         }
 
-        private void playClick(object sender, RoutedEventArgs e)
-        {
-            BackgroundAudioPlayer.Instance.Close();
-            stop.Visibility = Visibility.Collapsed;
-            play.Visibility = Visibility.Visible;
-            playAudio.Play();
-        }
+        /// <summary>
+        ///     Click handler for the Skip Next button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //void nextButton_Click(object sender, EventArgs e)
+        //{
+        //    // Show the indeterminate progress bar.
+        //    positionIndicator.IsIndeterminate = true;
+
+        //    // Disable the button so the user can't click it multiple times before 
+        //    // the background audio agent is able to handle their request.
+        //    //_nextButton.IsEnabled = false;
+
+        //    // Tell the background audio agent to skip to the next track.
+        //    BackgroundAudioPlayer.Instance.SkipNext();
+        //}
+    
 
         private void stopClick(object sender, RoutedEventArgs e)
         {
             RotateCircle.Stop();
-            playButton.IsEnabled = true;
-            saveButton.IsEnabled = true;
-            recordButton.Content = "Record";
-            _recorder.Stop();
-            SaveTempAudio(_recorder.Buffer);
+            //playButton.IsEnabled = true;
+            //saveButton.IsEnabled = true;
+            //recordButton.Content = "Record";
+            //_recorder.Stop();
+            //SaveTempAudio(_recorder.Buffer);
 
         }
 
@@ -384,7 +284,10 @@ namespace RadioNewsPaper.Views
             recordPopUp.IsOpen = false;
         }
 
-        #endregion
+
+        private MicrophoneRecorder _recorder = new MicrophoneRecorder();
+        private IsolatedStorageFileStream _audioStream;
+        private string _tempFileName = "tempWav.wav";
 
         private void toggleFavorite_Click(object sender, EventArgs e)
         {

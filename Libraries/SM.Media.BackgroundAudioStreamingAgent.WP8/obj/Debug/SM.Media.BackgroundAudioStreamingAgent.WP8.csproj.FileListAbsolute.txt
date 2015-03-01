@@ -1,0 +1,38 @@
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.pdb
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\Autofac.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Platform.WP8.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Web.HttpClientReader.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.TsParser.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\Autofac.xml
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.xml
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Platform.WP8.pdb
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.pdb
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Web.HttpClientReader.pdb
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.TsParser.pdb
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\obj\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.csprojResolveAssemblyReference.cache
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\obj\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.dll
+C:\Users\HooMan\Desktop\phonesm-1.4.5-alpha\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\obj\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\obj\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.csprojResolveAssemblyReference.cache
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\obj\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\obj\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\Autofac.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\Autofac.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Platform.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Web.HttpClientReader.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.TsParser.pdb

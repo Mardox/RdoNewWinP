@@ -92,12 +92,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SilverlightMedia\SilverlightMedia.csproj">
-      <Project>{B4B2178E-B3C5-4C6C-A8FF-E80CB58C6F1A}</Project>
-      <Name>SilverlightMedia</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="GoogleAds">
       <HintPath>..\..\..\GoogleMobileAdsSdkWindowsPhone8-6.5.13\lib\windowsphone8\GoogleAds.dll</HintPath>
     </Reference>
