@@ -109,11 +109,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <SDKReference Include="Microsoft.PlayerFramework.WP8.Core, Version=2.0.0.0">
-      <Name>Microsoft Player Framework</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +124,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.PlayerFramework.WP8.Core, Version=2.0.0.0">
+      <Name>Microsoft Player Framework</Name>
+    </SDKReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

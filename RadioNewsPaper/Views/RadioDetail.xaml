@@ -74,7 +74,7 @@
                 
             </StackPanel>-->
 
-            <Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
+            <!--<Popup x:Name="recordPopUp" IsOpen="False"  Height="450" VerticalAlignment="Center" >
                 <Border  BorderThickness="8" BorderBrush="#CCCCCC" Height="450">
                     <StackPanel Background="{StaticResource PhoneBackgroundBrush}" Width="430">
                         <Grid HorizontalAlignment="Right" Height="40" Width="40" Tap="closeGridTap">
@@ -126,12 +126,12 @@
                             </Grid>
 
                             <StackPanel Orientation="Vertical" Margin="20">
-                                <!--<ToggleButton Name="recordButton" Content="Record" 
+                                --><!--<ToggleButton Name="recordButton" Content="Record" 
                                           Height="100" Width="150"
                                           Checked="startClick"
                                           Unchecked="stopClick"/>-->
                                 <!--<Button Name="playButton" IsEnabled="False" Content="Play" Height="100" Width="150" Click="playClick" />
-                                <Button Name="saveButton" IsEnabled="False" Content="Save" Height="100" Width="150" Click="saveClick" />-->
+                                <Button Name="saveButton" IsEnabled="False" Content="Save" Height="100" Width="150" Click="saveClick" />--><!--
                             </StackPanel>
 
                         </StackPanel>
@@ -141,7 +141,7 @@
                         <MediaElement Name="playAudio" AutoPlay="False"/>
                     </StackPanel>
                 </Border>
-            </Popup>
+            </Popup>-->
 
         </Grid>
         
@@ -157,9 +157,9 @@
             <!--<shell:ApplicationBarIconButton IconUri="/Assets/favs.png"
                                             Click="toggleFavorite_Click"
                                             Text="Favorite" />-->
-            <shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/microphone.png" 
                                             Click="recordButtonClick"
-                                            Text="Record" />
+                                            Text="Record" />-->
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

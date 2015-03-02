@@ -1,7 +1,6 @@
 ﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="RadioNewsPaper" EntryPointType="RadioNewsPaper.App" RuntimeVersion="4.7.50308.0">
   <Deployment.Parts>
     <AssemblyPart x:Name="RadioNewsPaper" Source="RadioNewsPaper.dll" />
-    <AssemblyPart x:Name="Microsoft.PlayerFramework" Source="Microsoft.PlayerFramework.dll" />
     <AssemblyPart x:Name="AdDuplex.WindowsPhone" Source="AdDuplex.WindowsPhone.dll" />
     <AssemblyPart x:Name="Autofac" Source="Autofac.dll" />
     <AssemblyPart x:Name="GoogleAds" Source="GoogleAds.dll" />
@@ -29,7 +28,6 @@
     <AssemblyPart x:Name="SM.Media.BackgroundAudioStreamingAgent.WP8" Source="SM.Media.BackgroundAudioStreamingAgent.WP8.dll" />
     <AssemblyPart x:Name="SM.Media.Builder" Source="SM.Media.Builder.dll" />
     <AssemblyPart x:Name="SM.Media" Source="SM.Media.dll" />
-    <AssemblyPart x:Name="SM.Media.MediaPlayer.WP8" Source="SM.Media.MediaPlayer.WP8.dll" />
     <AssemblyPart x:Name="SM.Media.Platform.WP8" Source="SM.Media.Platform.WP8.dll" />
     <AssemblyPart x:Name="SM.Media.Web.HttpClientReader" Source="SM.Media.Web.HttpClientReader.dll" />
     <AssemblyPart x:Name="SM.TsParser" Source="SM.TsParser.dll" />

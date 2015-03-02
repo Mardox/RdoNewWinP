@@ -290,20 +290,25 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll</HintPath>
     </Reference>
-    <Reference Include="SM.Media">
-      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.dll</HintPath>
+    <Reference Include="SM.Media, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.dll</HintPath>
     </Reference>
-    <Reference Include="SM.Media.Builder">
-      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Builder.dll</HintPath>
+    <Reference Include="SM.Media.Builder, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.Builder.dll</HintPath>
     </Reference>
-    <Reference Include="SM.Media.Platform.WP8">
-      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Platform.WP8.dll</HintPath>
+    <Reference Include="SM.Media.Platform.WP8, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.Platform.WP8.dll</HintPath>
     </Reference>
-    <Reference Include="SM.Media.Web.HttpClientReader">
-      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Web.HttpClientReader.dll</HintPath>
+    <Reference Include="SM.Media.Web.HttpClientReader, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.Web.HttpClientReader.dll</HintPath>
     </Reference>
-    <Reference Include="SM.TsParser">
-      <HintPath>..\..\..\phonesm-1.4.5-alpha\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.TsParser.dll</HintPath>
+    <Reference Include="SM.TsParser, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.TsParser.dll</HintPath>
     </Reference>
     <Reference Include="SOMAWP8, Version=1.4.5408.30787, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -323,22 +328,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\SM.Media.BackgroundAudioStreamingAgent.WP8.csproj">
       <Project>{9f8af48d-82ba-4cb6-a691-e96e683b96c4}</Project>
       <Name>SM.Media.BackgroundAudioStreamingAgent.WP8</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Libraries\SM.Media.MediaPlayer.WP8\SM.Media.MediaPlayer.WP8.csproj">
-      <Project>{503beb79-3826-4966-9767-f957f1d83e0c}</Project>
-      <Name>SM.Media.MediaPlayer.WP8</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="Microsoft.PlayerFramework.WP8.Core, Version=2.0.0.0">
-      <Name>Microsoft Player Framework</Name>
-    </SDKReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
