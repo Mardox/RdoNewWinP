@@ -160,6 +160,8 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="RadioNewsPaper_2015_03_02_17_55_01.sap" />
+    <None Include="RadioNewsPaper_2015_03_02_17_55_10.sap" />
     <None Include="RateMyAppGuide_v1 1.pdf" />
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +312,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\SM.Media.BackgroundAudioStreamingAgent.WP8.csproj">
+      <Project>{9f8af48d-82ba-4cb6-a691-e96e683b96c4}</Project>
+      <Name>SM.Media.BackgroundAudioStreamingAgent.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\SM.Media.MediaPlayer.WP8\SM.Media.MediaPlayer.WP8.csproj">
+      <Project>{503beb79-3826-4966-9767-f957f1d83e0c}</Project>
+      <Name>SM.Media.MediaPlayer.WP8</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

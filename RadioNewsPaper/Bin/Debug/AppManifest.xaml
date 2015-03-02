@@ -2,7 +2,6 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="RadioNewsPaper" Source="RadioNewsPaper.dll" />
     <AssemblyPart x:Name="AdDuplex.WindowsPhone" Source="AdDuplex.WindowsPhone.dll" />
-    <AssemblyPart x:Name="Autofac" Source="Autofac.dll" />
     <AssemblyPart x:Name="GoogleAds" Source="GoogleAds.dll" />
     <AssemblyPart x:Name="GoogleAnalytics.Core" Source="GoogleAnalytics.Core.dll" />
     <AssemblyPart x:Name="GoogleAnalytics" Source="GoogleAnalytics.dll" />
@@ -26,16 +25,17 @@
     <AssemblyPart x:Name="Parse.Phone" Source="Parse.Phone.dll" />
     <AssemblyPart x:Name="RateMyApp" Source="RateMyApp.dll" />
     <AssemblyPart x:Name="SM.Media.BackgroundAudioStreamingAgent.WP8" Source="SM.Media.BackgroundAudioStreamingAgent.WP8.dll" />
-    <AssemblyPart x:Name="SM.Media.Builder" Source="SM.Media.Builder.dll" />
     <AssemblyPart x:Name="SM.Media" Source="SM.Media.dll" />
     <AssemblyPart x:Name="SM.Media.MediaPlayer.WP8" Source="SM.Media.MediaPlayer.WP8.dll" />
-    <AssemblyPart x:Name="SM.Media.Platform.WP8" Source="SM.Media.Platform.WP8.dll" />
-    <AssemblyPart x:Name="SM.Media.Web.HttpClientReader" Source="SM.Media.Web.HttpClientReader.dll" />
-    <AssemblyPart x:Name="SM.TsParser" Source="SM.TsParser.dll" />
     <AssemblyPart x:Name="SOMAWP8" Source="SOMAWP8.dll" />
     <AssemblyPart x:Name="System.Net.Http" Source="System.Net.Http.dll" />
     <AssemblyPart x:Name="System.Net.Http.Extensions" Source="System.Net.Http.Extensions.dll" />
     <AssemblyPart x:Name="System.Net.Http.Primitives" Source="System.Net.Http.Primitives.dll" />
+    <AssemblyPart x:Name="SM.Media.Platform.WP8" Source="SM.Media.Platform.WP8.dll" />
+    <AssemblyPart x:Name="SM.TsParser" Source="SM.TsParser.dll" />
     <AssemblyPart x:Name="Microsoft.PlayerFramework" Source="Microsoft.PlayerFramework.dll" />
+    <AssemblyPart x:Name="Autofac" Source="Autofac.dll" />
+    <AssemblyPart x:Name="SM.Media.Builder" Source="SM.Media.Builder.dll" />
+    <AssemblyPart x:Name="SM.Media.Web.HttpClientReader" Source="SM.Media.Web.HttpClientReader.dll" />
   </Deployment.Parts>
 </Deployment>

@@ -37,3 +37,10 @@ C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAud
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Platform.WP8.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Web.HttpClientReader.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.TsParser.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Builder.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Platform.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.Web.HttpClientReader.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.TsParser.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.dll.CodeAnalysisLog.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.BackgroundAudioStreamingAgent.WP8\bin\Debug\SM.Media.BackgroundAudioStreamingAgent.WP8.dll.lastcodeanalysissucceeded

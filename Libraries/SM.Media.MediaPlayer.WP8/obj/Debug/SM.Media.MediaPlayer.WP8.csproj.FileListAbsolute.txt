@@ -17,3 +17,11 @@ C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.W
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\obj\Debug\SM.Media.MediaPlayer.WP8.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\obj\Debug\SM.Media.MediaPlayer.WP8.pdb
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\obj\Debug\SM.Media.MediaPlayer.WP8.csprojResolveAssemblyReference.cache
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.Media.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.Media.Platform.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.TsParser.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\Autofac.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.Media.Builder.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.Media.Web.HttpClientReader.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.Media.MediaPlayer.WP8.dll.CodeAnalysisLog.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Libraries\SM.Media.MediaPlayer.WP8\bin\Debug\SM.Media.MediaPlayer.WP8.dll.lastcodeanalysissucceeded

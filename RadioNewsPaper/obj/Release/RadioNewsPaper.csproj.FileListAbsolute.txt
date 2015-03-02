@@ -139,3 +139,17 @@ C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\Radio
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\RadioNewsPaper.dll
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\RadioNewsPaper.pdb
 C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Release\XapCacheFile.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.BackgroundAudioStreamingAgent.WP8.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.MediaPlayer.WP8.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.Platform.WP8.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Microsoft.PlayerFramework.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Autofac.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.Builder.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.Web.HttpClientReader.dll
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.BackgroundAudioStreamingAgent.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.MediaPlayer.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.Platform.WP8.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Microsoft.PlayerFramework.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\Autofac.xml
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.Builder.pdb
+C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Release\SM.Media.Web.HttpClientReader.pdb
