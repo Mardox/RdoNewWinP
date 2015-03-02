@@ -28,7 +28,6 @@ namespace RadioNewsPaper
     {
 
         private InterstitialAd interstitialAd, interstitialAd2;
-        int popupCount = 1;
 
         // Constructor
         public MainPage()

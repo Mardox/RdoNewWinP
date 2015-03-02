@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioNewsPaper", "RadioNewsPaper\RadioNewsPaper.csproj", "{0179C934-779F-43CF-ADE4-3E97EF6FAC60}"
 	ProjectSection(ProjectDependencies) = postProject
+		{503BEB79-3826-4966-9767-F957F1D83E0C} = {503BEB79-3826-4966-9767-F957F1D83E0C}
 		{9F8AF48D-82BA-4CB6-A691-E96E683B96C4} = {9F8AF48D-82BA-4CB6-A691-E96E683B96C4}
 	EndProjectSection
 EndProject

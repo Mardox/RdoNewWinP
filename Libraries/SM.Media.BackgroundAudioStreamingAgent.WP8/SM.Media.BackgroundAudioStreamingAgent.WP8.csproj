@@ -68,23 +68,23 @@
     </Reference>
     <Reference Include="SM.Media, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.dll</HintPath>
+      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.dll</HintPath>
     </Reference>
     <Reference Include="SM.Media.Builder, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Builder.dll</HintPath>
+      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.Builder.dll</HintPath>
     </Reference>
     <Reference Include="SM.Media.Platform.WP8, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Platform.WP8.dll</HintPath>
+      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.Platform.WP8.dll</HintPath>
     </Reference>
     <Reference Include="SM.Media.Web.HttpClientReader, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.Media.Web.HttpClientReader.dll</HintPath>
+      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.Web.HttpClientReader.dll</HintPath>
     </Reference>
     <Reference Include="SM.TsParser, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\obj\ARM\Release\MDIL\SM.TsParser.dll</HintPath>
+      <HintPath>..\..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.TsParser.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
