@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{00a22271-67e4-468e-a201-ddbc6f5cc627}" Title="Ghana Live Radio" RuntimeType="Silverlight" Version="1.0.1.0" Genre="apps.normal" Author="Modern Apps" Description="" Publisher="Modern Apps" PublisherID="{cbff559d-c279-4d87-aba0-655bdb9f7be0}">
+  <App xmlns="" ProductID="{00a22271-67e4-468e-a201-ddbc6f5cc627}" Title="Ghana Live Radio" RuntimeType="Silverlight" Version="1.0.1.3" Genre="apps.normal" Author="Modern Apps" Description="" Publisher="Modern Apps" PublisherID="{cbff559d-c279-4d87-aba0-655bdb9f7be0}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

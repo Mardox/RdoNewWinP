@@ -127,7 +127,12 @@ namespace RadioNewsPaper.Views
 
             List<ParseObject> newsPapers = NewsPaperData.returnPapers();
             ParseObject currentPaper = newsPapers[Convert.ToInt32(index)];
+
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "show_paper", currentPaper["name"].ToString(), 0);
+
             NewsPaperBrowser.Navigate(new Uri(currentPaper["data"].ToString(), UriKind.Absolute));
+
+            
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)

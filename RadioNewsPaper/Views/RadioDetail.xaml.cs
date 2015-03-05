@@ -53,6 +53,8 @@ namespace RadioNewsPaper.Views
 
             GoogleAnalytics.EasyTracker.GetTracker().SendView("RadioPlayer");
 
+            
+            
             radioStations = RadioData.returnStations();
 
             //_prevButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PrevButtonIndex]));
@@ -147,17 +149,21 @@ namespace RadioNewsPaper.Views
                     _playButton.IsEnabled = false;
                     _pauseButton.IsEnabled = true;
                     bufferingProgress.Visibility = Visibility.Collapsed;
+                    warning.Visibility = Visibility.Collapsed;
 
                     UpdateState(null, null);
 
                     // Start the timer for updating the UI.
                     _timer.Start();
 
+                    GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "playing_radio", currentStation["name"].ToString(), 0);
+
                     break;
                 case PlayState.Stopped:
                 case PlayState.BufferingStarted:
                     _playButton.IsEnabled = false;
                     bufferingProgress.Visibility = Visibility.Visible;
+                    GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "buffering_radio", currentStation["name"].ToString(), 0);
                     break;
                 case PlayState.Paused:
                     // Update the UI.
@@ -288,6 +294,7 @@ namespace RadioNewsPaper.Views
         /// <param name="e"></param>
         void playButton_Click(object sender, EventArgs e)
         {
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "loading_radio", currentStation["name"].ToString(), 0);
             // Tell the background audio agent to play the current track.
             BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
                 currentStation["data"].ToString(),

@@ -66,6 +66,7 @@
 
         <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
             <TextBlock Height="32" HorizontalAlignment="Left" Margin="12,397,0,0" x:Name="txtState" Text="State: N/A" VerticalAlignment="Top" Width="438" />
+            <TextBlock TextWrapping="Wrap" Height="Auto" Margin="12,170,0,0" x:Name="warning" Text="If The Station is Not Playing It Could Offline At The Moment..." VerticalAlignment="Top" Width="438" FontSize="28" HorizontalAlignment="Left" TextAlignment="Center" Foreground="#DEFFFFFF" />
             <TextBlock Height="45" HorizontalAlignment="Left" Margin="12,24,0,0" x:Name="txtTrack" Text="Track:" VerticalAlignment="Top" Width="438" FontSize="28" />
             <ProgressBar HorizontalAlignment="Left" Margin="12,100,0,0" x:Name="positionIndicator" VerticalAlignment="Top" Width="438"/>
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,120,0,0" x:Name="textPosition" Text="00:00:00" VerticalAlignment="Top" />

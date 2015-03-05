@@ -197,6 +197,8 @@ namespace RadioNewsPaper
             //MessageBox.Show(index.ToString());
             NavigationService.Navigate(new Uri("/Views/RadioDetail.xaml?index=" + index, UriKind.Relative));
 
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("ui_action", "tap", "radio_station", 0);
+
             // Reset selected item to null
             RadioList.SelectedItem = null;
         }
@@ -211,6 +213,8 @@ namespace RadioNewsPaper
             int index = longlistselector.ItemsSource.IndexOf(longlistselector.SelectedItem);
             //MessageBox.Show(index.ToString());
             NavigationService.Navigate(new Uri("/Views/NewsPaperDetail.xaml?index=" + index, UriKind.Relative));
+
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("ui_action", "tap", "news_paper", 0);
 
             // Reset selected item to null
             NewsPaperList.SelectedItem = null;
