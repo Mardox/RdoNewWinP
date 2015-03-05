@@ -99,7 +99,6 @@ namespace RadioNewsPaper.ViewModels
         public void LoadData()
         {
             LoadRadioData();
-            LoadNewsPaperData();
             LoadRecordingData();
             LoadMoreItemsData();
             this.IsDataLoaded = true;
@@ -150,14 +149,14 @@ namespace RadioNewsPaper.ViewModels
         async void LoadRadioData()
         {
 
-                int return_value =  await RadioData.LoadRadioData();
+                int return_value =  await DataCenter.LoadData();
 
                 if (return_value > 0)
                 {
                     //radioTitles = RadioData.returnTitle();
                     //radioUrls = RadioData.returnUrl();
 
-                    radioStations = RadioData.returnStations();
+                    radioStations = DataCenter.returnStations();
 
                     //for (int i = 0; i < radioTitles.Count(); i++)
                     //{
@@ -170,46 +169,59 @@ namespace RadioNewsPaper.ViewModels
                         this.RadioItems.Add(new RadioViewModel() { RadioTitle = item["name"].ToString(), RadioUrl = item["data"].ToString() });
                     }
 
+                    newsPapers = DataCenter.returnPapers();
+
+                    //for (int i = 0; i < radioTitles.Count(); i++)
+                    //{
+                    //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
+                    //}
+
+                    for (int i = 0; i < newsPapers.Count(); i++)
+                    {
+                        ParseObject item = newsPapers[i];
+                        this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = item["name"].ToString(), NewsUrl = item["data"].ToString() });
+                    }
+
                 }
             //}
         }
 
 
 
-        async void LoadNewsPaperData()
-        {
+        //async void LoadNewsPaperData()
+        //{
 
-             int return_value =  await NewsPaperData.LoadNewsPaperData();
+        //     int return_value =  await DataCenter.LoadNewsPaperData();
 
-             if (return_value > 0)
-             {
+        //     if (return_value > 0)
+        //     {
 
-                 newsPapers = NewsPaperData.returnPapers();
+        //         newsPapers = DataCenter.returnPapers();
 
-                 //for (int i = 0; i < radioTitles.Count(); i++)
-                 //{
-                 //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
-                 //}
+        //         //for (int i = 0; i < radioTitles.Count(); i++)
+        //         //{
+        //         //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
+        //         //}
 
-                 for (int i = 0; i < newsPapers.Count(); i++)
-                 {
-                     ParseObject item = newsPapers[i];
-                     this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = item["name"].ToString(), NewsUrl = item["data"].ToString() });
-                 }
+        //         for (int i = 0; i < newsPapers.Count(); i++)
+        //         {
+        //             ParseObject item = newsPapers[i];
+        //             this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = item["name"].ToString(), NewsUrl = item["data"].ToString() });
+        //         }
 
 
-                 //newsTitles = NewsPaperData.returnNewsTitles();
-                 //newsUrls = NewsPaperData.returnNewsUrls();
+        //         //newsTitles = NewsPaperData.returnNewsTitles();
+        //         //newsUrls = NewsPaperData.returnNewsUrls();
 
-                 //for (int i = 0; i < newsTitles.Count(); i++)
-                 //{
-                 //    this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = newsTitles[i], NewsUrl = newsUrls[i] });
-                 //}
-             }
+        //         //for (int i = 0; i < newsTitles.Count(); i++)
+        //         //{
+        //         //    this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = newsTitles[i], NewsUrl = newsUrls[i] });
+        //         //}
+        //     }
 
             
       
-        }
+        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName)

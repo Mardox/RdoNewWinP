@@ -55,7 +55,7 @@ namespace RadioNewsPaper.Views
 
             
             
-            radioStations = RadioData.returnStations();
+            radioStations = DataCenter.returnStations();
 
             //_prevButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PrevButtonIndex]));
             _pauseButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[PauseButtonIndex]));
@@ -63,7 +63,7 @@ namespace RadioNewsPaper.Views
             //_nextButton = ((ApplicationBarIconButton)(ApplicationBar.Buttons[NextButtonIndex]));
 
 
-            interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
+            interstitialAd = new InterstitialAd(DataCenter.detailInterstitial);
             AdRequest adRequest = new AdRequest();
 
             interstitialAd.ReceivedAd += OnAdReceived;

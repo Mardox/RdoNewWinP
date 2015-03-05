@@ -8,13 +8,14 @@ using System.Collections.Generic;
 
 namespace RadioNewsPaper.Data
 {
-    public static class RadioData
+    public static class DataCenter
     {
 
          static List<string> radioTitle = new List<string>();
          static List<string> radioUrl = new List<string>();
 
          static List<ParseObject> radioStations = new List<ParseObject>();
+         static List<ParseObject> newsPapers = new List<ParseObject>();
 
         //public RadioData()
         //{
@@ -24,7 +25,7 @@ namespace RadioNewsPaper.Data
         async public static Task<int> LoadRadioData()
         {
 
-            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana").WhereEqualTo("type", "Radio");
+            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Senegal").WhereEqualTo("type", "Radio");
             IEnumerable<ParseObject> results = await stations.FindAsync();
 
             if (results.Count() > 0)
@@ -35,7 +36,6 @@ namespace RadioNewsPaper.Data
                     ParseObject item = results.ElementAt(i);
                     radioTitle.Add(item["name"].ToString());
                     radioUrl.Add(item["data"].ToString());
-
                     radioStations.Add(item);
                 }
                
@@ -68,10 +68,38 @@ namespace RadioNewsPaper.Data
           
         }
 
-       
+        async public static Task<int> LoadData()
+        {
+
+            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", "Ghana");
+            IEnumerable<ParseObject> results = await stations.FindAsync();
+
+            if (results.Count() > 0)
+            {
+
+                for (int i = 0; i < results.Count(); i++)
+                {
+                    ParseObject item = results.ElementAt(i);
+
+                    if (item["type"].ToString() == "Radio")
+                    {
+                        radioStations.Add(item);
+                    }
+                    else if (item["type"].ToString() == "News")
+                    {
+                        newsPapers.Add(item);
+                    }
+                 
+                }
+
+            }
+
+            return results.Count();
+
+        }
        
 
-        public static string adBanner = "ca-app-pub-7607380003153721/4788904298";
+        //public static string adBanner = "ca-app-pub-7607380003153721/4788904298";
         public static string homeInterstitial = "ca-app-pub-7607380003153721/6265637496";
         public static string detailInterstitial = "ca-app-pub-7607380003153721/7742370691";
 
@@ -90,5 +118,9 @@ namespace RadioNewsPaper.Data
             return radioStations;
         }
 
+        public static List<ParseObject> returnPapers()
+        {
+            return newsPapers;
+        }
     }
 }

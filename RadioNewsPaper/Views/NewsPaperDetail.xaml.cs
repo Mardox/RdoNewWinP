@@ -45,7 +45,7 @@ namespace RadioNewsPaper.Views
 
             Loaded += NewsPaperDetail_Loaded;
 
-            interstitialAd = new InterstitialAd(RadioData.detailInterstitial);
+            interstitialAd = new InterstitialAd(DataCenter.detailInterstitial);
             AdRequest adRequest = new AdRequest();
 
             interstitialAd.ReceivedAd += OnAdReceived;
@@ -125,7 +125,7 @@ namespace RadioNewsPaper.Views
             //mainViewModel = new MainViewModel();
             //mainViewModel.NewsSource(Convert.ToInt32(index));
 
-            List<ParseObject> newsPapers = NewsPaperData.returnPapers();
+            List<ParseObject> newsPapers = DataCenter.returnPapers();
             ParseObject currentPaper = newsPapers[Convert.ToInt32(index)];
 
             GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "show_paper", currentPaper["name"].ToString(), 0);
@@ -146,7 +146,7 @@ namespace RadioNewsPaper.Views
                 index = temp;
             }
 
-            List<string> newsTitles = NewsPaperData.returnNewsTitles();
+            //List<string> newsTitles = NewsPaperData.returnNewsTitles();
             //pageName.Text = newsTitles[Convert.ToInt32(index)];
         }
 

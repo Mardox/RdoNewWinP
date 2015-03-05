@@ -115,7 +115,7 @@ namespace RadioNewsPaper
         {
 
             GoogleAnalytics.EasyTracker.GetTracker().SendView("MainPage");
-            interstitialAd = new InterstitialAd(RadioData.homeInterstitial);
+            interstitialAd = new InterstitialAd(DataCenter.homeInterstitial);
             AdRequest adRequest = new AdRequest();
 
             interstitialAd.ReceivedAd += OnAdReceived;

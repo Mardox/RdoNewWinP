@@ -95,8 +95,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\MoreItemsData.cs" />
-    <Compile Include="Data\NewsPaperData.cs" />
-    <Compile Include="Data\RadioData.cs" />
+    <Compile Include="Data\DataCenter.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
