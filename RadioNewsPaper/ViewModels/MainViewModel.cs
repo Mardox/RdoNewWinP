@@ -153,15 +153,7 @@ namespace RadioNewsPaper.ViewModels
 
                 if (return_value > 0)
                 {
-                    //radioTitles = RadioData.returnTitle();
-                    //radioUrls = RadioData.returnUrl();
-
                     radioStations = DataCenter.returnStations();
-
-                    //for (int i = 0; i < radioTitles.Count(); i++)
-                    //{
-                    //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
-                    //}
 
                     for (int i = 0; i < radioStations.Count(); i++)
                     {
@@ -171,10 +163,6 @@ namespace RadioNewsPaper.ViewModels
 
                     newsPapers = DataCenter.returnPapers();
 
-                    //for (int i = 0; i < radioTitles.Count(); i++)
-                    //{
-                    //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
-                    //}
 
                     for (int i = 0; i < newsPapers.Count(); i++)
                     {
@@ -183,45 +171,9 @@ namespace RadioNewsPaper.ViewModels
                     }
 
                 }
-            //}
+            
         }
 
-
-
-        //async void LoadNewsPaperData()
-        //{
-
-        //     int return_value =  await DataCenter.LoadNewsPaperData();
-
-        //     if (return_value > 0)
-        //     {
-
-        //         newsPapers = DataCenter.returnPapers();
-
-        //         //for (int i = 0; i < radioTitles.Count(); i++)
-        //         //{
-        //         //    this.RadioItems.Add(new RadioViewModel() { RadioTitle = radioTitles[i], RadioUrl = radioUrls[i] });
-        //         //}
-
-        //         for (int i = 0; i < newsPapers.Count(); i++)
-        //         {
-        //             ParseObject item = newsPapers[i];
-        //             this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = item["name"].ToString(), NewsUrl = item["data"].ToString() });
-        //         }
-
-
-        //         //newsTitles = NewsPaperData.returnNewsTitles();
-        //         //newsUrls = NewsPaperData.returnNewsUrls();
-
-        //         //for (int i = 0; i < newsTitles.Count(); i++)
-        //         //{
-        //         //    this.NewsItems.Add(new NewsPaperViewModel() { NewsTitle = newsTitles[i], NewsUrl = newsUrls[i] });
-        //         //}
-        //     }
-
-            
-      
-        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName)

@@ -143,4 +143,13 @@
   <data name="Email" xml:space="preserve">
     <value>support@modernapps.biz</value>
   </data>
+  <data name="AdmobIntrestitialDetail" xml:space="preserve">
+    <value>ca-app-pub-7607380003153721/7742370691</value>
+  </data>
+  <data name="AdmobIntrestitialHome" xml:space="preserve">
+    <value>ca-app-pub-7607380003153721/6265637496</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ghana</value>
+  </data>
 </root>
