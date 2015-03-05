@@ -1,7 +1,7 @@
-﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2/03/2015 6:08:16 PM">
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="2/03/2015 6:08:12 PM" />
+﻿<xapCache source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\RadioNewsPaper_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="5/03/2015 11:44:28 PM">
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\obj\Debug\RadioNewsPaper.dll" archivePath="RadioNewsPaper.dll" lastWriteTime="5/03/2015 11:44:25 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\AdMediator.config" archivePath="AdMediator.config" lastWriteTime="2/03/2015 6:05:41 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\analytics.xml" archivePath="analytics.xml" lastWriteTime="2/03/2015 4:11:28 PM" />
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\analytics.xml" archivePath="analytics.xml" lastWriteTime="2/03/2015 7:09:50 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="21/09/2014 4:11:01 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\appbar.music.wifi.png" archivePath="Assets\appbar.music.wifi.png" lastWriteTime="10/11/2014 6:22:15 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Assets\background.jpg" archivePath="Assets\background.jpg" lastWriteTime="28/02/2015 11:29:19 PM" />
@@ -87,5 +87,5 @@
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.xml" archivePath="System.Net.Http.Primitives.xml" lastWriteTime="2/03/2015 4:11:31 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\Autofac.dll" archivePath="Autofac.dll" lastWriteTime="1/03/2015 7:07:09 PM" />
   <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\Autofac.xml" archivePath="Autofac.xml" lastWriteTime="1/03/2015 7:07:09 PM" />
-  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2/03/2015 6:08:14 PM" />
+  <file source="C:\Users\HooMan\Desktop\Windows Apps\RdoNewWinP\RadioNewsPaper\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="5/03/2015 11:44:27 PM" />
 </xapCache>

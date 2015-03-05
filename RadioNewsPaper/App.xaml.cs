@@ -99,7 +99,7 @@ namespace RadioNewsPaper
 
                 // By convention, the empty string is considered a "Broadcast" channel
                 // Note that we had to add "async" to the definition to use the await keyword
-                await ParsePush.SubscribeAsync("Ghana");
+                await ParsePush.SubscribeAsync(AppResources.Country);
             };
 
         }
