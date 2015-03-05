@@ -180,6 +180,7 @@
     <Content Include="Assets\Player\appbar.transport.pause.rest.png" />
     <Content Include="Assets\Player\appbar.transport.play.rest.png" />
     <Content Include="Assets\Player\appbar.transport.rew.rest.png" />
+    <Content Include="Assets\RadioMainIcon.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
