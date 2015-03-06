@@ -43,10 +43,10 @@ namespace RadioNewsPaper
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
 
-            AdMediator_A18543.AdSdkError += AdMediator_Bottom_AdError;
-            AdMediator_A18543.AdMediatorFilled += AdMediator_Bottom_AdFilled;
-            AdMediator_A18543.AdMediatorError += AdMediator_Bottom_AdMediatorError;
-            AdMediator_A18543.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
+            AdMediator_Home.AdSdkError += AdMediator_Bottom_AdError;
+            AdMediator_Home.AdMediatorFilled += AdMediator_Bottom_AdFilled;
+            AdMediator_Home.AdMediatorError += AdMediator_Bottom_AdMediatorError;
+            AdMediator_Home.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
 
             //AdMediator_A18543.Disable();
         }

@@ -60,10 +60,10 @@ namespace RadioNewsPaper.Views
             //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
             //interstitialAd2.LoadAd(adRequest2);
 
-            AdMediator_436C16.AdSdkError += AdMediator_Bottom_AdError;
-            AdMediator_436C16.AdMediatorFilled += AdMediator_Bottom_AdFilled;
-            AdMediator_436C16.AdMediatorError += AdMediator_Bottom_AdMediatorError;
-            AdMediator_436C16.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
+            AdMediator_NewsPaper_Detail.AdSdkError += AdMediator_Bottom_AdError;
+            AdMediator_NewsPaper_Detail.AdMediatorFilled += AdMediator_Bottom_AdFilled;
+            AdMediator_NewsPaper_Detail.AdMediatorError += AdMediator_Bottom_AdMediatorError;
+            AdMediator_NewsPaper_Detail.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
 
         }
 
