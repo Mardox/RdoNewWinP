@@ -23,7 +23,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="0,0,0,0">
             <!--<TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>-->
-            <WindowsPhone8:AdMediatorControl x:Name="AdMediator_436C16" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-C06068A2-8760-4C7B-882B-87D22ABD9FE9" Grid.Row="1" VerticalAlignment="Top" Width="480"/>
+            <WindowsPhone8:AdMediatorControl x:Name="AdMediator_NewsPaper_Detail" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-C06068A2-8760-4C7B-882B-87D22ABD9FE9" Grid.Row="1" VerticalAlignment="Top" Width="480"/>
             <!--<TextBlock x:Name="pageName" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
         </StackPanel>
 

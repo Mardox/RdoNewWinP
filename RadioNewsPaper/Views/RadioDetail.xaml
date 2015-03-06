@@ -176,7 +176,7 @@
 
         </Grid>
         <Grid x:Name="AdPanel" Grid.Row="3" Margin="0,0,0,0">
-            <WindowsPhone8:AdMediatorControl x:Name="AdMediator_Radio_detail" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-35CC1195-940A-4D8E-867E-DF2FCD54F5B9"  Grid.Row="1" VerticalAlignment="Bottom" Width="480"/>
+            <WindowsPhone8:AdMediatorControl x:Name="AdMediator_Radio_Detail" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-35CC1195-940A-4D8E-867E-DF2FCD54F5B9"  Grid.Row="1" VerticalAlignment="Bottom" Width="480"/>
         </Grid>
     </Grid>
 

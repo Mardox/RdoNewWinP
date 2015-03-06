@@ -208,7 +208,7 @@
                 </StackPanel>
             </Border>
         </Popup>
-        <WindowsPhone8:AdMediatorControl x:Name="AdMediator_A18543" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-2EA1A9F5-C32A-40E6-8236-B5ECD9F5401F" VerticalAlignment="Bottom" Width="480"/>
+        <WindowsPhone8:AdMediatorControl x:Name="AdMediator_Home" HorizontalAlignment="Left" Height="80" Id="AdMediator-Id-2EA1A9F5-C32A-40E6-8236-B5ECD9F5401F" VerticalAlignment="Bottom" Width="480"/>
 
         <MediaElement x:Name="playRecAudio" Volume="1" AutoPlay="False"/>
 
