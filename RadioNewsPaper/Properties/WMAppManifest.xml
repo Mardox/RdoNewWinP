@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{00a22271-67e4-468e-a201-ddbc6f5cc627}" Title="Ghana Live Radio" RuntimeType="Silverlight" Version="1.0.1.4" Genre="apps.normal" Author="Modern Apps" Description="" Publisher="Modern Apps" PublisherID="{cbff559d-c279-4d87-aba0-655bdb9f7be0}">
+  <App xmlns="" ProductID="{00a22271-67e4-468e-a201-ddbc6f5cc627}" Title="Ghana Live Radio" RuntimeType="Silverlight" Version="1.0.1.5" Genre="apps.normal" Author="Modern Apps" Description="" Publisher="Modern Apps" PublisherID="{cbff559d-c279-4d87-aba0-655bdb9f7be0}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -23,9 +23,9 @@
     <Tokens>
       <PrimaryToken TokenID="RadioNewsPaperToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">MainIcon-small.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">MainIcon.png</BackgroundImageURI>
           <Title>Ghana Live Radio</Title>
           <BackContent>
           </BackContent>
@@ -33,10 +33,13 @@
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">MainIcon.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

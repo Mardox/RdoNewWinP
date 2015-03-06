@@ -201,6 +201,8 @@
     <Content Include="Assets\transport.play.png" />
     <Content Include="Assets\transport.rew.png" />
     <Content Include="Assets\transport.stop.png" />
+    <Content Include="MainIcon-small.png" />
+    <Content Include="MainIcon.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
