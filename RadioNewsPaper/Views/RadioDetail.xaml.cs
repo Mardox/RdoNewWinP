@@ -77,6 +77,35 @@ namespace RadioNewsPaper.Views
             //interstitialAd2.ReceivedAd += OnAdReceived2;
             //interstitialAd2.DismissingOverlay += interstitialAd_DismissingOverlay2;
             //interstitialAd2.LoadAd(adRequest2);
+            AdMediator_Radio_Detail.AdSdkError += AdMediator_Bottom_AdError;
+            AdMediator_Radio_Detail.AdMediatorFilled += AdMediator_Bottom_AdFilled;
+            AdMediator_Radio_Detail.AdMediatorError += AdMediator_Bottom_AdMediatorError;
+            AdMediator_Radio_Detail.AdSdkEvent += AdMediator_Bottom_AdSdkEvent;
+
+        }
+
+
+        void AdMediator_Bottom_AdSdkEvent(object sender, Microsoft.AdMediator.Core.Events.AdSdkEventArgs e)
+        {
+            Debug.WriteLine("AdSdk event {0} by {1}", e.EventName, e.Name);
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("ui_action", "tap", e.EventName, 0);
+        }
+
+        void AdMediator_Bottom_AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
+        {
+            Debug.WriteLine("AdMediatorError:" + e.Error + " " + e.ErrorCode);
+            // if (e.ErrorCode == AdMediatorErrorCode.NoAdAvailable)
+            // AdMediator will not show an ad for this mediation cycle
+        }
+
+        void AdMediator_Bottom_AdFilled(object sender, Microsoft.AdMediator.Core.Events.AdSdkEventArgs e)
+        {
+            Debug.WriteLine("AdFilled:" + e.Name);
+        }
+
+        void AdMediator_Bottom_AdError(object sender, Microsoft.AdMediator.Core.Events.AdFailedEventArgs e)
+        {
+            Debug.WriteLine("AdSdkError by {0} ErrorCode: {1} ErrorDescription: {2} Error: {3}", e.Name, e.ErrorCode, e.ErrorDescription, e.Error);
         }
 
         void RadioDetail_OnLoaded(object sender, RoutedEventArgs e)

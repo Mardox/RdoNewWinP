@@ -71,6 +71,7 @@ namespace RadioNewsPaper.Views
         void AdMediator_Bottom_AdSdkEvent(object sender, Microsoft.AdMediator.Core.Events.AdSdkEventArgs e)
         {
             Debug.WriteLine("AdSdk event {0} by {1}", e.EventName, e.Name);
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("ui_action", "tap", e.EventName, 0);
         }
 
         void AdMediator_Bottom_AdMediatorError(object sender, Microsoft.AdMediator.Core.Events.AdMediatorFailedEventArgs e)
