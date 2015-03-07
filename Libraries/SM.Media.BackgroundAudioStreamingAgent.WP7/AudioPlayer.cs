@@ -32,11 +32,12 @@ using System.Windows;
 using Microsoft.Phone.BackgroundAudio;
 using SM.Media.Utility;
 
+
 namespace SM.Media.BackgroundAudioStreamingAgent
 {
     public class AudioPlayer : AudioPlayerAgent
     {
-
+        
         static readonly AudioTrack[] AudioTracks =
         {
             new AudioTrack(null, "Apple", null, null, null,
@@ -125,10 +126,12 @@ namespace SM.Media.BackgroundAudioStreamingAgent
                         player.Play();
                         break;
                     case PlayState.Shutdown:
+                        Debug.WriteLine("AudioPlayer.OnPlayStateChanged() Shutdown playstate: " + playState);
                         break;
                     case PlayState.Unknown:
                         break;
                     case PlayState.Stopped:
+                        Debug.WriteLine("AudioPlayer.OnPlayStateChanged() Stopped playstate: " + playState);
                         break;
                     case PlayState.Paused:
                         break;
@@ -137,6 +140,7 @@ namespace SM.Media.BackgroundAudioStreamingAgent
                     case PlayState.BufferingStarted:
                         break;
                     case PlayState.BufferingStopped:
+                        Debug.WriteLine("AudioPlayer.OnPlayStateChanged() Buffering Stopped playstate: " + playState);
                         break;
                     case PlayState.Rewinding:
                         break;

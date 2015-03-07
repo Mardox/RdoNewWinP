@@ -292,8 +292,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll</HintPath>
     </Reference>
-    <Reference Include="SM.Media, Version=1.4.5.0, Culture=neutral, PublicKeyToken=a8a96d0f02112ebc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SM.Media">
       <HintPath>..\Phone\BackgroundAudio.Sample.WP8\Bin\ARM\Release\SM.Media.dll</HintPath>
     </Reference>
     <Reference Include="SOMAWP8, Version=1.4.5408.30787, Culture=neutral, processorArchitecture=MSIL">

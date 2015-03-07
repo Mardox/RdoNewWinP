@@ -89,9 +89,12 @@ namespace RadioNewsPaper.Views
 
             _timer.Tick += UpdateState;
 
-            BackgroundAudioPlayer.Instance.PlayStateChanged += Instance_PlayStateChanged;
+            var player = BackgroundAudioPlayer.Instance;
 
-            Instance_PlayStateChanged(null, null);
+            player.PlayStateChanged += Instance_PlayStateChanged;
+
+            PlayTrack(player);
+
         }
 
 
@@ -127,7 +130,14 @@ namespace RadioNewsPaper.Views
         /// <param name="e"></param>
         void Instance_PlayStateChanged(object sender, EventArgs e)
         {
-            switch (BackgroundAudioPlayer.Instance.PlayerState)
+
+            var player = BackgroundAudioPlayer.Instance;
+            
+            Debug.WriteLine("Hooman Player track.Source {0} track.Tag {1} playState {2}",
+                null == player.Track ? "<no track>" : null == player.Track.Source ? "<none>" : player.Track.Source.ToString(),
+                null == player.Track ? "<no track>" : player.Track.Tag ?? "<none>", player.PlayerState);
+
+            switch (player.PlayerState)
             {
                 case PlayState.Playing:
                     // Update the UI.
@@ -181,6 +191,8 @@ namespace RadioNewsPaper.Views
                     _playButton.IsEnabled = false;
                     _pauseButton.IsEnabled = true;
 
+                    UpdateState(null, null);
+
                     break;
             }
 
@@ -201,10 +213,7 @@ namespace RadioNewsPaper.Views
                 index = Convert.ToInt32(temp);
                 currentStation = radioStations[index];
                 GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "loading_radio", currentStation["name"].ToString(), 0);
-                BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
-                    currentStation["data"].ToString(),
-                    EnabledPlayerControls.All);
-                BackgroundAudioPlayer.Instance.Play();
+                
                 
             }
             else if (NavigationContext.QueryString.TryGetValue("favIndex", out temp))
@@ -214,6 +223,11 @@ namespace RadioNewsPaper.Views
                 index = element.FavIndex;
                 currentStation = radioStations[index];
             }
+            else
+            {
+                bufferingProgress.Visibility = Visibility.Collapsed;
+                warning.Visibility = Visibility.Collapsed;
+            }
 
             
            
@@ -222,10 +236,27 @@ namespace RadioNewsPaper.Views
         }
 
 
+        private void PlayTrack(BackgroundAudioPlayer player)
+        {
+            if ((player.Track == null) || (player.Track.Title != currentStation["name"].ToString()))
+            {
+                // If it's a new track, set the track
+                player.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
+                    currentStation["data"].ToString(),
+                    EnabledPlayerControls.All);
+            }
+
+            // Play it
+            if ((player.Track != null) && (player.PlayerState != PlayState.Playing))
+            {
+                player.Play();
+            }
+        }
+
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
 
-            if (DataCenter.showAds())
+            if (DataCenter.showAds() && interstitialAd != null)
             {
                 interstitialAd.ShowAd();
             }
