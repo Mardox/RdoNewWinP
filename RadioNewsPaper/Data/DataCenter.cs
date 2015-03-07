@@ -17,13 +17,26 @@ namespace RadioNewsPaper.Data
 
          static List<ParseObject> radioStations = new List<ParseObject>();
          static List<ParseObject> newsPapers = new List<ParseObject>();
+         static ParseConfig config = null;
 
 
         async public static Task<int> LoadData()
         {
 
-            var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", AppResources.Country);
-            IEnumerable<ParseObject> results = await stations.FindAsync();
+            IEnumerable<ParseObject> results = null;
+            try
+            {
+                config = await ParseConfig.GetAsync();
+                var stations = ParseObject.GetQuery("Data").WhereEqualTo("country", AppResources.Country);
+                results = await stations.FindAsync();
+            }
+            catch (Exception e)
+            {
+                // Something went wrong (e.g. request timed out)
+                config = ParseConfig.CurrentConfig;
+            }
+
+           
 
             if (results.Count() > 0)
             {
@@ -65,6 +78,34 @@ namespace RadioNewsPaper.Data
         public static List<ParseObject> returnPapers()
         {
             return newsPapers;
+        }
+
+        public static bool showAds()
+        {
+            double adProbability = 0.6;
+
+            bool result = config.TryGetValue("AdProbability", out adProbability);
+
+            if (!result)
+            {
+                Console.WriteLine("Falling back to default message.");
+                adProbability = 0.6;
+            }
+
+            int probabilityConstant = Convert.ToInt32(adProbability * 10);
+            Random random = new Random();
+            int randomNumber = random.Next(0, 10);
+            
+            Console.WriteLine("Random Number {0} and {1}", randomNumber, adProbability);
+
+            if (randomNumber < probabilityConstant)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

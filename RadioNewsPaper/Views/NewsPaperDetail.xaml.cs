@@ -108,7 +108,7 @@ namespace RadioNewsPaper.Views
 
         private void OnAdReceived2(object sender, AdEventArgs e)
         {
-            if (RandomNumber() == 0)
+            if (DataCenter.showAds())
             {
               //  interstitialAd2.ShowAd();
             }
@@ -152,7 +152,7 @@ namespace RadioNewsPaper.Views
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            if (RandomNumber() == 0)
+            if (DataCenter.showAds())
             {
                 interstitialAd.ShowAd();
             }
@@ -163,11 +163,5 @@ namespace RadioNewsPaper.Views
         }
 
 
-        private int RandomNumber()
-        {
-            Random random = new Random();
-            return random.Next(0, 1);
-            //return 0;
-        }
     }
 }

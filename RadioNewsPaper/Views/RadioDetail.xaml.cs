@@ -114,7 +114,7 @@ namespace RadioNewsPaper.Views
         private void OnAdReceived2(object sender, AdEventArgs e)
         {
             Debug.WriteLine("Received second ad");
-            if (RandomNumber() == 0)
+            if (DataCenter.showAds())
             {
                 interstitialAd2.ShowAd();
             }
@@ -200,6 +200,11 @@ namespace RadioNewsPaper.Views
             {
                 index = Convert.ToInt32(temp);
                 currentStation = radioStations[index];
+                GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "loading_radio", currentStation["name"].ToString(), 0);
+                BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
+                    currentStation["data"].ToString(),
+                    EnabledPlayerControls.All);
+                BackgroundAudioPlayer.Instance.Play();
                 
             }
             else if (NavigationContext.QueryString.TryGetValue("favIndex", out temp))
@@ -210,11 +215,7 @@ namespace RadioNewsPaper.Views
                 currentStation = radioStations[index];
             }
 
-            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "loading_radio", currentStation["name"].ToString(), 0);
-            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
-                currentStation["data"].ToString(),
-                EnabledPlayerControls.All);
-            BackgroundAudioPlayer.Instance.Play();
+            
            
             //playButton_Click(null, null);
 
@@ -224,7 +225,7 @@ namespace RadioNewsPaper.Views
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
 
-            if (RandomNumber() == 0)
+            if (DataCenter.showAds())
             {
                 interstitialAd.ShowAd();
             }
@@ -489,10 +490,6 @@ namespace RadioNewsPaper.Views
         //    recordPopUp.IsOpen = false;
         //}
 
-        private int RandomNumber()
-        {
-            Random random = new Random();
-            return random.Next(0, 2);
-        }
+       
     }
 }
