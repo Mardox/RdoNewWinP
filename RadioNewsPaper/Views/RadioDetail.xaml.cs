@@ -200,6 +200,7 @@ namespace RadioNewsPaper.Views
             {
                 index = Convert.ToInt32(temp);
                 currentStation = radioStations[index];
+                
             }
             else if (NavigationContext.QueryString.TryGetValue("favIndex", out temp))
             {
@@ -209,7 +210,13 @@ namespace RadioNewsPaper.Views
                 currentStation = radioStations[index];
             }
 
-            playButton_Click(null, null);
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "loading_radio", currentStation["name"].ToString(), 0);
+            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
+                currentStation["data"].ToString(),
+                EnabledPlayerControls.All);
+            BackgroundAudioPlayer.Instance.Play();
+           
+            //playButton_Click(null, null);
 
         }
 
@@ -294,11 +301,11 @@ namespace RadioNewsPaper.Views
         /// <param name="e"></param>
         void playButton_Click(object sender, EventArgs e)
         {
-            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("app_action", "loading_radio", currentStation["name"].ToString(), 0);
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("ui_action", "tap", "play_radio", 0);
             // Tell the background audio agent to play the current track.
-            BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
-                currentStation["data"].ToString(),
-                EnabledPlayerControls.All);
+            //BackgroundAudioPlayer.Instance.Track = new AudioTrack(null, currentStation["name"].ToString(), null, null, null,
+            //    currentStation["data"].ToString(),
+            //    EnabledPlayerControls.All);
             BackgroundAudioPlayer.Instance.Play();
         }
 
@@ -309,6 +316,7 @@ namespace RadioNewsPaper.Views
         /// <param name="e"></param>
         void pauseButton_Click(object sender, EventArgs e)
         {
+            GoogleAnalytics.EasyTracker.GetTracker().SendEvent("ui_action", "tap", "pause_radio", 0);
             // Tell the background audio agent to pause the current track.
             BackgroundAudioPlayer.Instance.Pause();
         }
